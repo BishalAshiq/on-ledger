@@ -15,7 +15,7 @@ import styles from "../login/login.module.css";
 
 const page = () => {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -55,17 +55,17 @@ const page = () => {
         <Nav />
       </div>
       <div className='login-full-div'>
-        <div className='hr' />
+        {/* <div className='hr' /> */}
         <Slider {...settings} className='slider-login'>
           <div>
             <div className='fist-slider-text-div'>
-              <h1>
+              {/* <h1>
                 Unlocking ESG Trust and Transparency with Block chain integrity
-              </h1>
+              </h1> */}
             </div>
           </div>
           <div>
-            <div className='p-3'>
+            <div className=''>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
@@ -98,7 +98,7 @@ const page = () => {
             </div>
           </div>
           <div>
-            <div className='p-3'>
+            <div className=''>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
@@ -127,14 +127,14 @@ const page = () => {
             </div>
           </div>
         </Slider>
-        <div className='hrs' />
+        {/* <div className='hrs' /> */}
 
-        <div className='pioneeringtext'>
+        {/* <div className='pioneeringtext'>
           <p>
             A pioneering blockchain-driven
             <br /> platform under OneChain®
           </p>
-        </div>
+        </div> */}
       </div>
 
       <div className='login-footer-banner-full-div'>
@@ -145,7 +145,7 @@ const page = () => {
               <div className=''>
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
-                  For inquiries or more information please contact:
+                  For inquiries or more information <br /> please contact:
                   enquiries@esgledger.co
                 </p>
               </div>

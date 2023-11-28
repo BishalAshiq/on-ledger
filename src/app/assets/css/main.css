@@ -6,7 +6,7 @@ body {
 /* Navbar  */
 .full-navbar-div {
   background-color: white;
-  padding: 15px 0;
+  padding: 5px 0;
   border: 1px solid gray;
   position: fixed;
   top: 0;
@@ -21,8 +21,8 @@ body {
 }
 .nav-logo-img {
   /* border: 1px solid gray; */
-  width: 150px;
-  height: 40px;
+  width: 160px;
+  height: 42px;
 }
 
 .nav-items-div {
@@ -57,7 +57,10 @@ body {
 }
 
 /* Login   */
-
+.login-full-div {
+  margin-top: 7%;
+  /* height: 20vh; */
+}
 .ad-tag {
   color: #066f69;
   font-size: 1.2rem;
@@ -129,7 +132,7 @@ body {
   bottom: 0;
   width: 100%;
   margin-top: 30px;
-  background-color: #066f69;
+  background-color: #00a5bd;
 }
 .login-footer-banner-div {
   display: flex;
@@ -168,7 +171,7 @@ body {
 }
 
 .logins-footer-full-div {
-  background-color: #066f69;
+  background-color: #00a5bd;
   /* margin-top: 5% !important; */
   /* height: 8vh; */
   /* margin: 0 20%; */
@@ -184,7 +187,7 @@ body {
   /* text-align: center; */
   /* height: 18vh; */
 
-  background-color: #066f69;
+  background-color: #00a5bd;
 }
 .logins-footer-div {
   position: relative;
@@ -458,8 +461,11 @@ body {
 
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
   .login-full-div {
-    margin-top: 2%;
+    margin-top: 10%;
     height: 20vh;
+  }
+  .login-banner-img-div {
+    /* width: 200px; */
   }
   .certificate-full-div {
     margin-top: 5%;
@@ -494,6 +500,12 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
+  }
+
+  .login-footer-banner-full-div {
+    /* margin-top: 30px; */
+    padding: 30px 0 0 0;
+    background-color: #00a5bd;
   }
 }
 
