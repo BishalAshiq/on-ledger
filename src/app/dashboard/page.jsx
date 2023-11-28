@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import DashNav from "@/component/Navbar/dashNav";
 import ViewAllItems from "@/component/DashboardAll/ViewAllItems";
 import IssuDetails from "@/component/DashboardAll/IssuDetails";
-import ViewAllItemsData from "@/component/DashboardAll/ViewAllItemsData";
 
 const page = () => {
   const [activeDiv, setActiveDiv] = useState(1);
+
   const handleTextClick = (divId) => {
     setActiveDiv(divId);
   };
@@ -22,22 +22,17 @@ const page = () => {
           <div className='dash-sidebar-div'>
             <div
               onClick={() => handleTextClick(1)}
-              className={`dashboard-side-bar-li ${activeDiv === 1 ? "active-das" : ""
-                }`}>
-              <h6>Upload new products</h6>
+              className={`dashboard-side-bar-li ${
+                activeDiv === 1 ? "active-das" : ""
+              }`}>
+              <h6>View all brands</h6>
             </div>
             <div
               onClick={() => handleTextClick(2)}
-              className={`dashboard-side-bar-li ${activeDiv === 2 ? "active-das" : ""
-                }`}>
-              <h6>View all products</h6>
-            </div>
-
-            <div
-              onClick={() => handleTextClick(3)}
-              className={`dashboard-side-bar-li ${activeDiv === 3 ? "active-das" : ""
-                }`}>
-              <h6>Customie data</h6>
+              className={`dashboard-side-bar-li ${
+                activeDiv === 2 ? "active-das" : ""
+              }`}>
+              <h6>View all items</h6>
             </div>
           </div>
         </div>
@@ -52,15 +47,6 @@ const page = () => {
           )}
 
           {activeDiv === 2 && (
-            <div>
-              <div className=''>
-                <ViewAllItemsData />
-
-              </div>
-            </div>
-          )}
-
-          {activeDiv === 3 && (
             <div>
               <div className=''>
                 <ViewAllItems />

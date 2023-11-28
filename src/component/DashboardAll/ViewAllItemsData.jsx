@@ -1,84 +1,407 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Downloadicon from "../../../public/downloadicon.svg";
 import QrCode from "../../../public/qrcode.svg";
 import Image from "next/image";
-import axiosInstance from "../../../utils/axios";
-import QRCodeComponent from "./QRCodeComponent";
-import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
-
 
 const ViewAllItemsData = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
-  const router = useRouter();
-  const [headers, setHeaders] = useState([]);
-  const [columns, setColumns] = useState([]);
 
-  useEffect(() => {
-    axiosInstance.get('/item-list').then((res) => {
-      if (res.data.status == 200) {
-        setHeaders(res.data.header);
-        setColumns(res.data.data);
-      }
-      if (res.data.status == 401) {
-        toast.error(res.data.message, {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-        localStorage.removeItem("refreshToken");
-        router.push('/');
-      }
-    })
-  }, [])
+  const data = [
+    // Your data here
+    // Example data for testing
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    // Add more data as needed
+  ];
 
-  const totalPages = Math.ceil(columns.length / itemsPerPage);
+  const totalPages = Math.ceil(data.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentData = columns.slice(startIndex, endIndex);
+  const currentData = data.slice(startIndex, endIndex);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-  };
-
-  const [copySuccess, setCopySuccess] = useState(null);
-
-  const copyToClipboard = (copy_url) => {
-    try {
-      // Get the current URL
-      const currentURL = 'http://esgledger.co/products/' + copy_url;
-      console.log(currentURL);
-      // Attempt to use the Clipboard API
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(currentURL);
-        setCopySuccess('URL copied to clipboard!');
-      } else {
-        // Fallback for non-secure contexts (HTTP)
-        const textArea = document.createElement('textarea');
-        textArea.value = currentURL;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        setCopySuccess('URL copied to clipboard!');
-        toast.success("URL copied to clipboard!", {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-      }
-    } catch (error) {
-      // Handle errors
-      console.error('Error copying to clipboard:', error);
-      setCopySuccess('Copy to clipboard failed');
-    }
   };
 
   return (
@@ -134,29 +457,170 @@ const ViewAllItemsData = () => {
         </div>
 
         <div>
+          {/* <table class='table'>
+            <thead>
+              <tr>
+                <th scope='col'>Brand</th>
+                <th scope='col'>Product</th>
+                <th scope='col'>Serial</th>
+                <th scope='col'>Item</th>
+                <th scope='col'>Certification/Tests</th>
+                <th scope='col'>Part</th>
 
+                <th scope='col'>QR code</th>
+                <th scope='col'></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>KIBO</td>
+                <td>Sydeny</td>
+                <td>12345…</td>
+                <td>Recycled Leather</td>
+                <td>GRS</td>
+                <td>Upper</td>
+                <td>
+                  <div className='tabl-icon'>
+                    <Image src={QrCode.src} height={20} width={20} alt='' />
+                    <Image
+                      src={Downloadicon.src}
+                      height={25}
+                      width={25}
+                      alt=''
+                    />
+                  </div>
+                </td>
+                <td>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    class='bi bi-three-dots'
+                    viewBox='0 0 16 16'>
+                    <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                  </svg>
+                </td>
+              </tr>
+              <tr>
+                <td>KIBO</td>
+                <td>Sydeny</td>
+                <td>12345…</td>
+                <td>Recycled Leather</td>
+                <td>GRS</td>
+                <td>Upper</td>
+                <td>
+                  <div className='tabl-icon'>
+                    <Image src={QrCode.src} height={20} width={20} alt='' />
+                    <Image
+                      src={Downloadicon.src}
+                      height={25}
+                      width={25}
+                      alt=''
+                    />
+                  </div>
+                </td>
+                <td>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    class='bi bi-three-dots'
+                    viewBox='0 0 16 16'>
+                    <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                  </svg>
+                </td>
+              </tr>
+              <tr>
+                <td>KIBO</td>
+                <td>Sydeny</td>
+                <td>12345…</td>
+                <td>Recycled Leather</td>
+                <td>GRS</td>
+                <td>Upper</td>
+                <td>
+                  <div className='tabl-icon'>
+                    <Image src={QrCode.src} height={20} width={20} alt='' />
+                    <Image
+                      src={Downloadicon.src}
+                      height={25}
+                      width={25}
+                      alt=''
+                    />
+                  </div>
+                </td>
+                <td>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    class='bi bi-three-dots'
+                    viewBox='0 0 16 16'>
+                    <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                  </svg>
+                </td>
+              </tr>
+              <tr>
+                <td>KIBO</td>
+                <td>Sydeny</td>
+                <td>12345…</td>
+                <td>Recycled Leather</td>
+                <td>GRS</td>
+                <td>Upper</td>
+                <td>
+                  <div className='tabl-icon'>
+                    <Image src={QrCode.src} height={20} width={20} alt='' />
+                    <Image
+                      src={Downloadicon.src}
+                      height={25}
+                      width={25}
+                      alt=''
+                    />
+                  </div>
+                </td>
+                <td>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    class='bi bi-three-dots'
+                    viewBox='0 0 16 16'>
+                    <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                  </svg>
+                </td>
+              </tr>
+            </tbody>
+          </table> */}
           <div className='mt-4'>
             <table className='table'>
               <thead>
                 <tr>
-                  {
-                    headers.length > 0 &&
-                    headers.map((item) => (
-                      <th className='table-nav' scope='col'>
-                        <p className='table-th'> {item}</p>
-                      </th>
-                    ))
-                  }
-
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Brand</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Product</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Serial</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Item</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Certification/Tests</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Part</p>
+                  </th>
                   <th className='table-nav' scope='col'>
                     <p className='table-th'> QR code</p>
                   </th>
-
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Action</p>
-                  </th>
                   <th className='table-navs' scope='col'>
-                    <p className='table-ths'> Action</p>
+                    <p className='table-ths'> QR code</p>
                   </th>
                   {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
@@ -164,48 +628,54 @@ const ViewAllItemsData = () => {
                 </tr>
               </thead>
               <tbody>
-                {columns.length > 0 &&
-                  columns.map((item, index) => (
-                    <tr key={index} className='data-tr'>
-                      {headers.length > 0 &&
-                        headers.map((head) => (
-                          <td className='data-td'>
-                            <p className='data-th-text'>{item[head]}</p>
-                          </td>
-                        ))}
+                {currentData.map((item, index) => (
+                  <tr key={index} className='data-tr'>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.brand}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.product}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-texts'>{item.serial}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.item}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.certification}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.part}</p>
+                    </td>
+                    <td>
+                      <div className='tabl-icon'>
+                        {/* {item.img1} {item.img1} */}
+                        <Image src={item.img2} width={25} height={25} alt='' />
+                        <Image src={item.img1} width={20} height={20} alt='' />
+                      </div>
+                    </td>
 
-                      <td>
-                        <div className='tabl-icon ' style={{ height: '20px', width: '15px', marginTop: '-10px' }}>
-                          {/* {item.img1} {item.img1} */}
-                          <QRCodeComponent value={item['lsg_unique_id']} size={50} />
-                        </div>
-                      </td>
-                      <td>
-                        <svg onClick={(e) => copyToClipboard(item['slug'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
-                        </svg>
-                      </td>
-                      {/* <td>
+                    {/* <td>
                       <div className='tabl-icon'>
                         QR code and download icon
                       </div>
                     </td> */}
-                      <td>
-                        <div className='th-svg-div'>
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='24'
-                            height='24'
-                            fill='#155C79'
-                            className='bi bi-three-dots'
-                            viewBox='0 0 16 16'>
-                            <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
-                          </svg>
-                        </div>
-                      </td>
-                    </tr>
-                  ))
-                }
+                    <td>
+                      <div className='th-svg-div'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='24'
+                          height='24'
+                          fill='#155C79'
+                          className='bi bi-three-dots'
+                          viewBox='0 0 16 16'>
+                          <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
 

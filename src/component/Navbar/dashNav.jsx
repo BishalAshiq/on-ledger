@@ -1,21 +1,7 @@
 import React from "react";
 import DashnavLogo from "../../../public/pageLogomd.png";
-import { useRouter } from "next/navigation";
-import Cookies from "js-cookie";
 
 const dashNav = () => {
-  const router = useRouter();
-  const handleLogout = () => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("refreshToken");
-
-      localStorage.removeItem("userInfo");
-
-      localStorage.removeItem("userId");
-    }
-    Cookies.remove('refreshToken');
-    router.push("/");
-  }
   return (
     <div>
       <div className='dashnav-div'>
@@ -24,7 +10,7 @@ const dashNav = () => {
         </div>
 
         <div>
-          <svg onClick={handleLogout}
+          <svg
             xmlns='http://www.w3.org/2000/svg'
             width='25'
             height='25'
