@@ -340,7 +340,9 @@ const IssuDetails = () => {
           <h6>Preview</h6>
           <div className='previe-issue-text'>
             <p className='previe-issue-btn-text'>Clear</p>
-            <button className='previe-issue-btn'>Mint</button>
+            <div>
+              <button className='previe-issue-btn'>Mint</button>
+            </div>
           </div>
         </div>
 

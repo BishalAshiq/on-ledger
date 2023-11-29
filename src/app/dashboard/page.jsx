@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import DashNav from "@/component/Navbar/dashNav";
 import ViewAllItems from "@/component/DashboardAll/ViewAllItems";
 import IssuDetails from "@/component/DashboardAll/IssuDetails";
+import ViewAllItemsData from "@/component/DashboardAll/ViewAllItemsData";
 
 const page = () => {
   const [activeDiv, setActiveDiv] = useState(1);
@@ -25,14 +26,21 @@ const page = () => {
               className={`dashboard-side-bar-li ${
                 activeDiv === 1 ? "active-das" : ""
               }`}>
-              <h6>View all brands</h6>
+              <h6 className='dashboard-side-bartext'>Upload new products</h6>
             </div>
             <div
               onClick={() => handleTextClick(2)}
               className={`dashboard-side-bar-li ${
                 activeDiv === 2 ? "active-das" : ""
               }`}>
-              <h6>View all items</h6>
+              <h6 className='dashboard-side-bartext'>View all products</h6>
+            </div>
+            <div
+              onClick={() => handleTextClick(3)}
+              className={`dashboard-side-bar-li ${
+                activeDiv === 3 ? "active-das" : ""
+              }`}>
+              <h6 className='dashboard-side-bartext'>Customize data</h6>
             </div>
           </div>
         </div>
@@ -50,6 +58,13 @@ const page = () => {
             <div>
               <div className=''>
                 <ViewAllItems />
+              </div>
+            </div>
+          )}
+          {activeDiv === 3 && (
+            <div>
+              <div className=''>
+                <ViewAllItemsData />
               </div>
             </div>
           )}

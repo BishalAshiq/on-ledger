@@ -3,7 +3,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  background-color: #066f69;
+  background-color: #00a5bd;
   padding: 10px 20px;
 }
 
@@ -22,6 +22,14 @@
 .dashboard-side-bar-li {
   padding: 20px 25px;
   cursor: pointer;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+.dashboard-side-bartext {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .active-das {
   background-color: #86c6ca;
@@ -237,7 +245,7 @@
 .issue-upload-div {
   display: grid;
   place-items: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .csv-textp {
@@ -259,17 +267,20 @@
 }
 .previe-issue-text {
   display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
   gap: 20px;
 }
 .previe-issue-btn-text {
-  color: #00b3ff;
+  color: #00a5bd;
 }
 
 .previe-issue-btn {
-  background-color: #066f69;
+  background-color: #00a5bd;
   color: white;
-  padding: 1px 60px;
-  height: 5vh;
+  padding: 3px 60px;
+  /* height: 5vh; */
   border-radius: 2px;
   outline: none;
   border: none;
@@ -284,4 +295,22 @@
 .issue-svg-div {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 3000px) and (min-width: 1370px) {
+  .dashboard-side-bartext {
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-footer-banner-full-div {
+    /* Adjust styles for smaller screens */
+    padding: 10px; /* Example: reduce padding on smaller screens */
+    margin-top: 10px; /* Adjust the margin-top for smaller screens */
+  }
 }
