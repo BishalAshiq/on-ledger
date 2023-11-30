@@ -134,6 +134,13 @@ body {
   margin-top: 30px;
   background-color: #00a5bd;
 }
+.login-footer-banner-full-divs {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #00a5bd;
+}
 .login-footer-banner-div {
   display: flex;
   justify-content: space-between;

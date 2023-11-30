@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../login/login.module.css";
 import Nav from "@/component/Navbar/Nav";
-import pageLogo from "../../../public/pageLogomd.png";
+import pageLogo from "../../../public/pageLogomds.png";
 import pageicon1 from "../../../public/social1.svg";
 import pageicon2 from "../../../public/social2.svg";
 import pageicon3 from "../../../public/social3.svg";
@@ -16,7 +16,7 @@ const page = () => {
   return (
     <div className='individual'>
       {" "}
-      <div className={styles["background-img"]}>
+      <div className={styles["background-imgs"]}>
         <div className=''>
           <Nav />
         </div>
@@ -207,14 +207,47 @@ const page = () => {
           </div>
         </div>
 
-        <div className='logins-footer-div'>
+        <div className='login-footer-banner-full-divs'>
+          <div className='row'>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+            <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
+              <div className='login-footer-banner-div'>
+                <div className=''>
+                  <img className='footer-img' src={pageLogo.src} alt='' />
+                  <p className='fotter-ptext'>
+                    For inquiries or more information <br /> please contact:
+                    enquiries@esgledger.co
+                  </p>
+                </div>
+
+                <div className=''>
+                  <p className='footer-textpp'>Join the Community</p>
+
+                  <div className='footer-text-icon'>
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </div>
+                </div>
+              </div>
+              <div className=''>
+                <hr className='f-hr' />
+                <p className='f-text'>© 2023 OneChain Ltd.</p>
+              </div>
+            </div>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3'></div>
+          </div>
+        </div>
+
+        {/* <div className='logins-footer-div'>
           <div className='logins-footer-full-div row'>
             <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
             <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
               <div className='footer-img-div'>
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
-                  For inquiries or more information please contact:
+                  For inquiries or more information <br /> please contact:
                   enquiries@esgledger.co
                 </p>
               </div>
@@ -247,7 +280,7 @@ const page = () => {
               <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

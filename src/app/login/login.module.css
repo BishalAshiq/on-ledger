@@ -4,8 +4,22 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh; /* Adjust as needed */
-  overflow: hidden;
-  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  /* padding-top: 2%; */
+}
+.background-imgs {
+  background-image: url("/onledbackgrounds.png"); /* Replace with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Adjust as needed */
+  /* overflow-y: hidden; */
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100vh;

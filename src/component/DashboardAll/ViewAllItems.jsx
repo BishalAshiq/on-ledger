@@ -76,13 +76,9 @@ const ViewAllItems = () => {
           </div>
           <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
             <div>
-              <select
-                class='form-select form-select-sm'
-                aria-label='Small select example'>
-                <option selected>Certification/ Tests</option>
-                <option value='1'>Certification</option>
-                <option value='2'>Tests</option>
-              </select>
+              <div>
+                <input type='text' className='ser-item-input' />
+              </div>
             </div>
           </div>
           <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
@@ -113,13 +109,9 @@ const ViewAllItems = () => {
           </div>
           <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
             <div>
-              <select
-                class='form-select form-select-sm'
-                aria-label='Small select example'>
-                <option selected>Part</option>
-                <option value='1'>Part2</option>
-                <option value='2'>Part3</option>
-              </select>
+              <div>
+                <input type='text' className='ser-item-input' />
+              </div>
             </div>
           </div>
           <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>

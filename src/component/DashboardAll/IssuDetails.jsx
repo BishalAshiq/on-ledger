@@ -322,7 +322,7 @@ const IssuDetails = () => {
   return (
     <div className='container-fluid mt-4'>
       <div>
-        <h6>Upload recipients and certificates data</h6>
+        <h6 className='uptag-text'>Upload recipients and certificates data</h6>
         <div className='issue-upload-full-div'>
           <div className='issue-upload-div'>
             <a className='csv-a'>Download the CSV template</a>
@@ -335,9 +335,9 @@ const IssuDetails = () => {
         </div>
       </div>
 
-      <div className='mt-5'>
+      <div className='mt-2'>
         <div className='previe-issue-div'>
-          <h6>Preview</h6>
+          <h6 className='uptag-text'>Preview</h6>
           <div className='previe-issue-text'>
             <p className='previe-issue-btn-text'>Clear</p>
             <div>
@@ -347,7 +347,7 @@ const IssuDetails = () => {
         </div>
 
         <div>
-          <div className='mt-4 issue-data-table-div'>
+          <div className=' issue-data-table-div'>
             <table className='table'>
               <thead>
                 <tr>
