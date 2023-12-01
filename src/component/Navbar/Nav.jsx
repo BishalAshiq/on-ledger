@@ -19,7 +19,7 @@ const Nav = () => {
             <div>
               <div className='nav-items-div'>
                 <Link href='/'>Home</Link>
-                <Link href='/'>Brands</Link>
+                <Link href='/brands/login'>Brands</Link>
                 <Link href='/'>About ESGLedger</Link>
                 <Link href='/'>Explorer</Link>
                 <Link className='contact-nav-a' href='/'>
