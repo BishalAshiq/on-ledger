@@ -4,7 +4,7 @@ import { parse } from 'cookie';
 
 // Limit the middleware to paths starting with `/api/`
 export const config = {
-    matcher: '/dashboard',
+    matcher: '/brands/dashboard',
 }
 
 export function middleware(request) {

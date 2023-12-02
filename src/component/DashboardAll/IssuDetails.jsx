@@ -2,322 +2,174 @@
 import React, { useState } from "react";
 import upFile from "../../../public/upFile.svg";
 import Image from "next/image";
+import axiosInstance from "../../../utils/axios";
+import { toast } from "react-toastify";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 
 const IssuDetails = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
 
-  const data = [
-    // Your data here
-    // Example data for testing
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-  ];
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const [headers, setHeaders] = useState([]);
+  const [columns, setColumns] = useState([]);
+  const totalPages = Math.ceil(columns.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentData = data.slice(startIndex, endIndex);
-
+  const currentData = columns.slice(startIndex, endIndex);
+  const [isGenerate, SetIsGenerate] = useState(0);
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
+  const router = useRouter();
+
+  const handleDownload = async () => {
+    // Make a request to the API endpoint
+    try {
+      let token = "";
+      if (typeof window !== "undefined") {
+        token = localStorage.getItem("refreshToken");
+      }
+
+      const response = await axiosInstance.get("download-xls", {
+        responseType: "blob",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.status == 401) {
+        toast.error("Token Failed Please Login", {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+        localStorage.removeItem("refreshToken");
+        router.push("/");
+      }
+
+      if (response.status == 201) {
+        toast.error("Please customize fields first.", {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+      } else {
+        const blob = new Blob([response.data], { type: "text/csv" });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "brand_cutomize_fields.xlsx";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }
+    } catch (error) {
+      console.error("Error downloading CSV:", error);
+    }
+  };
+
+  const handleFileClick = (e) => {
+    e.stopPropagation();
+    const fileInput = document.getElementById("fileInput");
+    if (fileInput) {
+      fileInput.click();
+    }
+  };
+
+  const handleFileChange = (e) => {
+    SetIsGenerate(1);
+    // console.log("handlefile change");
+    const formData = new FormData();
+    formData.append("csv_file", e.target.files[0]);
+
+    let token = "";
+
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+
+    axiosInstance
+      .post(`/upload-csv`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.status == 200) {
+          setHeaders(res.data.header);
+          setColumns(res.data.data);
+          SetIsGenerate(2);
+        }
+        if (res.data.status == 201) {
+          // toast.error(res.data.message)
+          toast.error(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+        }
+        if (res.data.status == 401) {
+          toast.error(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+          localStorage.removeItem("refreshToken");
+          router.push("/");
+        }
+      });
+  };
+  const handleDelete = (deleteId) => {
+    const formData = {
+      id: deleteId,
+    };
+    axiosInstance
+      .post("/delete-item", formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.status == 200) {
+          const indexToDelete = columns.findIndex(
+            (item) => item.id === deleteId
+          );
+
+          if (indexToDelete !== -1) {
+            // Create a new array without the deleted item
+            const updatedColumns = [...columns];
+            updatedColumns.splice(indexToDelete, 1);
+
+            // Update the state with the new array
+            setColumns(updatedColumns);
+
+            toast.success("Item Removed", {
+              position: "top-right",
+              style: {
+                background: "white",
+                color: "black",
+              },
+            });
+          }
+        }
+      });
+  };
+
 
   return (
     <div className='container-fluid mt-4'>
@@ -325,12 +177,18 @@ const IssuDetails = () => {
         <h6 className='uptag-text'>Upload recipients and certificates data</h6>
         <div className='issue-upload-full-div'>
           <div className='issue-upload-div'>
-            <a className='csv-a'>Download the CSV template</a>
+            <a className='csv-a' onClick={handleDownload}>Download the CSV template</a>
             <Image src={upFile.src} width={80} height={80} alt='' />
             <p className='csv-textp'>Drag or upload an excel file here.</p>
             <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
             </p>
+            <input
+              type='file'
+              id='fileInput'
+              onChange={handleFileChange}
+              style={{ display: "none" }}
+            />
           </div>
         </div>
       </div>
@@ -340,14 +198,31 @@ const IssuDetails = () => {
           <h6 className='uptag-text'>Preview</h6>
           <div className='previe-issue-text'>
             <p className='previe-issue-btn-text'>Clear</p>
-            <div>
-              <button className='previe-issue-btn'>Mint</button>
-            </div>
+            <Link href='/allitems'>
+              <p className='previe-issue-btn'> Mint</p>
+            </Link>
           </div>
         </div>
 
         <div>
-          <div className=' issue-data-table-div'>
+          <div
+            lassName={` issue-data-table-div ${isGenerate != 2 ? "issue-box-details" : ""
+              }`}
+          >
+
+            {isGenerate == 0 && (
+              <div className='no-file-select-div'>
+                <p>No File Select</p>
+              </div>
+            )}
+
+            {isGenerate == 1 && (
+              <div className='no-file-select-div'>
+                <p>
+                  Generating <span className='loading-dot'>...</span>
+                </p>
+              </div>
+            )}
             <table className='table'>
               <thead>
                 <tr>

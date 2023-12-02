@@ -92,7 +92,7 @@ const page = () => {
         Cookies.set('refreshToken', res.data.token, { path: '/', expires: 7 });
 
 
-        router.push('/dashboard');
+        router.push('/brands/dashboard');
 
 
       } else if (res.data.status == 401) {
