@@ -12,7 +12,7 @@ const page = () => {
     const router = useRouter();
     const handleTextClick = (divId) => {
         // setActiveDiv(divId);
-        router.push('/dashboard');
+        router.push('/brands/dashboard');
     };
 
 

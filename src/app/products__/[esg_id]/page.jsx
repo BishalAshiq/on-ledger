@@ -2,18 +2,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../login/login.module.css";
 import Nav from "@/component/Navbar/Nav";
-import pageLogo from "../../../../public/pageLogomd.png";
-import pageicon1 from "../../../../public/social1.svg";
-import pageicon2 from "../../../../public/social2.svg";
-import pageicon3 from "../../../../public/social3.svg";
-import pageicon4 from "../../../../public/social4.svg";
-// import pageicon4 from "../../../../public/social4.svg";
-import certified from "../../../../public/certified.svg";
-import copy from "../../../../public/copy.svg";
-import redix from "../../../../public/redix.png";
+import pageLogo from "../../../../../public/pageLogomd.png";
+import pageicon1 from "../../../../../public/social1.svg";
+import pageicon2 from "../../../../../public/social2.svg";
+import pageicon3 from "../../../../../public/social3.svg";
+import pageicon4 from "../../../../../public/social4.svg";
+// import pageicon4 from "../../../../../public/social4.svg";
+import certified from "../../../../../public/certified.svg";
+import copy from "../../../../../public/copy.svg";
+import redix from "../../../../../public/redix.png";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import axiosInstance from "../../../../utils/axios";
+import axiosInstance from "../../../../../utils/axios";
 import Link from "next/link";
 
 const page = () => {
