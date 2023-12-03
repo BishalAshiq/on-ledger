@@ -4,7 +4,6 @@ import DashNav from "@/component/Navbar/dashNav";
 import ViewAllItems from "@/component/DashboardAll/ViewAllItems";
 import IssuDetails from "@/component/DashboardAll/IssuDetails";
 import ViewAllItemsData from "@/component/DashboardAll/ViewAllItemsData";
-import axiosInstance from "../../../utils/axios";
 import { useRouter } from "next/navigation";
 
 const page = () => {
@@ -12,7 +11,7 @@ const page = () => {
     const router = useRouter();
     const handleTextClick = (divId) => {
         // setActiveDiv(divId);
-        router.push('/dashboard');
+        router.push('/brands/dashboard');
     };
 
 

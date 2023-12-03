@@ -138,6 +138,13 @@ const IssuDetails = () => {
     const formData = {
       id: deleteId,
     };
+    let token = "";
+
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+
+
     axiosInstance
       .post("/delete-item", formData, {
         headers: {
@@ -176,7 +183,7 @@ const IssuDetails = () => {
       <div>
         <h6 className='uptag-text'>Upload recipients and certificates data</h6>
         <div className='issue-upload-full-div'>
-          <div className='issue-upload-div'>
+          <div className='issue-upload-div' onClick={handleFileClick}>
             <a className='csv-a' onClick={handleDownload}>Download the CSV template</a>
             <Image src={upFile.src} width={80} height={80} alt='' />
             <p className='csv-textp'>Drag or upload an excel file here.</p>
@@ -206,7 +213,7 @@ const IssuDetails = () => {
 
         <div>
           <div
-            lassName={` issue-data-table-div ${isGenerate != 2 ? "issue-box-details" : ""
+            className={` issue-data-table-div ${isGenerate != 2 ? "issue-box-details" : ""
               }`}
           >
 
@@ -223,79 +230,68 @@ const IssuDetails = () => {
                 </p>
               </div>
             )}
-            <table className='table'>
-              <thead>
-                <tr>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Product</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Serial</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Item</p>
-                  </th>
+            {isGenerate == 2 && (
+              <table className='table'>
+                <thead>
+                  <tr>
+                    {headers.length > 0 &&
+                      headers.map((item) => (
+                        <th className='table-nav' scope='col'>
+                          <p className='table-th'> {item}</p>
+                        </th>
+                      ))}
 
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Certification/Tests</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Part</p>
-                  </th>
 
-                  <th className='table-navs' scope='col'>
-                    <p className='table-ths'> QR code</p>
-                  </th>
-                  {/* <th className='table-navs' scope='col'>
+                    <th className='table-navs' scope='col'>
+                      <p className='table-ths'> QR code</p>
+                    </th>
+                    {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
                   </th> */}
-                  <th className='table-navs' scope='col'>
-                    <p className='table-ths'> QR code</p>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {currentData.map((item, index) => (
-                  <tr key={index} className='data-tr'>
-                    <td className='data-td'>
-                      {/* <p className='data-th-text'>{item.brand}</p> */}
-                      <p className='data-th-text'>{item.product}</p>
-                    </td>
-
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.serial}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.item}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.certification}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.part}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text-delete'>{item.delete}</p>
-                    </td>
-
-                    <td>
-                      <div className='issue-svg-div'>
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          width='24'
-                          height='24'
-                          fill='#155C79'
-                          className='bi bi-three-dots'
-                          viewBox='0 0 16 16'>
-                          <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
-                        </svg>
-                      </div>
-                    </td>
+                    <th className='table-navs' scope='col'>
+                      <p className='table-ths'> QR code</p>
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {columns.map((item, index) => (
+                    <tr key={index} className='data-tr'>
+                      {headers.length > 0 &&
+                        headers.map((head) => (
+                          <td className='data-td'>
+                            {/* <p className='data-th-text'>{item.brand}</p> */}
+                            <p className='data-th-text'>{item[head]}</p>
+                          </td>
+                        ))}
 
+                      <td className='data-td'>
+                        <p
+                          className='data-th-text-delete'
+                          onClick={() => {
+                            handleDelete(item.id);
+                          }}>
+                          Delete
+                        </p>
+                      </td>
+
+                      <td>
+                        <div className='issue-svg-div'>
+                          <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            width='24'
+                            height='24'
+                            fill='#155C79'
+                            className='bi bi-three-dots'
+                            viewBox='0 0 16 16'>
+                            <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                          </svg>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
             {/* <div className='pagination'>
               <svg
                 onClick={() => handlePageChange(currentPage - 1)}
