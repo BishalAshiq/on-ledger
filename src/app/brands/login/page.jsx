@@ -4,7 +4,7 @@ import React, { Component, useState } from "react";
 // import Slider from "react-slick";
 import LoginBanner from "../../../../public/loginBanner.png";
 import Brands from "../../../../public/brands.jpeg";
-import pageLogo from "../../../../public/pageLogomd.png";
+import pageLogo from "../../../../public/pageLogomds.png";
 import pageicon1 from "../../../../public/social1.svg";
 import pageicon2 from "../../../../public/social2.svg";
 import pageicon3 from "../../../../public/social3.svg";
