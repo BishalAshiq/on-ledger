@@ -92,7 +92,7 @@ const page = () => {
         Cookies.set('refreshToken', res.data.token, { path: '/', expires: 7 });
 
 
-        router.push('/dashboard');
+        router.push('/brands/dashboard');
 
 
       } else if (res.data.status == 401) {
@@ -124,60 +124,59 @@ const page = () => {
         <Nav />
       </div>
       <div className='login-full-div'>
-        <div className='hr' />
+        {/* <div className='hr' /> */}
         <Slider {...settings} className='slider-login'>
-        <div>
-            <div className='p-3'>
+
+          <div>
+            <div className=''>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
                     className='login-banner-img'
-                    src={Brands.src}
+                    src={LoginBanner.src}
                     alt=''
                   />
                 </div>
-
                 <div className='login-banner-inputs-div'>
-                  <h6 className='heading-tag'>Brand Login</h6>
-                  <form className="content" onSubmit={handleLogin} method="post">
+                  <h6 className='ad-tag'>Brand Login</h6>
+                  <form
+                    className='content'
+                    onSubmit={handleLogin}
+                    method='post'>
                     <div>
                       {" "}
                       <label for='email'>Email</label> <br />
-                      <input type='email' id='email' name='email' onChange={handleFormChange} value={formData.email} required />
+                      <input type='email' id='email' name='email'
+                        onChange={handleFormChange}
+                        value={formData.email}
+                        required />
                     </div>
                     <div>
                       {" "}
                       <label for='email'>Password</label> <br />
-                      <input type='password' id='Password' name='password' value={formData.password} required
+                      <input type='password' id='Password' name='password'
+                        value={formData.password}
+                        required
                         onChange={handleFormChange} />
                     </div>
 
                     <p className='forget-text'>Forget Password</p>
 
                     <div className='submit-btn-div'>
-                      <button type="submit" className='submit-btn'>Log in</button>
+                      <button className='submit-btn'>Log in</button>
                     </div>
                   </form>
-
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <div className='fist-slider-text-div'>
-              <h1>
-                Unlocking ESG Trust and Transparency with Block chain integrity
-              </h1>
-            </div>
-          </div>
-        
-          <div>
-            <div className='p-3'>
+            <div className=''>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
                     className='login-banner-img'
-                    src={Brands.src}
+                    src={LoginBanner.src}
                     alt=''
                   />
                 </div>
@@ -200,15 +199,23 @@ const page = () => {
               </div>
             </div>
           </div>
-        </Slider>
-        <div className='hrs' />
 
-        <div className='pioneeringtext'>
+          <div>
+            <div className='fist-slider-text-div'>
+              {/* <h1>
+                Unlocking ESG Trust and Transparency with Block chain integrity
+              </h1> */}
+            </div>
+          </div>
+        </Slider>
+        {/* <div className='hrs' /> */}
+
+        {/* <div className='pioneeringtext'>
           <p>
             A pioneering blockchain-driven
             <br /> platform under OneChain®
           </p>
-        </div>
+        </div> */}
       </div>
 
       <div className='login-footer-banner-full-div'>
@@ -219,7 +226,7 @@ const page = () => {
               <div className=''>
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
-                  For inquiries or more information please contact:
+                  For inquiries or more information <br /> please contact:
                   enquiries@esgledger.co
                 </p>
               </div>
