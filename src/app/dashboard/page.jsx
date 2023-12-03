@@ -57,14 +57,14 @@ const page = () => {
           {activeDiv === 2 && (
             <div>
               <div className=''>
-                <ViewAllItems />
+                <ViewAllItemsData />
               </div>
             </div>
           )}
           {activeDiv === 3 && (
             <div>
               <div className=''>
-                <ViewAllItemsData />
+                <ViewAllItems />
               </div>
             </div>
           )}

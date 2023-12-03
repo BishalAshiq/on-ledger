@@ -81,7 +81,7 @@
 }
 
 .view-add-btn {
-  background-color: #066f69;
+  background-color: #00a5bd;
   color: white;
   border-radius: 3px;
   font-size: 0.8rem;
@@ -201,11 +201,12 @@
   /* padding: 10px 0; */
 }
 .dashboard-footer-text {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   padding: 10px 20px 5px 40px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   align-items: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .data-td {
