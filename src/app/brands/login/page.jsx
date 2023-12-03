@@ -21,7 +21,7 @@ import Cookies from "js-cookie";
 const page = () => {
   const router = useRouter();
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
