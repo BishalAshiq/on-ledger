@@ -21,7 +21,7 @@ const page = () => {
   const [attribute, setAttribute] = useState('');
   useEffect(() => {
 
-    axiosInstance.get('item-details/' + param.esg_id).then((res) => {
+    axiosInstance.get("item-details/" + param.brand_name + "/" + param.product_name).then((res) => {
       setItem(res.data.data)
       const parsedAttribute = JSON.parse((res.data.data.attribute));
 
