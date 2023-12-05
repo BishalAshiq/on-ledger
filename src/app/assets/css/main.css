@@ -75,24 +75,48 @@ body {
 }
 
 .login-banner-img-div {
+  background-color: white;
+  border-right: 1px solid gray;
 }
 
 .login-banner-img {
   width: 300px;
-  height: 300px;
+
+  /* height: 20px; */
 }
 .hr {
   /* width: 100px; */
   /* margin: 20; */
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   border: 1px solid rgb(255, 255, 255);
-  margin: 6% 30% 0 30%;
+  width: 50%;
+  opacity: 1;
+  margin: 0 30% 0 25%;
 }
+
+.hrs-div {
+  z-index: -1;
+}
+/* .hrs-text {
+  color: white;
+  z-index: 1;
+  margin: -3% 30% 2% 30%;
+} */
 .hrs {
   display: grid;
   place-items: center;
   border-top: 1px solid rgb(255, 255, 255);
+  opacity: 2;
+  width: 50%;
+  margin: -2% 30% 2% 30%;
+}
+.hrs-text {
+  color: white;
+  /* border: 1px solid white; */
+  width: 250px;
+  font-family: "Roboto", sans-serif;
+  font-size: px;
   margin: -2% 30% 2% 30%;
 }
 .login-banner-inputs-div {
@@ -103,6 +127,7 @@ body {
   width: 310px;
   /* padding: 80px; */
   /* justify-content: center; */
+  z-index: 1;
   /* align-items: start; */
   padding: 30px 40px;
 }
@@ -272,6 +297,8 @@ body {
   color: blue;
   display: flex;
   justify-content: end;
+  text-align: end;
+  align-items: end;
   /* margin: auto; */
 }
 
@@ -488,8 +515,45 @@ body {
     margin-top: 10%;
     height: 20vh;
   }
+  .hrs-div {
+    z-index: -1;
+  }
+  .hrs-text {
+    color: white;
+    z-index: 1;
+    font-size: 30px;
+    margin: -3% 30% 2% 30%;
+  }
+  .hrs {
+    display: grid;
+    place-items: center;
+    border: 1px solid rgb(255, 255, 255);
+    width: 50%;
+    margin: -2% 30% 2% 25%;
+  }
+  .hrs-text {
+    color: white;
+    /* border: 1px solid white; */
+    width: 250px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin: -2% 30% 2% 30%;
+  }
   .login-banner-img-div {
     /* width: 200px; */
+  }
+  .login-banner-img {
+    width: 380px;
+    height: 360px;
+  }
+  .ad-tag {
+    text-align: justify !important;
+  }
+  .forget-text {
+    display: flex;
+    justify-content: end;
+    text-align: end;
+    align-items: end;
   }
   .certificate-full-div {
     margin-top: 5%;
@@ -536,12 +600,9 @@ body {
     width: 20%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: start; */
+    text-align: justify;
     padding: 80px;
-  }
-  .login-banner-img {
-    width: 400px;
-    height: 350px;
   }
 }
 
