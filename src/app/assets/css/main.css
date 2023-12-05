@@ -50,7 +50,7 @@ body {
 }
 
 .ffs-div {
-  background: #066f69;
+  background: #00a5bd;
   margin-top: -30px;
 }
 .ff-div {
@@ -207,6 +207,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
+  background-color: #00a5bd;
   /* margin-top: 20%; */
   /* Set background color as needed */
   /* padding: 10px; Adjust padding as needed */
@@ -383,7 +384,7 @@ body {
 }
 
 .Blockchain-tagone-div {
-  background-color: #00A5BD;
+  background-color: #00a5bd;
   display: flex;
   margin: 20px 20px;
   justify-content: center;
@@ -410,14 +411,14 @@ body {
 
 .Blockchain-tagotwo {
   text-align: center;
+  margin: 10px 20px;
   font-size: 1rem;
-
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
-  /* white-space: nowrap; */
   margin: 10px 20px;
   font-family: "Roboto", sans-serif;
   max-width: 100%;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  cursor: pointer;
 }
 
 .Blockchain-ptag-div {
@@ -440,7 +441,7 @@ body {
 }
 
 .block-ptext {
-  color: #00A5BD;
+  color: #00a5bd;
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
@@ -469,6 +470,17 @@ body {
 }
 .block-ptwotext {
   margin-top: -10px;
+}
+.block-ptwotext-add {
+  text-decoration: underline;
+}
+.mobile-nav-div {
+  /* display: none; */
+  visibility: hidden;
+}
+.footer-privacy-div {
+  display: none;
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
@@ -539,14 +551,175 @@ body {
     padding: 10px; /* Example: reduce padding on smaller screens */
     margin-top: 10px; /* Adjust the margin-top for smaller screens */
   }
-}
 
+  .nav-items-div {
+    display: flex;
+    flex-direction: column;
+    padding: 17px 0 0 20px;
+  }
+  .full-navbar-div {
+    /* display: none; */
+    visibility: hidden;
+  }
+  .mobile-nav-div {
+    /* display: none; */
+    visibility: visible;
+    /* background-color: #066f69; */
+  }
+  .mob-nav {
+    background-color: #e9e9e9;
+  }
+  .nav-mob-logo-img-div {
+    display: flex;
+    justify-content: center;
+    background-color: #00a5bd;
+    gap: 20px;
+    padding: 40px 100% 10px 75%;
+    margin-top: -20px;
+    /* width: 200%; */
+  }
+  .nav-mob-logo-img {
+    width: 197px;
+    height: 46px;
+    /* margin-left: 10px; */
+  }
+  .navbar-toggler {
+    margin-left: 40px;
+  }
+  .login-footer-banner-full-div {
+    /* Adjust styles for smaller screens */
+    padding: 10px;
+    /* Example: reduce padding on smaller screens */
+    margin-top: 10px;
+    /* Adjust the margin-top for smaller screens */
+  }
+
+  .Blockchain-tagone {
+    font-size: 0.9rem;
+    padding: 5px;
+    margin: 1px 0 0 0;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .Blockchain-tagotwo {
+    text-align: center;
+    margin: 10px 20px;
+    font-size: 0.9rem;
+    margin: 10px 20px;
+    font-family: "Roboto", sans-serif;
+    max-width: 100%;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    color: #494949;
+  }
+
+  .Information-full-div {
+    line-height: 1;
+    color: #494949;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .certificate-tags {
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .certificate-h5Tag {
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+  }
+
+  .footer-img-div {
+    visibility: hidden;
+  }
+
+  .footer-text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  .ffs-div {
+    margin-top: -70px;
+    background: #00a5bd;
+  }
+  .f-text {
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+  .footer-textpp {
+    visibility: hidden;
+    display: none;
+  }
+  .footer-textpps {
+    visibility: visible;
+    font-size: 0.9rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .footer-privacy-div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 0 60px 0;
+    visibility: visible;
+  }
+  .footer-privacy-div a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    margin-top: -15px;
+  }
+  .footer-privacy-text {
+    width: fit-content;
+  }
+  .mobile-nav-div {
+    border: none;
+  }
+  .redix-div {
+    padding: 20px 10px 0 10px;
+    border: none;
+    margin-top: 7%;
+  }
+
+  .redix-divs {
+    border: none;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .redix-sec-div {
+    padding: 0 10px 10px 10px;
+    border: none;
+  }
+  .redixSec-div {
+    /* padding: 20px 0 0 0; */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: none;
+  }
+
+  .block-ptext {
+    font-size: 1rem;
+    display: inline-block;
+    width: 105%;
+    /* border: 1px solid gray; */
+  }
+}
 
 .issue-box-details {
   width: 100%;
   height: 50vh;
 }
-
 
 .no-file-select-div {
   display: flex;
@@ -574,5 +747,3 @@ body {
   color: black;
   text-decoration: none;
 }
-
-
