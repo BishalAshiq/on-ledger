@@ -20,13 +20,15 @@ const page = () => {
   const [item, setItem] = useState({});
   const [attribute, setAttribute] = useState("");
   useEffect(() => {
-    axiosInstance.get("item-details/" + param.esg_id).then((res) => {
-      setItem(res.data.data);
-      const parsedAttribute = JSON.parse(res.data.data.attribute);
+    axiosInstance
+      .get("item-details/" + param.brand_name + "/" + param.product_name)
+      .then((res) => {
+        setItem(res.data.data);
+        const parsedAttribute = JSON.parse(res.data.data.attribute);
 
-      // Set the parsed object in the state
-      setAttribute(parsedAttribute);
-    });
+        // Set the parsed object in the state
+        setAttribute(parsedAttribute);
+      });
   }, []);
 
   const formateDate = (date) => {
