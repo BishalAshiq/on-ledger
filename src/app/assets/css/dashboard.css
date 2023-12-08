@@ -8,6 +8,21 @@
   background-color: #00a5bd;
   padding: 10px 20px;
 }
+.dashnav-links {
+  display: flex;
+  gap: 60px;
+}
+.dashnav-linksa {
+  display: flex;
+  gap: 20px;
+}
+.dashnav-linksa a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 4;
+  font-family: "Roboto", sans-serif;
+}
 
 .dashnav-img {
   width: 150px;
@@ -37,10 +52,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 .active-das {
-  background-color: #86c6ca;
+  background-color: #00a5bd;
+  color: white;
 }
 
 .dash-sidebar-div {
@@ -150,32 +167,44 @@
 .tabl-icon {
   display: flex;
   gap: 10px;
+  padding: 0 20px;
   justify-content: center;
 }
 
 .table-nav {
+  padding: 0 40px;
+  /* width: 50%; */
+  /* margin: 20px 0; */
   background-color: #f4f4f4 !important;
   border-right: 1px solid rgb(165, 165, 165);
 }
 .table-navs {
+  /* width: 100%; */
+  padding: 0 20px;
   background-color: #f4f4f4 !important;
   /* border-right: 1px solid gray; */
 
   /* width: 00px; */
 }
+/* .table-navss {
+  background-color: #000000;
+} */
 .table-th {
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-bottom: -2px;
+  /* display: inline-block; */
+  font-size: 0.8rem;
+  /* margin-bottom: -4px; */
+  font-family: "Roboto", sans-serif;
 }
 .table-ths {
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-bottom: -2px;
+  /* margin-bottom: -2px; */
   visibility: hidden;
 }
 .th-svg-div {
@@ -221,11 +250,12 @@
 
 .data-th-text {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: -10px;
+  margin: -4px 20px;
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 .data-th-texts {
   display: flex;

@@ -16,7 +16,7 @@ const ViewAllItemsData = () => {
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get('/item-list').then((res) => {
+    axiosInstance.get("/item-list").then((res) => {
       if (res.data.status == 200) {
         setHeaders(res.data.header);
         setColumns(res.data.data);
@@ -30,10 +30,10 @@ const ViewAllItemsData = () => {
           },
         });
         localStorage.removeItem("refreshToken");
-        router.push('/');
+        router.push("/");
       }
-    })
-  }, [])
+    });
+  }, []);
   const totalPages = Math.ceil(columns.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -44,26 +44,25 @@ const ViewAllItemsData = () => {
     setCurrentPage(newPage);
   };
 
-
   const [copySuccess, setCopySuccess] = useState(null);
 
-  const copyToClipboard = (e,copy_url) => {
+  const copyToClipboard = (e, copy_url) => {
     try {
       // Get the current URL
-      const currentURL = 'http://oneledger.co/' + copy_url;
-      console.log(copy_url);  
+      const currentURL = "http://oneledger.co/" + copy_url;
+      console.log(copy_url);
       if (navigator.clipboard) {
         navigator.clipboard.writeText(currentURL);
-        setCopySuccess('URL copied to clipboard!');
+        setCopySuccess("URL copied to clipboard!");
       } else {
         // Fallback for non-secure contexts (HTTP)
-        const textArea = document.createElement('textarea');
+        const textArea = document.createElement("textarea");
         textArea.value = currentURL;
         document.body.appendChild(textArea);
         textArea.select();
-        document.execCommand('copy');
+        document.execCommand("copy");
         document.body.removeChild(textArea);
-        setCopySuccess('URL copied to clipboard!');
+        setCopySuccess("URL copied to clipboard!");
         toast.success("URL copied to clipboard!", {
           position: "top-right",
           style: {
@@ -74,8 +73,8 @@ const ViewAllItemsData = () => {
       }
     } catch (error) {
       // Handle errors
-      console.error('Error copying to clipboard:', error);
-      setCopySuccess('Copy to clipboard failed');
+      console.error("Error copying to clipboard:", error);
+      setCopySuccess("Copy to clipboard failed");
     }
   };
 
@@ -273,23 +272,22 @@ const ViewAllItemsData = () => {
             <table className='table'>
               <thead>
                 <tr>
-                  {
-                    headers.length > 0 &&
+                  {headers.length > 0 &&
                     headers.map((item) => (
                       <th className='table-nav' scope='col'>
                         <p className='table-th'> {item}</p>
                       </th>
-                    ))
-                  }
+                    ))}
                   <th className='table-nav' scope='col'>
                     <p className='table-th'> QR code</p>
                   </th>
                   <th className='table-navs' scope='col'>
                     <p className='table-th'> Action</p>
                   </th>
-                  {/* <th className='table-navs' scope='col'>
+
+                  <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
-                  </th> */}
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -305,14 +303,21 @@ const ViewAllItemsData = () => {
                       <td>
                         <div className='tabl-icon'>
                           {/* {item.img1} {item.img1} */}
-                          <QRCodeComponent value={'https://esgledger.co/' + item['slug']} size={50} slug={item['slug']} />
-
+                          <QRCodeComponent
+                            value={"https://esgledger.co/" + item["slug"]}
+                            size={50}
+                            slug={item["slug"]}
+                          />
                         </div>
                       </td>
-                      <td>
-                        <svg onClick={(e) => copyToClipboard(e, item['slug'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
-                        </svg>
+                      <td className='tabl-icon'>
+                        <Image
+                          onClick={(e) => copyToClipboard(e, item["slug"])}
+                          src={Downloadicon.src}
+                          height={30}
+                          width={30}
+                          alt=''
+                        />
                       </td>
                       {/* <td>
                       <div className='tabl-icon'>
@@ -333,8 +338,7 @@ const ViewAllItemsData = () => {
                         </div>
                       </td>
                     </tr>
-                  ))
-                }
+                  ))}
               </tbody>
             </table>
 

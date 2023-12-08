@@ -12,7 +12,9 @@ const Nav = () => {
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
           <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
             <div className='nav-logo-img-div'>
-              <img className='nav-logo-img' src={PageLogo.src} alt='' />
+              <Link href='/'>
+                <img className='nav-logo-img' src={PageLogo.src} alt='' />
+              </Link>
             </div>
           </div>
 
@@ -56,7 +58,7 @@ const Nav = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link className='contact-nav-a' href='/'>
+                <Link className='contact-nav-a' href='/contactUs'>
                   Contact
                   <span>
                     <svg
