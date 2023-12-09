@@ -303,8 +303,8 @@ const ViewAllItemsData = () => {
                       <td>
                         <div className='tabl-icon'>
                           {/* {item.img1} {item.img1} */}
-                          <QRCodeComponent
-                            value={"https://esgledger.co/" + item["slug"]}
+                          <QRCodeComponent 
+                            value={"https://oneledger.co/" + item["slug"]}
                             size={50}
                             slug={item["slug"]}
                           />
