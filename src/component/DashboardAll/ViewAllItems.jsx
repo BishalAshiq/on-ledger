@@ -345,7 +345,7 @@ const ViewAllItems = () => {
             </div>
             <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
               <div>
-                <input type='text' className='ser-item-input' />
+                <input type='text' className='ser-item-input' onChange={(e) => handleFormChange(4, e.target.value)} />
               </div>
             </div>
             <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
@@ -357,6 +357,7 @@ const ViewAllItems = () => {
                     value=''
                     id='flexCheckChecked'
                   // checked
+                  onChange={(e) => handleFormCheckboxChange(4, e.target.value)}
                   />
                 </div>
               </div>
