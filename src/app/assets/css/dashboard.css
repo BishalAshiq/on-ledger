@@ -35,10 +35,10 @@
 }
 
 .dddssa {
-  height: 20vh;
+  height: 10vh;
   background-color: white;
   box-shadow: rgba(190, 190, 190, 0.45) 22px 11px 10px -17px;
-  margin: 0 0 5px 0;
+  /* margin: 0 0 5px 0; */
   border-bottom: 1px solid rgb(172, 172, 172);
 }
 
@@ -62,7 +62,7 @@
 
 .dash-sidebar-div {
   background-color: white;
-  box-shadow: rgba(190, 190, 190, 0.45) 22px 11px 10px -17px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   height: 100vh;
   /* padding: 20px 0 0 40px; */
   display: flex;
@@ -173,20 +173,34 @@
 }
 
 .table-nav {
-  padding: 0 40px;
-  /* width: 50%; */
+  /* padding: 0 40px; */
+  width: 17%;
+  /* height: 2vh !important; */
   /* margin: 20px 0; */
+  border-top-left-radius: 6px;
   background-color: #f4f4f4 !important;
   border-right: 1px solid rgb(165, 165, 165);
 }
 .table-navs {
-  /* width: 100%; */
-  padding: 0 20px;
+  border-top-right-radius: 6px;
+  width: 15%;
+  padding: 0 40px;
   background-color: #f4f4f4 !important;
   /* border-right: 1px solid gray; */
 
   /* width: 00px; */
 }
+.table-thead th {
+  /* height: -80px; Set your preferred height */
+}
+
+.table-thead p {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* Remove default margin on <p> inside <th> */
+}
+
 /* .table-navss {
   background-color: #000000;
 } */
@@ -211,6 +225,8 @@
 .th-svg-div {
   display: flex;
   justify-content: end;
+  text-align: end;
+  padding-right: 20px;
 }
 
 .pagination {
@@ -240,28 +256,32 @@
 }
 
 .data-td {
+  padding-top: 10px; /* Adjust the top padding as needed */
+  padding-bottom: 10px; /* Adjust the bottom padding as needed */
 }
 .data-tr {
+  margin-top: 0;
+  margin-bottom: 0;
   border: 1px solid rgb(235, 235, 235);
-  gap: 10px;
-
   border-radius: 5px;
-  margin: 2% 0 !important;
 }
 
 .data-th-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: -4px 20px;
+  text-align: justify;
+
+  margin: 1px 20px;
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
 }
 .data-th-texts {
   display: flex;
+  text-align: justify;
   justify-content: center;
-  margin-bottom: -10px;
+  /* margin-bottom: -10px; */
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -269,6 +289,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%;
+}
+.table-thead {
+  border-radius: 15px !important;
 }
 
 /* Issue Details  */

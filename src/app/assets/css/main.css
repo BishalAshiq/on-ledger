@@ -53,6 +53,7 @@ body {
 .qr-code-img {
   border: 1px solid #155c79;
   padding: 1px;
+  margin: 5px;
 }
 
 .ffs-div {
