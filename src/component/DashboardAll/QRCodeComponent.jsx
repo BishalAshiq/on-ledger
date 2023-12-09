@@ -4,8 +4,8 @@ import qrcode from 'qrcode';
 
 const QRCodeComponent = ({ value, size, slug }) => {
     const initialSize = 550;
-    const handleDownload = async () => {
-    
+    const handleDownload = async (e) => {
+        e.stopPropagation();
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
 
