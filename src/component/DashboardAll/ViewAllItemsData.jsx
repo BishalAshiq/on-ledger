@@ -48,6 +48,7 @@ const ViewAllItemsData = () => {
   const [copySuccess, setCopySuccess] = useState(null);
 
   const copyToClipboard = (e, copy_url) => {
+    e.stopPropagation();
     try {
       // Get the current URL
       const currentURL = "http://oneledger.co/" + copy_url;
@@ -64,14 +65,16 @@ const ViewAllItemsData = () => {
         document.execCommand("copy");
         document.body.removeChild(textArea);
         setCopySuccess("URL copied to clipboard!");
-        toast.success("URL copied to clipboard!", {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
+        
       }
+
+      toast.success("URL copied to clipboard!", {
+        position: "top-right",
+        style: {
+          background: "white",
+          color: "black",
+        },
+      });
     } catch (error) {
       // Handle errors
       console.error("Error copying to clipboard:", error);
@@ -341,7 +344,7 @@ const ViewAllItemsData = () => {
                       </td>
                       <td className='tabl-icon'>
                         <Image
-                          onClick={(e) => handleDownload(e, item["slug"])}
+                          onClick={(e) => copyToClipboard(e, item["slug"])}
                           src={Downloadicon.src}
                           height={30}
                           width={30}
