@@ -790,6 +790,7 @@ body {
   .Information-full-div {
     line-height: 1;
     font-size: 0.9rem;
+    font-weight: 500;
     color: #494949;
     font-family: "Roboto", sans-serif;
   }
@@ -910,7 +911,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    line-height: 0.7;
+    line-height: 1.2;
     align-items: center;
     text-align: center;
     margin: 10px 0;
@@ -918,13 +919,13 @@ body {
   }
 
   .mob-certificate-tags {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
   }
 
   .mob-certificate-ptag {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
   }
