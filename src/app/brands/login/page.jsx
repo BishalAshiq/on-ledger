@@ -130,12 +130,9 @@ const page = () => {
                     alt=''
                   />
                 </div>
-                <div className='login-banner-inputs-div'>
+                <div className='login-brand-inputs-div'>
                   <h6 className='ad-tag'>Brand Login</h6>
-                  <form
-                    className='content'
-                    onSubmit={handleLogin}
-                    method='post'>
+                  <form className='' onSubmit={handleLogin} method='post'>
                     <div>
                       {" "}
                       <label for='email'>Email</label> <br />
@@ -147,10 +144,7 @@ const page = () => {
                         onChange={handleFormChange}
                         value={formData.email}
                         required
-                      />
-                    </div>
-                    <div>
-                      {" "}
+                      />{" "}
                       <label for='email'>Password</label> <br />
                       <input
                         className='admin-login-inpu'
@@ -188,12 +182,22 @@ const page = () => {
                   <div>
                     {" "}
                     <label for='password'>New password</label> <br />
-                    <input type='password' id='password' name='Password' />
+                    <input
+                      className='admin-login-inpu'
+                      type='password'
+                      id='password'
+                      name='Password'
+                    />
                   </div>
                   <div className='mt-2'>
                     {" "}
                     <label for='email'>Repeat your new password</label> <br />
-                    <input type='password' id='Password' name='password' />
+                    <input
+                      className='admin-login-inpu'
+                      type='password'
+                      id='Password'
+                      name='password'
+                    />
                   </div>
 
                   <div className='submit-btn-div'>
