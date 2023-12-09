@@ -100,15 +100,29 @@ const Nav = () => {
                   aria-controls='navbarTogglerDemo02'
                   aria-expanded='false'
                   aria-label='Toggle navigation'>
-                  <span class='navbar-toggler-icon'></span>
+                  <span className=''>
+                    {" "}
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='26'
+                      height='26'
+                      fill='white'
+                      className='bi bi-justify'
+                      viewBox='0 0 16 16'>
+                      <path
+                        fill-rule='evenodd'
+                        d='M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5'
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>
               <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
-                <div className='nav-items-div'>
-                  <Link className='contact-nav-a' href='/'>
-                    Home
+                <div className='nav-items-div-mob'>
+                  <Link className='contact-nav-a-mov' href='/'>
+                    <p> Home</p>
                   </Link>
-                  <Link className='contact-nav-a' href='/brands/login'>
+                  <Link className='contact-nav-a-mov' href='/brands/login'>
                     {" "}
                     <p>Brands</p>{" "}
                     <span>
@@ -126,10 +140,10 @@ const Nav = () => {
                       </svg>
                     </span>
                   </Link>
-                  <Link className='contact-nav-a' href='/about'>
-                    About ESGLedger
+                  <Link className='contact-nav-a-mov' href='/about'>
+                    <p> About ESGLedger</p>
                   </Link>
-                  <Link className='contact-nav-a' href='/'>
+                  <Link className='contact-nav-a-mov' href='/'>
                     <p>Explorer</p>{" "}
                     <span>
                       <svg
@@ -146,7 +160,7 @@ const Nav = () => {
                       </svg>
                     </span>
                   </Link>
-                  <Link className='contact-nav-a' href='/contactUs'>
+                  <Link className='contact-nav-a-mov' href='/contactUs'>
                     <p>Contact</p>{" "}
                     <span>
                       <svg

@@ -80,12 +80,22 @@ const page = () => {
                   <div>
                     {" "}
                     <label for='email'>Email</label> <br />
-                    <input type='email' id='email' name='email' />
+                    <input
+                      className='admin-login-inpu'
+                      type='email'
+                      id='email'
+                      name='email'
+                    />
                   </div>
                   <div>
                     {" "}
                     <label for='email'>Password</label> <br />
-                    <input type='password' id='Password' name='password' />
+                    <input
+                      className='admin-login-inpu'
+                      type='password'
+                      id='Password'
+                      name='password'
+                    />
                   </div>
 
                   <p className='forget-text'>Forget Password</p>
@@ -111,12 +121,22 @@ const page = () => {
                   <div>
                     {" "}
                     <label for='password'>New password</label> <br />
-                    <input type='password' id='password' name='Password' />
+                    <input
+                      className='admin-login-inpu'
+                      type='password'
+                      id='password'
+                      name='Password'
+                    />
                   </div>
                   <div className='mt-2'>
                     {" "}
                     <label for='email'>Repeat your new password</label> <br />
-                    <input type='password' id='Password' name='password' />
+                    <input
+                      className='admin-login-inpu'
+                      type='password'
+                      id='Password'
+                      name='password'
+                    />
                   </div>
 
                   <div className='submit-btn-div'>
