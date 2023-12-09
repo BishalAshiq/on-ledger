@@ -7,7 +7,7 @@ body {
 .full-navbar-div {
   background-color: white;
   padding: 10px 0;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   position: fixed;
   top: 0;
   left: 0;
@@ -390,6 +390,11 @@ body {
   padding: 0 15px;
 }
 
+.mob-certificate-tags-div{
+  visibility: hidden;
+  display: none;
+}
+
 .certificate-tags {
   font-size: 1rem;
   font-weight: 700;
@@ -401,6 +406,9 @@ body {
   font-weight: 700;
   font-family: "Roboto", sans-serif;
 }
+
+
+
 
 .certificate-des-div {
   display: flex;
@@ -867,6 +875,40 @@ body {
     width: 105%;
     /* border: 1px solid gray; */
   }
+
+  .certificate-tags-div {
+    display: none;
+    visibility: hidden;
+  }
+
+  
+  
+  .mob-certificate-tags-div{
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 0.7;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+    padding: 0 15px;
+  }
+  
+  .mob-certificate-tags {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .mob-certificate-ptag {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+  }
+  
+
+
 }
 
 .issue-box-details {

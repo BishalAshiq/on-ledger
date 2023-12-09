@@ -7,6 +7,7 @@ import axiosInstance from "../../../utils/axios";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import QRCodeComponent from "./QRCodeComponent";
+import qrcode from 'qrcode';
 
 const ViewAllItemsData = () => {
   const itemsPerPage = 15;
@@ -78,6 +79,34 @@ const ViewAllItemsData = () => {
     }
   };
 
+
+  const initialSize = 550;
+  const handleDownload = async (e, slug) => {
+    e.stopPropagation();
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    let value = 'https://oneledger.co/' + slug;
+    await qrcode.toCanvas(canvas, value, { width: initialSize });
+
+
+    canvas.toBlob((blob) => {
+      const url = URL.createObjectURL(blob);
+
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${slug}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(url);
+    });
+  };
+  const handleRowClick = (slug) => {
+    // Handle redirection logic here
+    window.location.href = "https://oneledger.co/"+slug;
+  };
   return (
     <div className='container-fluid'>
       <div>
@@ -293,7 +322,7 @@ const ViewAllItemsData = () => {
               <tbody>
                 {columns.length > 0 &&
                   columns.map((item, index) => (
-                    <tr key={index} className='data-tr'>
+                    <tr key={index} className='data-tr' onClick={() => handleRowClick(item["slug"])}>
                       {headers.length > 0 &&
                         headers.map((head) => (
                           <td className='data-td'>
@@ -304,7 +333,7 @@ const ViewAllItemsData = () => {
                         <div className='tabl-icon'>
                           {/* {item.img1} {item.img1} */}
                           <QRCodeComponent
-                            value={"https://esgledger.co/" + item["slug"]}
+                            value={"https://oneledger.co/" + item["slug"]}
                             size={50}
                             slug={item["slug"]}
                           />
@@ -312,7 +341,7 @@ const ViewAllItemsData = () => {
                       </td>
                       <td className='tabl-icon'>
                         <Image
-                          onClick={(e) => copyToClipboard(e, item["slug"])}
+                          onClick={(e) => handleDownload(e, item["slug"])}
                           src={Downloadicon.src}
                           height={30}
                           width={30}
