@@ -7,7 +7,7 @@ import axiosInstance from "../../../utils/axios";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import QRCodeComponent from "./QRCodeComponent";
-import qrcode from 'qrcode';
+import qrcode from "qrcode";
 
 const ViewAllItemsData = () => {
   const itemsPerPage = 15;
@@ -65,7 +65,6 @@ const ViewAllItemsData = () => {
         document.execCommand("copy");
         document.body.removeChild(textArea);
         setCopySuccess("URL copied to clipboard!");
-        
       }
 
       toast.success("URL copied to clipboard!", {
@@ -82,21 +81,18 @@ const ViewAllItemsData = () => {
     }
   };
 
-
   const initialSize = 550;
   const handleDownload = async (e, slug) => {
     e.stopPropagation();
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-    let value = 'https://oneledger.co/' + slug;
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    let value = "https://oneledger.co/" + slug;
     await qrcode.toCanvas(canvas, value, { width: initialSize });
-
 
     canvas.toBlob((blob) => {
       const url = URL.createObjectURL(blob);
 
-
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = url;
       a.download = `${slug}.png`;
       document.body.appendChild(a);
@@ -108,7 +104,7 @@ const ViewAllItemsData = () => {
   };
   const handleRowClick = (slug) => {
     // Handle redirection logic here
-    window.location.href = "https://oneledger.co/"+slug;
+    window.location.href = "https://oneledger.co/" + slug;
   };
   return (
     <div className='container-fluid'>
@@ -310,11 +306,11 @@ const ViewAllItemsData = () => {
                         <p className='table-th'> {item}</p>
                       </th>
                     ))}
-                  <th className='table-nav' scope='col'>
+                  <th className='table-navs' scope='col'>
                     <p className='table-th'> QR code</p>
                   </th>
                   <th className='table-navs' scope='col'>
-                    <p className='table-th'> Action</p>
+                    <p className='table-ths'> Action</p>
                   </th>
 
                   <th className='table-navs' scope='col'>
@@ -325,7 +321,10 @@ const ViewAllItemsData = () => {
               <tbody>
                 {columns.length > 0 &&
                   columns.map((item, index) => (
-                    <tr key={index} className='data-tr' onClick={() => handleRowClick(item["slug"])}>
+                    <tr
+                      key={index}
+                      className='data-tr'
+                      onClick={() => handleRowClick(item["slug"])}>
                       {headers.length > 0 &&
                         headers.map((head) => (
                           <td className='data-td'>
@@ -340,17 +339,16 @@ const ViewAllItemsData = () => {
                             size={50}
                             slug={item["slug"]}
                           />
+                          <Image
+                            onClick={(e) => copyToClipboard(e, item["slug"])}
+                            src={Downloadicon.src}
+                            height={35}
+                            width={35}
+                            alt=''
+                          />
                         </div>
                       </td>
-                      <td className='tabl-icon'>
-                        <Image
-                          onClick={(e) => copyToClipboard(e, item["slug"])}
-                          src={Downloadicon.src}
-                          height={30}
-                          width={30}
-                          alt=''
-                        />
-                      </td>
+                      {/* <td className='tabl-icon'></td> */}
                       {/* <td>
                       <div className='tabl-icon'>
                         QR code and download icon

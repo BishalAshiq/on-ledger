@@ -50,6 +50,10 @@ body {
   display: flex;
   gap: 5px;
 }
+.qr-code-img {
+  border: 1px solid #155c79;
+  padding: 1px;
+}
 
 .ffs-div {
   background: #00a5bd;
@@ -66,7 +70,7 @@ body {
   margin-top: 7%;
   /* height: 20vh; */
 }
-.ad-tag {
+.brand-add-tag {
   color: #00a5bd;
   font-size: 1.5rem;
 }
@@ -601,7 +605,7 @@ body {
     width: 531px;
     height: 451px;
   }
-  .ad-tag {
+  .brand-add-tag {
     text-align: justify !important;
   }
   .forget-text {

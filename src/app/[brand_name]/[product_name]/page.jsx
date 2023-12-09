@@ -217,8 +217,8 @@ const page = () => {
                       <li>
                         <p className='block-ptwotext'>
                           {" "}
-                          This certificate is non-transferable and is
-                          permanently recorded on the blockchain
+                          For any inquiries or conernsm, feel free to contact us
+                          at enquiries@oneledger.co
                         </p>
                       </li>
                     </ol>

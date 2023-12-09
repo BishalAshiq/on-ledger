@@ -131,7 +131,7 @@ const page = () => {
                   />
                 </div>
                 <div className='login-brand-inputs-div'>
-                  <h6 className='ad-tag'>Brand Login</h6>
+                  <h6 className='brand-add-tag'>Brand Login</h6>
                   <form className='' onSubmit={handleLogin} method='post'>
                     <div>
                       {" "}
