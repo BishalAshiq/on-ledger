@@ -59,7 +59,11 @@ const ViewAllItems = () => {
 
 
   const [rows, setRows] = useState([{ id: 5, text: '', checked: false }]);
-  const [formData, setFormData] = useState([{ id: 1, text: '', checked: false }]);
+  const [formData, setFormData] = useState([
+    { id: 1, text: 'Brand Name', checked: false },
+    { id: 2, text: 'Product Name', checked: false },
+    { id: 3, text: 'Product No', checked: false }
+  ]);
 
 
   const handleFormChange = (id, value) => {
@@ -100,7 +104,7 @@ const ViewAllItems = () => {
     }
   };
 
-
+  console.log(formData);
   const handleCustomizeForm = (e) => {
     e.preventDefault();
     // const mergedData = { ...formData, rows: [...rows] };
@@ -124,7 +128,18 @@ const ViewAllItems = () => {
       brand_name: brand,
       rows: merged
     };
-    axiosInstance.post('/cutomize-data', mergedData).then(res => {
+    let token = "";
+
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+
+
+    axiosInstance.post('/cutomize-data', mergedData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(res => {
 
       if (res.data.status == 200) {
         toast.success(res.data.message, {
@@ -198,7 +213,7 @@ const ViewAllItems = () => {
           <div className='row checkbox-div '>
             <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
               <div>
-                <h6>Brand</h6>
+                <h6>Brand Name</h6>
               </div>
             </div>
             <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
@@ -206,7 +221,7 @@ const ViewAllItems = () => {
                 <p>Yes by default</p>
               </div>
             </div>
-            <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+            {/* <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
               <div>
                 <div>
                   <input type='text'
@@ -228,13 +243,13 @@ const ViewAllItems = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className='row checkbox-div '>
             <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
               <div>
-                <h6>Product</h6>
+                <h6>Product Name</h6>
               </div>
             </div>
             <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
@@ -242,7 +257,7 @@ const ViewAllItems = () => {
                 <p>Yes by default</p>
               </div>
             </div>
-            <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+            {/* <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
               <div>
                 <div>
                   <input type='text'
@@ -265,13 +280,13 @@ const ViewAllItems = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className='row checkbox-div '>
             <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
               <div>
-                <h6>Serial</h6>
+                <h6>Product No</h6>
               </div>
             </div>
             <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
@@ -279,7 +294,7 @@ const ViewAllItems = () => {
                 <p>Yes by default</p>
               </div>
             </div>
-            <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+            {/* <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
               <div>
                 <input type='text' className='ser-item-input'
                   onChange={(e) => handleFormChange(3, e.target.value)}
@@ -298,8 +313,8 @@ const ViewAllItems = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
+            </div> */}
+            {/* <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
               <div>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -311,13 +326,13 @@ const ViewAllItems = () => {
                   <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z' />
                 </svg>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className='row checkbox-div '>
             <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
               <div className='d-items-div'>
-                <h6>Item</h6>
+                <h6>Add New Item</h6>
                 <svg
                   onClick={handleAddRow}
                   xmlns='http://www.w3.org/2000/svg'
@@ -356,8 +371,8 @@ const ViewAllItems = () => {
                     type='checkbox'
                     value=''
                     id='flexCheckChecked'
-                  // checked
-                  onChange={(e) => handleFormCheckboxChange(4, e.target.value)}
+                    // checked
+                    onChange={(e) => handleFormCheckboxChange(4, e.target.value)}
                   />
                 </div>
               </div>
