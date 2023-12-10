@@ -33,6 +33,11 @@
   font-family: "Roboto", sans-serif;
   margin: 0 0 0 10px;
 }
+.uptag-textP {
+  color: #494949;
+  font-family: "Roboto", sans-serif;
+  margin: 0 0 0 16px;
+}
 
 .dddssa {
   height: 10vh;
@@ -311,13 +316,15 @@
 .issue-upload-div {
   display: grid;
   place-items: center;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .csv-textp {
   font-size: 0.9rem;
-  color: #8f8f8f;
+  color: #000000;
   margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 .csv-textp2 {
   color: #8f8f8f;
