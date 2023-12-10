@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import upFile from "../../../public/upFile.svg";
+import upFile from "../../../public/download.png";
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
 import { toast } from "react-toastify";
@@ -181,7 +181,13 @@ const IssuDetails = () => {
         <div className='issue-upload-full-div'>
           <div className='issue-upload-div' onClick={handleFileClick}>
             {/* <a className='csv-a' onClick={handleDownload}>Download the CSV template</a> */}
-            <Image src={upFile.src} width={80} height={80} alt='' />
+            <Image
+              className='file-image'
+              src={upFile.src}
+              width={40}
+              height={40}
+              alt=''
+            />
             <p className='csv-textp'>Doc name</p>
             {/* <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
@@ -202,7 +208,7 @@ const IssuDetails = () => {
           <div className='previe-issue-text'>
             <p className='previe-issue-btn-text'>Clear</p>
             <Link href='/allitems'>
-              <p className='previe-issue-btn'> Mint</p>
+              <span className='previe-issue-btn'> Mint</span>
             </Link>
           </div>
         </div>

@@ -307,16 +307,35 @@
 .issue-upload-full-div {
   border: 1px solid gray;
 }
-
-.csv-a {
-  margin-bottom: 10px;
-  color: #00b3ff;
-  font-size: 0.8rem;
-}
 .issue-upload-div {
   display: grid;
   place-items: center;
   padding: 20px 0;
+  position: relative;
+}
+
+.issue-upload-div:hover .file-image {
+  display: none; /* Hide the file image when hovering */
+}
+
+.issue-upload-div:hover::after {
+  content: "";
+  background: url("/upico.png") no-repeat;
+  background-size: 40px 40px; /* Set the desired width and height */
+  /* position: absolute; */
+
+  /* top: 50%; */
+  /* left: 50%; */
+  transform: translate(-50%, -50%);
+  transition: calc(All);
+  width: 40px; /* Set the desired width */
+  height: 40px; /* Set the desired height */
+  background-size: cover;
+}
+.csv-a {
+  margin-bottom: 10px;
+  color: #00b3ff;
+  font-size: 0.8rem;
 }
 
 .csv-textp {
@@ -343,7 +362,11 @@
   justify-content: center;
   /* align-items: center; */
   text-align: center;
+  margin-top: 7px;
   gap: 20px;
+}
+.previe-issue-text a {
+  text-decoration: none;
 }
 .previe-issue-btn-text {
   color: #00a5bd;
@@ -352,7 +375,8 @@
 .previe-issue-btn {
   background-color: #00a5bd;
   color: white;
-  padding: 3px 60px;
+  text-decoration: none;
+  padding: 5px 60px;
   /* height: 5vh; */
   border-radius: 2px;
   outline: none;

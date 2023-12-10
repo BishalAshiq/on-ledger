@@ -229,7 +229,7 @@ const page = () => {
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
                   For inquiries or more information <br /> please contact:
-                  enquiries@esgledger.co
+                  enquiries@oneledger.co
                 </p>
               </div>
             </div>
