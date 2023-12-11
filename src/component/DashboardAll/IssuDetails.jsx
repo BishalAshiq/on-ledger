@@ -179,8 +179,10 @@ const IssuDetails = () => {
       <div>
         <h6 className='uptag-text'>Upload new product data</h6>
         <div className='issue-upload-full-div'>
+          <a className='csv-a' onClick={handleDownload}>
+            Download the CSV template
+          </a>
           <div className='issue-upload-div' onClick={handleFileClick}>
-            {/* <a className='csv-a' onClick={handleDownload}>Download the CSV template</a> */}
             <Image
               className='file-image'
               src={upFile.src}
@@ -189,9 +191,9 @@ const IssuDetails = () => {
               alt=''
             />
             <p className='csv-textp'>Doc name</p>
-            {/* <p className='csv-textp2'>
+            <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
-            </p> */}
+            </p>
             <input
               type='file'
               id='fileInput'

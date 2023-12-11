@@ -932,13 +932,13 @@ body {
 }
 
 /* Macbook PRo  */
-@media (max-width: 1440px) {
+@media (max-width: 1680px) and (min-width: 900px) {
   .login-banner-img-input-div {
-    margin: 13% 0 0 0;
+    margin: 10% 0 0 0;
   }
   .login-banner-img {
     width: 100%;
-    height: 40vh;
+    height: 50vh;
   }
   .nav-items-div a {
     font-size: 0.9rem;

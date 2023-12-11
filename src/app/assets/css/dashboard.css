@@ -316,26 +316,14 @@
   position: relative;
 }
 
-.issue-upload-div:hover .file-image {
-  display: none; /* Hide the file image when hovering */
-}
+/* .issue-upload-div:hover .file-image {
+  display: none; 
+} */
 
-.issue-upload-div:hover::after {
-  content: "";
-  background: url("/upico.png") no-repeat;
-  background-size: 40px 40px; /* Set the desired width and height */
-  /* position: absolute; */
-
-  /* top: 50%; */
-  /* left: 50%; */
-  transform: translate(-50%, -50%);
-  transition: calc(All);
-  width: 40px; /* Set the desired width */
-  height: 40px; /* Set the desired height */
-  background-size: cover;
-}
 .csv-a {
-  margin-bottom: 10px;
+  display: grid;
+  place-items: center;
+  margin: 10px 0 0 0;
   color: #00b3ff;
   font-size: 0.8rem;
 }
