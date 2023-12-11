@@ -297,7 +297,7 @@ const ViewAllItemsData = () => {
             </tbody>
           </table> */}
           <div className='mt-4'>
-            <table className=''>
+            <table className='full-table'>
               <thead className=''>
                 <tr>
                   {headers.length > 0 &&

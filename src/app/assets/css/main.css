@@ -515,7 +515,7 @@ body {
   font-weight: 700;
 }
 
-.Information-full-div {
+.Information-full-divs {
   font-family: "Roboto", sans-serif;
   margin: 20px 30px !important;
   /* display: inline; */
@@ -530,7 +530,7 @@ body {
   text-align: justify;
   /* line-height: 1.4; */
 }
-.Informations-full-div {
+.Information-full-div {
   font-family: "Roboto", sans-serif;
   margin: 20px 30px !important;
   /* display: inline; */
@@ -545,8 +545,24 @@ body {
   text-align: justify;
   /* line-height: 1.4; */
 }
+.block-ptwotext-add {
+  margin-left: 5px;
+
+  text-decoration: underline;
+}
+
 .block-ptwotext {
-  margin-top: -10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-top: -4px;
+}
+.block-ptwotext {
+  /* margin-top: -10px; */
+}
+.block-ptwotextc {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-top: -4px;
 }
 .block-ptwotext-add {
   text-decoration: underline;
@@ -558,6 +574,40 @@ body {
 .footer-privacy-div {
   display: none;
   visibility: hidden;
+}
+.issue-box-details {
+  width: 100%;
+  height: 50vh;
+}
+
+.no-file-select-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+
+  /* margin-top: -10px; */
+}
+
+.no-file-select-div p {
+  text-align: center;
+}
+
+.loading-dot {
+  margin-bottom: -7px;
+  font-size: 1.5em;
+  /* Adjust font size if needed */
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  animation: loading 1s linear infinite;
+}
+.no-decoration {
+  color: black;
+  text-decoration: none;
+}
+.full-table {
+  width: 100%;
 }
 
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
@@ -632,7 +682,16 @@ body {
     font-size: 1rem;
   }
   .block-ptwotext {
-    margin-top: -10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: -4px;
+    /* margin-top: -6px; */
+  }
+  .block-ptwotextc {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: -4px;
+    /* margin-top: -10px; */
   }
   .certificate-tags-div {
     padding: 0 5px;
@@ -677,6 +736,10 @@ body {
   }
   .submit-btn-div {
     margin-top: 10%;
+  }
+
+  .full-table {
+    width: 100%;
   }
 }
 
@@ -787,14 +850,14 @@ body {
     color: #494949;
   }
 
-  .Information-full-div {
+  .Information-full-divs {
     line-height: 1;
     font-size: 0.9rem;
     font-weight: 500;
     color: #494949;
     font-family: "Roboto", sans-serif;
   }
-  .Informations-full-div {
+  .Information-full-div {
     line-height: 1.1;
     font-size: 0.9rem;
     color: #494949;
@@ -914,6 +977,7 @@ body {
     line-height: 1.2;
     align-items: center;
     text-align: center;
+
     margin: 10px 0;
     padding: 0 15px;
   }
@@ -921,20 +985,61 @@ body {
   .mob-certificate-tags {
     font-size: 0.9rem;
     font-weight: 700;
+    display: inline-block;
     font-family: "Roboto", sans-serif;
   }
 
   .mob-certificate-ptag {
     font-size: 0.9rem;
     font-weight: 700;
+    display: inline-block;
     font-family: "Roboto", sans-serif;
+  }
+
+  .Information-full-divs {
+    line-height: 1.2;
+    font-size: 0.8rem;
+    font-weight: 600;
+    /* text-align: ; */
+    font-family: "Roboto", sans-serif;
+  }
+  .Information-full-div {
+    line-height: 1.4;
+    font-size: 0.9rem;
+    font-weight: 600;
+    /* text-align: justify; */
+    font-family: "Roboto", sans-serif;
+  }
+  .block-ptwotext {
+    /* line-height: 1.9; */
+    /* white-space-collapse: discard; */
+    margin: 0 0 0 0;
+    font-size: 0.7rem;
+    color: #141414;
+    font-weight: 600;
+    margin: 0 0 1px 0;
+  }
+  .block-ptwotextc {
+    margin: 0 0 0 0;
+    font-size: 0.6rem;
+    color: #000000;
+    font-weight: 500;
+    /* word-spacing: -9px; */
+    /* font-style: italic; */
+    font-family: "Roboto", sans-serif;
+    word-spacing: -1px;
+  }
+  .block-ptwotext-add {
+    text-decoration: underline;
+    /* margin-top: -30px; */
+    /* line-height: 0.8; */
   }
 }
 
 /* Macbook PRo  */
-@media (max-width: 1680px) and (min-width: 900px) {
+@media (max-width: 1680px) and (min-width: 1368px) {
   .login-banner-img-input-div {
-    margin: 10% 0 0 0;
+    margin: 9% 0 0 0;
   }
   .login-banner-img {
     width: 100%;
@@ -949,54 +1054,33 @@ body {
     width: 30%;
     display: flex;
     justify-content: center;
-    align-items: start;
+    /* align-items: start; */
     text-align: justify;
-    padding: 90px 80px 0 83px;
+    /* padding: 0 44px 0 44px; */
+  }
+  .login-banner-img-div {
+    background-color: white;
+    border-right: 1px solid gray;
+    width: 30.5%;
   }
   .login-brand-inputs-div {
     width: 30%;
     display: flex;
     justify-content: center;
-    align-items: start;
+    /* align-items: start; */
     text-align: justify;
-    padding: 0 80px 0 80px;
+    /* padding: 0 44px 0 44px; */
   }
   .admin-login-inpu {
     width: 100%;
+    outline: none;
+    margin: 3px 0;
   }
   .submit-btn-div {
     margin-top: 5%;
   }
-}
 
-.issue-box-details {
-  width: 100%;
-  height: 50vh;
-}
-
-.no-file-select-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-
-  /* margin-top: -10px; */
-}
-
-.no-file-select-div p {
-  text-align: center;
-}
-
-.loading-dot {
-  margin-bottom: -7px;
-  font-size: 1.5em;
-  /* Adjust font size if needed */
-  overflow: hidden;
-  display: inline-block;
-  white-space: nowrap;
-  animation: loading 1s linear infinite;
-}
-.no-decoration {
-  color: black;
-  text-decoration: none;
+  .full-table {
+    width: 100%;
+  }
 }

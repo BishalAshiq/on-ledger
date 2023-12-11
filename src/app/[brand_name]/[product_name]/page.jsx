@@ -204,63 +204,36 @@ const page = () => {
                     </h5>
                   </div> */}
 
-                  <div className='Information-full-div'>
+                  <div className='Information-full-divs'>
                     <p>Important Information:</p>
                     <ol>
-                      <li>
-                        <p>
-                          {" "}
-                          This certificate is non-transferable and is
-                          permanently recorded on the blockchain
-                        </p>
+                      <li className='block-ptwotext'>
+                        This certificate is non-transferable and is permanently
+                        recorded on the blockchain
                       </li>
-                      <li>
-                        <p className='block-ptwotext'>
-                          {" "}
-                          For any inquiries or conernsm, feel free to contact us
-                          at enquiries@oneledger.co
-                        </p>
+                      <li className='block-ptwotext'>
+                        For any inquiries or conernsm, feel free to contact us
+                        at enquiries@certledger.io
                       </li>
                     </ol>
-                    {/* <p>
-                      {" "}
-                      1. This certificate is non-transferable and is permanently
-                      recorded on the blockchain
-                    </p>
-                    <p className='block-ptwotext'>
-                      {" "}
-                      2. For any inquiries or conernsm, feel free to contact us
-                      at enquiries@certledger.io
-                    </p> */}
                   </div>
 
-                  <div className='Informations-full-div'>
-                    <p>重要信息:</p>
+                  <div className='Information-full-div'>
+                    <p className='block-ptwotextcs'>重要信息:</p>
+
                     <ol>
-                      <li>
-                        <p> 此證書不可轉讓，已永久記錄在區塊鏈上。</p>
+                      <li className='block-ptwotextc'>
+                        此證書不可轉讓，已永久記錄在區塊鏈上。
                       </li>
-                      <li>
-                        <p className='block-ptwotext'>
+                      <li className='block-ptwotextc cc-mob'>
+                        如有任何疑問或關切事項 可電郵至:
+                        <span className='block-ptwotext-add'>
                           {" "}
-                          如有任何疑問或關切事 項，可電郵至:
-                          <span className='block-ptwotext-add'>
-                            {" "}
-                            enquiries@certledger.io
-                          </span>
-                          。
-                        </p>
+                          enquiries@certledger.io
+                        </span>
+                        。
                       </li>
                     </ol>
-                    {/* <p> 1. 此證書不可轉讓，已永久記錄在區塊鏈上。</p>
-                    <p className='block-ptwotext'>
-                      {" "}
-                      2. 如有任何疑問或關切事 項，可電郵至:
-                      <span className='block-ptwotext-add'>
-                        {" "}
-                        enquiries@certledger.io
-                      </span>
-                    </p> */}
                   </div>
                   {/* 
                   <div className='Information-full-div'>

@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "OneLedger",
-  description: "Next app",
+  description: "",
 };
 
 export default function RootLayout({ children }) {
