@@ -177,7 +177,7 @@ const IssuDetails = () => {
   return (
     <div className='container-fluid mt-4'>
       <div>
-        <h6 className='uptag-text'>Upload recipients and certificates data</h6>
+        <h6 className='uptag-text'>Upload new product data</h6>
         <div className='issue-upload-full-div'>
           <div className='issue-upload-div' onClick={handleFileClick}>
             {/* <a className='csv-a' onClick={handleDownload}>Download the CSV template</a> */}

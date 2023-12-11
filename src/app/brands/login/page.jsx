@@ -17,6 +17,7 @@ import { toast } from "react-toastify";
 import axiosInstance from "../../../../utils/axios";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import Link from "next/link";
 
 const page = () => {
   const router = useRouter();
@@ -253,10 +254,22 @@ const page = () => {
                 <p className='footer-textpp'>Join the Community</p>
 
                 <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon1.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
-                  <img className='social-icon' src={pageicon4.src} alt='' />
+                  <Link href='https://www.facebook.com/onechainagency'>
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </Link>
+
+                  <Link href='https://www.instagram.com/one.chain.io/'>
+                    {" "}
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                  </Link>
+                  <Link href='https://www.linkedin.com/company/77163564/admin/feed/posts/'>
+                    {" "}
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                  </Link>
+                  <Link href='https://www.youtube.com/@onechainblockchain'>
+                    {" "}
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                  </Link>
                 </div>
               </div>
             </div>
