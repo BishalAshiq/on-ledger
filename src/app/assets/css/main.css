@@ -1072,7 +1072,7 @@ body {
     /* padding: 0 44px 0 44px; */
   }
   .admin-login-inpu {
-    width: 100%;
+    width: 100% !important;
     outline: none;
     margin: 3px 0;
   }
