@@ -67,11 +67,15 @@ const page = () => {
                   </div>
 
                   <div className='certificate-tags-div'>
-                    <h2 className='certificate-tags'>
-                      THE BLOCKCHAIN CERTIFICATE{" "}
-                    </h2>
-                    <p className='certificate-ptag'>區塊鏈防偽證書</p>
-                    <p className='certificate-ptag'>by OneChain® </p>
+                    <h2 className='certificate-tags'>ONECHAIN®</h2>
+                    <p className='certificate-ptag'>
+                      {" "}
+                      CERTIFIED BLOCKCHAIN SEAL
+                    </p>
+                    <p className='certificate-ptag'>
+                      {" "}
+                      OneChain®區塊鏈認證封印{" "}
+                    </p>
                   </div>
 
                   <div className='mob-certificate-tags-div'>

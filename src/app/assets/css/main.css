@@ -610,6 +610,9 @@ body {
 .full-table {
   width: 100%;
 }
+.footer-textpps {
+  visibility: hidden;
+}
 
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
   .nav-items-div a {
@@ -1047,7 +1050,10 @@ body {
 /* Macbook PRo  */
 @media (max-width: 1680px) and (min-width: 1368px) {
   .login-banner-img-input-div {
-    margin: 9% 0 0 0;
+    margin: 3.5% 0 0 0;
+  }
+  .footer-textpps {
+    visibility: hidden;
   }
   .login-banner-img {
     width: 100%;
