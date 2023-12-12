@@ -216,8 +216,8 @@ const page = () => {
                         recorded on the blockchain
                       </li>
                       <li className='block-ptwotext'>
-                        For any inquiries or conernsm, feel free to contact us
-                        at enquiries@oneledger.co
+                        For any inquiries or conerns, feel free to contact us at
+                        enquiries@oneledger.co
                       </li>
                     </ol>
                   </div>

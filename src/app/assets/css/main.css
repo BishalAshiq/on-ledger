@@ -1057,7 +1057,7 @@ body {
   }
   .login-banner-img {
     width: 100%;
-    height: 50vh;
+    height: 47vh;
   }
   .nav-items-div a {
     font-size: 0.9rem;
@@ -1075,7 +1075,7 @@ body {
   .login-banner-img-div {
     background-color: white;
     border-right: 1px solid gray;
-    width: 30.5%;
+    width: 28.5%;
   }
   .login-brand-inputs-div {
     width: 30%;
