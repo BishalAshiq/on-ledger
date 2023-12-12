@@ -60,9 +60,9 @@ const ViewAllItems = () => {
 
   const [rows, setRows] = useState([{ id: 5, text: '', checked: false }]);
   const [formData, setFormData] = useState([
-    { id: 1, text: 'Brand Name', checked: false },
-    { id: 2, text: 'Product Name', checked: false },
-    { id: 3, text: 'Product No', checked: false }
+    { id: 1, text: 'Brand Name', checked: true },
+    { id: 2, text: 'Product Name', checked: true },
+    { id: 3, text: 'Product No', checked: true }
   ]);
 
 
