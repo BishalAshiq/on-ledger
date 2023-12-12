@@ -205,7 +205,7 @@ const page = () => {
                   </div> */}
 
                   <div className='Information-full-divs'>
-                    <p>Important Information:</p>
+                    <p className='block-ptwotextcs'>Important Information:</p>
                     <ol>
                       <li className='block-ptwotext'>
                         This certificate is non-transferable and is permanently
@@ -213,7 +213,7 @@ const page = () => {
                       </li>
                       <li className='block-ptwotext'>
                         For any inquiries or conernsm, feel free to contact us
-                        at enquiries@certledger.io
+                        at enquiries@oneledger.co
                       </li>
                     </ol>
                   </div>
@@ -226,10 +226,10 @@ const page = () => {
                         此證書不可轉讓，已永久記錄在區塊鏈上。
                       </li>
                       <li className='block-ptwotextc cc-mob'>
-                        如有任何疑問或關切事項 可電郵至:
+                        如有任何疑問或關切事項，可電郵至:
                         <span className='block-ptwotext-add'>
                           {" "}
-                          enquiries@certledger.io
+                          enquiries@oneledger.io
                         </span>
                         。
                       </li>
@@ -281,12 +281,23 @@ const page = () => {
             <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
               <div className='footer-text-div'>
                 <p className='footer-textpp'>Join the Community</p>
-
                 <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon4.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon1.src} alt='' />
+                  <Link href='https://www.facebook.com/onechainagency'>
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </Link>
+
+                  <Link href='https://www.instagram.com/one.chain.io/'>
+                    {" "}
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                  </Link>
+                  <Link href='https://www.linkedin.com/company/77163564/admin/feed/posts/'>
+                    {" "}
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                  </Link>
+                  <Link href='https://www.youtube.com/@onechainblockchain'>
+                    {" "}
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                  </Link>
                 </div>
                 <p className='footer-textpps'>Join the Community</p>
               </div>

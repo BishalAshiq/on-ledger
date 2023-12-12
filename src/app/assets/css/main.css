@@ -547,7 +547,7 @@ body {
 }
 .block-ptwotext-add {
   margin-left: 5px;
-
+  font-weight: 500;
   text-decoration: underline;
 }
 
@@ -566,6 +566,7 @@ body {
 }
 .block-ptwotext-add {
   text-decoration: underline;
+  font-weight: 500;
 }
 .mobile-nav-div {
   /* display: none; */
@@ -863,10 +864,6 @@ body {
     color: #494949;
     font-family: "Roboto", sans-serif;
   }
-  .block-ptwotext {
-    margin-top: -14px;
-    text-align: left;
-  }
 
   .certificate-tags {
     font-size: 1rem;
@@ -1004,34 +1001,45 @@ body {
     font-family: "Roboto", sans-serif;
   }
   .Information-full-div {
-    line-height: 1.4;
+    line-height: 1.2;
     font-size: 0.9rem;
     font-weight: 600;
     /* text-align: justify; */
     font-family: "Roboto", sans-serif;
   }
+  .block-ptwotextcs {
+    font-weight: 500;
+  }
   .block-ptwotext {
     /* line-height: 1.9; */
     /* white-space-collapse: discard; */
-    margin: 0 0 0 0;
+    margin: 0;
     font-size: 0.7rem;
-    color: #141414;
-    font-weight: 600;
-    margin: 0 0 1px 0;
+    /* text-align: justify; */
+    color: #494949;
+    font-weight: 500;
+    /* margin-top: -14px;
+    text-align: left; */
+    /* margin: 0 0 1px 0; */
   }
   .block-ptwotextc {
-    margin: 0 0 0 0;
-    font-size: 0.6rem;
-    color: #000000;
+    margin: 0;
+    font-size: 0.7rem;
+    color: #141414;
+    /* text-align: justify; */
     font-weight: 500;
     /* word-spacing: -9px; */
     /* font-style: italic; */
     font-family: "Roboto", sans-serif;
     word-spacing: -1px;
+    width: 227px;
   }
   .block-ptwotext-add {
+    font-weight: 500;
+    color: #494949;
+    font-family: "Roboto", sans-serif;
     text-decoration: underline;
-    /* margin-top: -30px; */
+    margin-top: -30px;
     /* line-height: 0.8; */
   }
 }
