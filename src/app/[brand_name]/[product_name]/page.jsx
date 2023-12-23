@@ -24,15 +24,14 @@ const page = () => {
       .get("item-details/" + param.brand_name + "/" + param.product_name)
       .then((res) => {
         setItem(res.data.data);
-        const parsedAttribute = JSON.parse(res.data.data.attribute);
+        console.log(res.data.data);
 
-        // Set the parsed object in the state
-        setAttribute(parsedAttribute);
+        setAttribute(res.data.final_data);
       });
   }, []);
 
-  const formateDate = (date) => {
-    const dateString = "2023-11-22T18:32:49.000000Z";
+  const formateDate = (dateString) => {
+    // const dateString = '2023-11-22T18:32:49.000000Z';
     const dateObject = new Date(dateString);
 
     // Format the date as "d M, Y"
@@ -41,6 +40,120 @@ const page = () => {
     return formatted;
   };
 
+
+  const [activeAccordion, setActiveAccordion] = useState("");
+  const [activeAccordion2, setActiveAccordion2] = useState("");
+  const [activeAccordion3, setActiveAccordion3] = useState("");
+  const [activeAccordion4, setActiveAccordion4] = useState("");
+  const [activeAccordion5, setActiveAccordion5] = useState("");
+
+  const isAccordionExpanded = (accordionId) => {
+    return activeAccordion === accordionId;
+  };
+
+  // const toggleAccordion = (accordionId) => {
+  //   if (isAccordionExpanded(accordionId)) {
+  //     setActiveAccordion("");
+  //   } else {
+  //     setActiveAccordion(accordionId);
+  //   }
+  // };
+
+  const handleAccordionClicks = (accordionId) => {
+    setActiveAccordion((prevAccordion) =>
+      prevAccordion === accordionId ? null : accordionId
+    );
+  };
+  const isAccordionExpanded2 = (accordionId) => {
+    return activeAccordion2 === accordionId;
+  };
+
+  const toggleAccordion2 = (accordionId) => {
+    if (isAccordionExpanded2(accordionId)) {
+      setActiveAccordion2("");
+    } else {
+      setActiveAccordion2(accordionId);
+    }
+  };
+
+  const handleAccordionClick3 = (accordionId) => {
+    setActiveAccordion3((prevAccordion3) =>
+      prevAccordion3 === accordionId ? "" : accordionId
+    );
+  };
+
+  const isAccordionExpanded3 = (accordionId) => {
+    return activeAccordion3 === accordionId;
+  };
+
+  const toggleAccordion3 = (accordionId) => {
+    if (isAccordionExpanded3(accordionId)) {
+      setActiveAccordion3("");
+    } else {
+      setActiveAccordion3(accordionId);
+    }
+  };
+  const handleAccordionClick4 = (accordionId) => {
+    setActiveAccordion4((prevAccordion4) =>
+      prevAccordion4 === accordionId ? "" : accordionId
+    );
+  };
+
+  const isAccordionExpanded4 = (accordionId) => {
+    return activeAccordion4 === accordionId;
+  };
+
+  const toggleAccordion4 = (accordionId) => {
+    if (isAccordionExpanded4(accordionId)) {
+      setActiveAccordion4("");
+    } else {
+      setActiveAccordion4(accordionId);
+    }
+  };
+  const handleAccordionClick5 = (accordionId) => {
+    setActiveAccordion5((prevAccordion5) =>
+      prevAccordion5 === accordionId ? "" : accordionId
+    );
+  };
+
+  const isAccordionExpanded5 = (accordionId) => {
+    return activeAccordion5 === accordionId;
+  };
+
+  // const toggleAccordion5 = (accordionId) => {
+  //   if (isAccordionExpanded5(accordionId)) {
+  //     setActiveAccordion5("");
+  //   } else {
+  //     setActiveAccordion5(accordionId);
+  //   }
+  // };
+
+  const processString = (inputString) => {
+    // Split the string by "/"
+
+    const values = inputString.split("/");
+
+    if (values.length > 0) {
+      const processedValues = values.map((value, index) => (
+        <React.Fragment key={index}>
+          {value} <br />
+        </React.Fragment>
+      ));
+      return processedValues;
+    } else {
+      return values;
+    }
+  };
+
+  const [activeAccordions, setActiveAccordions] = useState([]);
+
+  const toggleAccordion = (key) => {
+    if (activeAccordions.includes(key)) {
+      setActiveAccordions(activeAccordions.filter((item) => item !== key));
+    } else {
+      setActiveAccordions([...activeAccordions, key]);
+    }
+  };
   return (
     <div className='individual'>
       {" "}
@@ -123,8 +236,7 @@ const page = () => {
                     <div className='Blockchain-tagotwo-div'>
                       <Image src={copy.src} width={20} height={20} alt='' />
                       <h5 className='Blockchain-tagotwo'>
-                        f3e516e349300a615665fbcefaf63a53cdcdc9b0a
-                        d88824d34d7eb2ec3f7255e
+                        {item.block_chain_url}
                       </h5>
                     </div>
                   </Link>
@@ -138,15 +250,130 @@ const page = () => {
                   <div className='Blockchain-ptag-div'>
                     <p>{formateDate(item.created_at)}</p>
                   </div>
-                  {Object.entries(attribute).map(([key, value]) => (
-                    <div className='Blockchain-ptag-divs'>
-                      <p className='block-ptext'>{key} </p>
-                      <h5 className='blockchain-h5'>
-                        {value} <br />{" "}
-                      </h5>
-                    </div>
-                  ))}
+                  {Object.keys(attribute).map(
+                    (key) =>
+                      key != "" && (
+                        <>
+                          {typeof attribute[key] === "object" &&
+                            attribute[key] !== null ? (
+                            <>
+                              <div className=''>
+                                <div
+                                  className='accordion'
+                                  id='accordionExample'>
+                                  <div className='accordion-item'>
+                                    <div className='accor-tag-div'>
+                                      <h6 className='accordion-header'>
+                                        <div
+                                          className={`accordion-button ${isAccordionExpanded(
+                                            `collapse${key}`
+                                          )
+                                              ? ""
+                                              : "collapsed"
+                                            }`}
+                                          type='button'
+                                          data-bs-target={`#collapse${key}`}
+                                          aria-expanded={isAccordionExpanded(
+                                            `collapse${key}`
+                                          )}
+                                          aria-controls={`collapse${key}`}
+                                          onClick={() =>
+                                            handleAccordionClicks(
+                                              `collapse${key}`
+                                            )
+                                          }>
+                                          {key}
+                                        </div>
+                                      </h6>
 
+                                      <div className='chevron-icon'>
+                                        {isAccordionExpanded(
+                                          `collapse${key}`
+                                        ) ? (
+                                          <svg
+                                            id='chevron-btn-down'
+                                            xmlns='http://www.w3.org/2000/svg'
+                                            width='16'
+                                            height='16'
+                                            fill='currentColor'
+                                            className='bi bi-chevron-up '
+                                            viewBox='0 0 16 16'
+                                            onClick={() =>
+                                              handleAccordionClicks(
+                                                `collapse${key}`
+                                              )
+                                            }>
+                                            <path
+                                              fill-rule='evenodd'
+                                              d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'
+                                            />
+                                          </svg>
+                                        ) : (
+                                          <svg
+                                            xmlns='http://www.w3.org/2000/svg'
+                                            width='16'
+                                            height='16'
+                                            fill='currentColor'
+                                            className='bi bi-chevron-down'
+                                            viewBox='0 0 16 16'
+                                            onClick={() =>
+                                              handleAccordionClicks(
+                                                `collapse${key}`
+                                              )
+                                            }>
+                                            <path
+                                              fill-rule='evenodd'
+                                              d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
+                                            />
+                                          </svg>
+                                        )}
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id={`collapse${key}`}
+                                      className={`accordion-collapse collapse ${isAccordionExpanded(`collapse${key}`)
+                                          ? "show"
+                                          : ""
+                                        }`}
+                                      data-bs-parent='#accordionExample'>
+                                      <div className='accordion-body'>
+                                        {Object.entries(attribute[key]).map(
+                                          ([innerKey, innerValue], index) => (
+                                            <>
+                                              {innerKey != "" &&
+                                                innerValue != "" ? (
+                                                <div className='Blockchain-ptag-divs'>
+                                                  <p className='block-ptext'>
+                                                    {innerKey}{" "}
+                                                  </p>
+                                                  <h5 className='blockchain-h5'>
+                                                    {innerValue} <br />{" "}
+                                                  </h5>
+                                                </div>
+                                              ) : (
+                                                <></>
+                                              )}
+                                            </>
+                                          )
+                                        )}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          ) : (
+                            <div className='Blockchain-ptag-divs'>
+                              <p className='block-ptext'>{key} </p>
+                              <h5 className='blockchain-h5'>
+                                {processString(attribute[key])}
+                              </h5>
+                            </div>
+                          )}
+                        </>
+                      )
+                  )}
                   {/* <div className='Blockchain-ptag-divs'>
                     <p className='block-ptext'>Model No 型號</p>
                     <h5 className='blockchain-h5'>15692</h5>
