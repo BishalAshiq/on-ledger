@@ -130,18 +130,21 @@ const page = () => {
 
   const processString = (inputString) => {
     // Split the string by "/"
+    if (inputString != null) {
+      const values = inputString.split("/");
 
-    const values = inputString.split("/");
-
-    if (values.length > 0) {
-      const processedValues = values.map((value, index) => (
-        <React.Fragment key={index}>
-          {value} <br />
-        </React.Fragment>
-      ));
-      return processedValues;
+      if (values.length > 0) {
+        const processedValues = values.map((value, index) => (
+          <React.Fragment key={index}>
+            {value} <br />
+          </React.Fragment>
+        ));
+        return processedValues;
+      } else {
+        return values;
+      }
     } else {
-      return values;
+      return inputString;
     }
   };
 
@@ -268,8 +271,8 @@ const page = () => {
                                           className={`accordion-button ${isAccordionExpanded(
                                             `collapse${key}`
                                           )
-                                              ? ""
-                                              : "collapsed"
+                                            ? ""
+                                            : "collapsed"
                                             }`}
                                           type='button'
                                           data-bs-target={`#collapse${key}`}
@@ -333,8 +336,8 @@ const page = () => {
                                     <div
                                       id={`collapse${key}`}
                                       className={`accordion-collapse collapse ${isAccordionExpanded(`collapse${key}`)
-                                          ? "show"
-                                          : ""
+                                        ? "show"
+                                        : ""
                                         }`}
                                       data-bs-parent='#accordionExample'>
                                       <div className='accordion-body'>
