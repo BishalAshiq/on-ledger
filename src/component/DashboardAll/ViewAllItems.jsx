@@ -219,7 +219,7 @@ const ViewAllItems = () => {
       setSubCategory([...subCategory, newRow]);
     }
   };
-
+  const [rows, setRows] = useState([{ id: 5, text: "", checked: false }]);
   const handleCustomizeForm = (e) => {
     e.preventDefault();
 

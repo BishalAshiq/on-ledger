@@ -17,7 +17,16 @@ const ViewAllItemsData = () => {
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get("/item-list").then((res) => {
+    let token = "";
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+    axiosInstance.get("/item-list" ,{
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => {
       if (res.data.status == 200) {
         setHeaders(res.data.header);
         setColumns(res.data.data);
