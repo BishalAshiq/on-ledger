@@ -47,12 +47,11 @@ const ViewAllItemsData = () => {
 
   const [copySuccess, setCopySuccess] = useState(null);
 
-  const copyToClipboard = (copy_url) => {
+  const copyToClipboard = (e,copy_url) => {
     try {
       // Get the current URL
-      const currentURL = 'http://43.134.110.133:83/products/' + copy_url;
-      console.log(currentURL);
-      // Attempt to use the Clipboard API
+      const currentURL = 'http://oneledger.co/' + copy_url;
+      console.log(copy_url);  
       if (navigator.clipboard) {
         navigator.clipboard.writeText(currentURL);
         setCopySuccess('URL copied to clipboard!');
@@ -306,12 +305,12 @@ const ViewAllItemsData = () => {
                       <td>
                         <div className='tabl-icon'>
                           {/* {item.img1} {item.img1} */}
-                          <QRCodeComponent value={item['lsg_unique_id']} size={50} />
+                          <QRCodeComponent value={'https://esgledger.co/' + item['slug']} size={50} slug={item['slug']} />
 
                         </div>
                       </td>
                       <td>
-                        <svg onClick={(e) => copyToClipboard(item['lsg_unique_id'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                        <svg onClick={(e) => copyToClipboard(e, item['slug'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
                           <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
                         </svg>
                       </td>

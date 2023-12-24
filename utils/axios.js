@@ -7,7 +7,8 @@ if (typeof window !== "undefined") {
 }
 
 const axiosInstance = axios.create({
-    baseURL: "http://43.134.110.133:84/api/",
+    baseURL: "https://oneledger.co:84/api/",
+    // baseURL: "http://43.134.110.133:84/api/",
     // baseURL: "http://192.168.0.106:8000/api/",
     // baseURL: "http://192.168.0.107:8000/api/",
     // baseURL: 'http://159.223.38.62:83/api/',

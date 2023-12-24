@@ -21,7 +21,7 @@ import Cookies from "js-cookie";
 const page = () => {
   const router = useRouter();
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -173,6 +173,7 @@ const page = () => {
           </div>
           <div>
             <div className=''>
+              <hr className='hr' />
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
@@ -196,6 +197,16 @@ const page = () => {
                   <div className='submit-btn-div'>
                     <button className='submit-btn'>Confirm</button>
                   </div>
+                </div>
+              </div>
+
+              <div className='hrs-div'>
+                <h3 className='hrs-text'>Blockchain Integrity</h3>
+                <div className=''>
+                  <hr className='hrs' />
+                  <p className='hrs-text'>
+                    A pioneering blockchain-driven platform under OneChain®
+                  </p>
                 </div>
               </div>
             </div>

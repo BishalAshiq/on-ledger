@@ -21,13 +21,14 @@ body {
 }
 .nav-logo-img {
   /* border: 1px solid gray; */
-  width: 160px;
-  height: 42px;
+  width: 198px;
+  height: 62px;
 }
 
 .nav-items-div {
   display: flex;
   gap: 20px;
+  align-items: center;
   justify-content: end;
   margin-top: 6px;
   /* align-items: center !important; */
@@ -36,9 +37,11 @@ body {
 }
 .nav-items-div a {
   text-decoration: none;
-  color: #066f69;
+  color: #00a5bd;
   font-weight: 500;
   font-size: 0.9rem;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
 }
 
 .contact-nav-a {
@@ -47,7 +50,7 @@ body {
 }
 
 .ffs-div {
-  background: #066f69;
+  background: #00a5bd;
   margin-top: -30px;
 }
 .ff-div {
@@ -72,24 +75,48 @@ body {
 }
 
 .login-banner-img-div {
+  background-color: white;
+  border-right: 1px solid gray;
 }
 
 .login-banner-img {
   width: 300px;
-  height: 300px;
+
+  /* height: 20px; */
 }
 .hr {
   /* width: 100px; */
   /* margin: 20; */
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   border: 1px solid rgb(255, 255, 255);
-  margin: 6% 30% 0 30%;
+  width: 50%;
+  opacity: 1;
+  margin: 0 30% 0 25%;
 }
+
+.hrs-div {
+  z-index: -1;
+}
+/* .hrs-text {
+  color: white;
+  z-index: 1;
+  margin: -3% 30% 2% 30%;
+} */
 .hrs {
   display: grid;
   place-items: center;
   border-top: 1px solid rgb(255, 255, 255);
+  opacity: 2;
+  width: 50%;
+  margin: -2% 30% 2% 30%;
+}
+.hrs-text {
+  color: white;
+  /* border: 1px solid white; */
+  width: 250px;
+  font-family: "Roboto", sans-serif;
+  font-size: px;
   margin: -2% 30% 2% 30%;
 }
 .login-banner-inputs-div {
@@ -98,7 +125,9 @@ body {
   display: flex;
   flex-direction: column;
   width: 310px;
+  /* padding: 80px; */
   /* justify-content: center; */
+  z-index: 1;
   /* align-items: start; */
   padding: 30px 40px;
 }
@@ -138,13 +167,14 @@ body {
   /* position: absolute; */
   bottom: 0;
   width: 100%;
-  margin-top: 30px;
+
   background-color: #00a5bd;
 }
 .login-footer-banner-div {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  margin-top: 20px;
+  /* padding-top: 19px; */
 }
 
 /* styles/login/login.module.css */
@@ -202,6 +232,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
+  background-color: #00a5bd;
   /* margin-top: 20%; */
   /* Set background color as needed */
   /* padding: 10px; Adjust padding as needed */
@@ -266,6 +297,8 @@ body {
   color: blue;
   display: flex;
   justify-content: end;
+  text-align: end;
+  align-items: end;
   /* margin: auto; */
 }
 
@@ -378,7 +411,7 @@ body {
 }
 
 .Blockchain-tagone-div {
-  background-color: #00A5BD;
+  background-color: #00a5bd;
   display: flex;
   margin: 20px 20px;
   justify-content: center;
@@ -405,14 +438,14 @@ body {
 
 .Blockchain-tagotwo {
   text-align: center;
+  margin: 10px 20px;
   font-size: 1rem;
-
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
-  /* white-space: nowrap; */
   margin: 10px 20px;
   font-family: "Roboto", sans-serif;
   max-width: 100%;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  cursor: pointer;
 }
 
 .Blockchain-ptag-div {
@@ -435,7 +468,7 @@ body {
 }
 
 .block-ptext {
-  color: #00A5BD;
+  color: #00a5bd;
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
@@ -465,14 +498,62 @@ body {
 .block-ptwotext {
   margin-top: -10px;
 }
+.block-ptwotext-add {
+  text-decoration: underline;
+}
+.mobile-nav-div {
+  /* display: none; */
+  visibility: hidden;
+}
+.footer-privacy-div {
+  display: none;
+  visibility: hidden;
+}
 
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
   .login-full-div {
     margin-top: 10%;
     height: 20vh;
   }
+  .hrs-div {
+    z-index: -1;
+  }
+  .hrs-text {
+    color: white;
+    z-index: 1;
+    font-size: 30px;
+    margin: -3% 30% 2% 30%;
+  }
+  .hrs {
+    display: grid;
+    place-items: center;
+    border: 1px solid rgb(255, 255, 255);
+    width: 50%;
+    margin: -2% 30% 2% 25%;
+  }
+  .hrs-text {
+    color: white;
+    /* border: 1px solid white; */
+    width: 250px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin: -2% 30% 2% 30%;
+  }
   .login-banner-img-div {
     /* width: 200px; */
+  }
+  .login-banner-img {
+    width: 380px;
+    height: 360px;
+  }
+  .ad-tag {
+    text-align: justify !important;
+  }
+  .forget-text {
+    display: flex;
+    justify-content: end;
+    text-align: end;
+    align-items: end;
   }
   .certificate-full-div {
     margin-top: 5%;
@@ -514,6 +595,15 @@ body {
     padding: 30px 0 0 0;
     background-color: #00a5bd;
   }
+
+  .login-banner-inputs-div {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    /* align-items: start; */
+    text-align: justify;
+    padding: 80px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -522,14 +612,175 @@ body {
     padding: 10px; /* Example: reduce padding on smaller screens */
     margin-top: 10px; /* Adjust the margin-top for smaller screens */
   }
-}
 
+  .nav-items-div {
+    display: flex;
+    flex-direction: column;
+    padding: 17px 0 0 20px;
+  }
+  .full-navbar-div {
+    /* display: none; */
+    visibility: hidden;
+  }
+  .mobile-nav-div {
+    /* display: none; */
+    visibility: visible;
+    /* background-color: #066f69; */
+  }
+  .mob-nav {
+    background-color: #e9e9e9;
+  }
+  .nav-mob-logo-img-div {
+    display: flex;
+    justify-content: center;
+    background-color: #00a5bd;
+    gap: 20px;
+    padding: 40px 100% 10px 75%;
+    margin-top: -20px;
+    /* width: 200%; */
+  }
+  .nav-mob-logo-img {
+    width: 197px;
+    height: 46px;
+    /* margin-left: 10px; */
+  }
+  .navbar-toggler {
+    margin-left: 40px;
+  }
+  .login-footer-banner-full-div {
+    /* Adjust styles for smaller screens */
+    padding: 10px;
+    /* Example: reduce padding on smaller screens */
+    margin-top: 10px;
+    /* Adjust the margin-top for smaller screens */
+  }
+
+  .Blockchain-tagone {
+    font-size: 0.9rem;
+    padding: 5px;
+    margin: 1px 0 0 0;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .Blockchain-tagotwo {
+    text-align: center;
+    margin: 10px 20px;
+    font-size: 0.9rem;
+    margin: 10px 20px;
+    font-family: "Roboto", sans-serif;
+    max-width: 100%;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    cursor: pointer;
+    color: #494949;
+  }
+
+  .Information-full-div {
+    line-height: 1;
+    color: #494949;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .certificate-tags {
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .certificate-h5Tag {
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+  }
+
+  .footer-img-div {
+    visibility: hidden;
+  }
+
+  .footer-text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  .ffs-div {
+    margin-top: -70px;
+    background: #00a5bd;
+  }
+  .f-text {
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+  .footer-textpp {
+    visibility: hidden;
+    display: none;
+  }
+  .footer-textpps {
+    visibility: visible;
+    font-size: 0.9rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .footer-privacy-div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 0 60px 0;
+    visibility: visible;
+  }
+  .footer-privacy-div a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    margin-top: -15px;
+  }
+  .footer-privacy-text {
+    width: fit-content;
+  }
+  .mobile-nav-div {
+    border: none;
+  }
+  .redix-div {
+    padding: 20px 10px 0 10px;
+    border: none;
+    margin-top: 7%;
+  }
+
+  .redix-divs {
+    border: none;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .redix-sec-div {
+    padding: 0 10px 10px 10px;
+    border: none;
+  }
+  .redixSec-div {
+    /* padding: 20px 0 0 0; */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: none;
+  }
+
+  .block-ptext {
+    font-size: 1rem;
+    display: inline-block;
+    width: 105%;
+    /* border: 1px solid gray; */
+  }
+}
 
 .issue-box-details {
   width: 100%;
   height: 50vh;
 }
-
 
 .no-file-select-div {
   display: flex;
@@ -557,5 +808,3 @@ body {
   color: black;
   text-decoration: none;
 }
-
-

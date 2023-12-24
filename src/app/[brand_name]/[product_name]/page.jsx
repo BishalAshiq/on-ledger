@@ -18,29 +18,28 @@ import Link from "next/link";
 const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
-  const [attribute, setAttribute] = useState('');
+  const [attribute, setAttribute] = useState("");
   useEffect(() => {
+    axiosInstance
+      .get("item-details/" + param.brand_name + "/" + param.product_name)
+      .then((res) => {
+        setItem(res.data.data);
+        const parsedAttribute = JSON.parse(res.data.data.attribute);
 
-    axiosInstance.get('item-details/' + param.esg_id).then((res) => {
-      setItem(res.data.data)
-      const parsedAttribute = JSON.parse((res.data.data.attribute));
-
-      // Set the parsed object in the state
-      setAttribute(parsedAttribute);
-    })
-  }, [])
-
+        // Set the parsed object in the state
+        setAttribute(parsedAttribute);
+      });
+  }, []);
 
   const formateDate = (date) => {
-    const dateString = '2023-11-22T18:32:49.000000Z';
+    const dateString = "2023-11-22T18:32:49.000000Z";
     const dateObject = new Date(dateString);
 
     // Format the date as "d M, Y"
-    const options = { day: 'numeric', month: 'short', year: 'numeric' };
-    const formatted = dateObject.toLocaleDateString('en-US', options);
+    const options = { day: "numeric", month: "short", year: "numeric" };
+    const formatted = dateObject.toLocaleDateString("en-US", options);
     return formatted;
-  }
-
+  };
 
   return (
     <div className='individual'>
@@ -68,11 +67,11 @@ const page = () => {
                   </div>
 
                   <div className='certificate-tags-div'>
-                    <h2 className='certificate-tags'>
-                      THE BLOCKCHAIN CERTIFICATE
-                    </h2>
-                    <p className='certificate-ptag'>區塊鏈防偽證書</p>
-                    <p className='certificate-ptag'>by OneChain®</p>
+                    <h2 className='certificate-tags'>ONECHAIN®</h2>
+                    <p className='certificate-ptag'>
+                      CERTIFIED BLOCKCHAIN SEAL
+                    </p>
+                    <p className='certificate-ptag'>OneChain®區塊鏈認證封印</p>
                   </div>
 
                   <div className='certificate-des-div'>
@@ -103,7 +102,10 @@ const page = () => {
                       Blockchain Transaction Hx 區塊鏈上鏈紀錄
                     </h5>
                   </div>
-                  <Link className="no-decoration" href={`https://www.onechainscan.io/transaction/${item.block_chain_url}`} target="_blank">
+                  <Link
+                    className='no-decoration'
+                    href={`https://www.onechainscan.io/transaction/${item.block_chain_url}`}
+                    target='_blank'>
                     <div className='Blockchain-tagotwo-div'>
                       <Image src={copy.src} width={20} height={20} alt='' />
                       <h5 className='Blockchain-tagotwo'>
@@ -126,11 +128,10 @@ const page = () => {
                     <div className='Blockchain-ptag-divs'>
                       <p className='block-ptext'>{key} </p>
                       <h5 className='blockchain-h5'>
-                        {value} <br /> {" "}
+                        {value} <br />{" "}
                       </h5>
                     </div>
                   ))}
-
 
                   {/* <div className='Blockchain-ptag-divs'>
                     <p className='block-ptext'>Model No 型號</p>
@@ -213,7 +214,10 @@ const page = () => {
                     <p className='block-ptwotext'>
                       {" "}
                       2. 如有任何疑問或關切事 項，可電郵至:
-                      enquiries@certledger.io
+                      <span className='block-ptwotext-add'>
+                        {" "}
+                        enquiries@certledger.io
+                      </span>
                     </p>
                   </div>
                   {/* 
@@ -246,37 +250,54 @@ const page = () => {
             <div className='col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2'></div>
           </div>
         </div>
-
-        <div className='login-footer-banner-full-divs'>
-          <div className='row'>
+        <div className='logins-footer-div'>
+          <div className='logins-footer-full-div row'>
             <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
-            <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
-              <div className='login-footer-banner-div'>
-                <div className=''>
-                  <img className='footer-img' src={pageLogo.src} alt='' />
-                  <p className='fotter-ptext'>
-                    For inquiries or more information <br /> please contact:
-                    enquiries@esgledger.co
-                  </p>
+            <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+              <div className='footer-img-div'>
+                <img className='footer-img' src={pageLogo.src} alt='' />
+                <p className='fotter-ptext'>
+                  For inquiries or more information please contact:
+                  enquiries@esgledger.co
+                </p>
+              </div>
+            </div>
+
+            <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
+              <div className='footer-text-div'>
+                <p className='footer-textpp'>Join the Community</p>
+
+                <div className='footer-text-icon'>
+                  <img className='social-icon' src={pageicon4.src} alt='' />
+                  <img className='social-icon' src={pageicon3.src} alt='' />
+                  <img className='social-icon' src={pageicon2.src} alt='' />
+                  <img className='social-icon' src={pageicon1.src} alt='' />
                 </div>
+                <p className='footer-textpps'>Join the Community</p>
+              </div>
+            </div>
 
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+          </div>
+          <div className='ffs-div'>
+            <div className='row'>
+              <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+              <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
                 <div className=''>
-                  <p className='footer-textpp'>Join the Community</p>
-
-                  <div className='footer-text-icon'>
-                    <img className='social-icon' src={pageicon1.src} alt='' />
-                    <img className='social-icon' src={pageicon2.src} alt='' />
-                    <img className='social-icon' src={pageicon3.src} alt='' />
-                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  <hr className='f-hr' />
+                  <p className='f-text'>© 2023 OneChain Ltd.</p>
+                  <div className='footer-privacy-div'>
+                    <Link className='footer-privacy-text' href='/'>
+                      <p>Privacy Policy </p>
+                    </Link>
+                    <Link className='footer-privacy-text' href='/'>
+                      <p>Terms of Service </p>
+                    </Link>
                   </div>
                 </div>
               </div>
-              <div className=''>
-                <hr className='f-hr' />
-                <p className='f-text'>© 2023 OneChain Ltd.</p>
-              </div>
+              <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
             </div>
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3'></div>
           </div>
         </div>
 
