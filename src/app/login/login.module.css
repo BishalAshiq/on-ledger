@@ -2,13 +2,13 @@
   background-image: url("/onledbackground.png"); /* Replace with the actual path to your image */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Adjust as needed */
+  /* background-repeat: no-repeat; */
+  height: 130vh; /* Adjust as needed */
   /* overflow-y: hidden; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   position: relative;
   /* padding-top: 2%; */
 }

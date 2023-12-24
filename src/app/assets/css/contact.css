@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Inter:wght@100;300;400;500;700&family=Libre+Bodoni:ital@0;1&family=Libre+Franklin:wght@100;400;500;600;700;800&family=Montserrat:wght@100;400&family=Noto+Sans+Osmanya&family=Poppins:wght@100;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,500;1,700&display=swap");
+
+.contactUs-full-div {
+  padding: 10% 0;
+}
+.contactUs-inputs-div {
+  background-color: #00a5bd;
+  padding: 0 0 30px 0;
+}
+.contactUs-inpu-div {
+  background-color: #f8f8f8;
+  padding: 45px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.contactUs-tag {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.contactUs-des {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  font-weight: 400;
+  /* border: 1px solid gray; */
+  width: 96%;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.contact-inp {
+  width: 100%;
+  border: none;
+  background-color: white;
+  outline: none;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.contact-inp-text {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 0 0 10px;
+
+  border-radius: 5px;
+}
+
+.contact-inp-text-div {
+  padding: 2% 0;
+}
+
+.contact-inp-text {
+  width: 100%;
+  font-size: 0.8rem;
+  height: 20vh;
+  background-color: white;
+}
+
+.contact-lebel {
+  font-size: 0.8rem;
+  color: black;
+}
+
+.send-btn {
+  background-color: #00a5bd;
+  border: none;
+  font-size: 0.8rem;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.contact-getIn-touch-div {
+  padding: 45px 10px 0 10px;
+}
+
+.contact-address {
+  display: flex;
+  gap: 5px;
+  /* align-items: center; */
+  /* justify-content: ; */
+}
+
+.cont-add-icon {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cont-get-tag {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.cont-add-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  white-space: wrap;
+  margin-top: 2px;
+}
+
+.iframe-contact {
+  width: 180px;
+  height: 200px;
+}
+
+@media only screen and (max-width: 3000px) and (min-width: 1370px) {
+  .contact-address {
+    display: flex;
+    justify-content: start;
+    /* align-items: center; */
+  }
+  .contact-getIn-touch-div {
+    padding: 45px 15px 45px 0;
+  }
+  .cont-add-icon {
+    font-size: 1.1rem;
+  }
+
+  .cont-add-text {
+    margin-top: 2px;
+    font-size: 0.9rem;
+  }
+
+  .iframe-contact {
+    width: 275px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+}

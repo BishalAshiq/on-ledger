@@ -1,17 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import upFile from "../../../public/upFile.svg";
+import upFile from "../../../public/download.png";
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-
 const IssuDetails = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
-
 
   const [headers, setHeaders] = useState([]);
   const [columns, setColumns] = useState([]);
@@ -144,7 +142,6 @@ const IssuDetails = () => {
       token = localStorage.getItem("refreshToken");
     }
 
-
     axiosInstance
       .post("/delete-item", formData, {
         headers: {
@@ -177,16 +174,23 @@ const IssuDetails = () => {
       });
   };
 
-
   return (
     <div className='container-fluid mt-4'>
       <div>
-        <h6 className='uptag-text'>Upload recipients and certificates data</h6>
+        <h6 className='uptag-text'>Upload new product data</h6>
         <div className='issue-upload-full-div'>
+          <a className='csv-a' onClick={handleDownload}>
+            Download the CSV template
+          </a>
           <div className='issue-upload-div' onClick={handleFileClick}>
-            <a className='csv-a' onClick={handleDownload}>Download the CSV template</a>
-            <Image src={upFile.src} width={80} height={80} alt='' />
-            <p className='csv-textp'>Drag or upload an excel file here.</p>
+            <Image
+              className='file-image'
+              src={upFile.src}
+              width={40}
+              height={40}
+              alt=''
+            />
+            <p className='csv-textp'>Doc name</p>
             <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
             </p>
@@ -202,21 +206,20 @@ const IssuDetails = () => {
 
       <div className='mt-2'>
         <div className='previe-issue-div'>
-          <h6 className='uptag-text'>Preview</h6>
+          <h6 className='uptag-textP'>Preview</h6>
           <div className='previe-issue-text'>
             <p className='previe-issue-btn-text'>Clear</p>
             <Link href='/allitems'>
-              <p className='previe-issue-btn'> Mint</p>
+              <span className='previe-issue-btn'> Mint</span>
             </Link>
           </div>
         </div>
 
         <div>
           <div
-            className={` issue-data-table-div ${isGenerate != 2 ? "issue-box-details" : ""
-              }`}
-          >
-
+            className={` issue-data-table-div ${
+              isGenerate != 2 ? "issue-box-details" : ""
+            }`}>
             {isGenerate == 0 && (
               <div className='no-file-select-div'>
                 <p>No File Select</p>
@@ -240,7 +243,6 @@ const IssuDetails = () => {
                           <p className='table-th'> {item}</p>
                         </th>
                       ))}
-
 
                     <th className='table-navs' scope='col'>
                       <p className='table-ths'> QR code</p>

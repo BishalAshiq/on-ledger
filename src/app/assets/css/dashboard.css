@@ -8,6 +8,21 @@
   background-color: #00a5bd;
   padding: 10px 20px;
 }
+.dashnav-links {
+  display: flex;
+  gap: 60px;
+}
+.dashnav-linksa {
+  display: flex;
+  gap: 20px;
+}
+.dashnav-linksa a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 4;
+  font-family: "Roboto", sans-serif;
+}
 
 .dashnav-img {
   width: 150px;
@@ -16,14 +31,21 @@
 .uptag-text {
   color: #494949;
   font-family: "Roboto", sans-serif;
-  margin: 0 0 0 10px;
+  font-size: 0.9rem;
+  margin: 0 0 10px 10px;
+}
+.uptag-textP {
+  color: #494949;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  margin: 0 0 0 16px;
 }
 
 .dddssa {
-  height: 20vh;
+  height: 10vh;
   background-color: white;
   box-shadow: rgba(190, 190, 190, 0.45) 22px 11px 10px -17px;
-  margin: 0 0 5px 0;
+  /* margin: 0 0 5px 0; */
   border-bottom: 1px solid rgb(172, 172, 172);
 }
 
@@ -37,15 +59,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 .active-das {
-  background-color: #86c6ca;
+  background-color: #00a5bd;
+  color: white;
 }
 
 .dash-sidebar-div {
   background-color: white;
-  box-shadow: rgba(190, 190, 190, 0.45) 22px 11px 10px -17px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   height: 100vh;
   /* padding: 20px 0 0 40px; */
   display: flex;
@@ -150,37 +174,66 @@
 .tabl-icon {
   display: flex;
   gap: 10px;
+  padding: 0 20px;
   justify-content: center;
+  align-items: center;
 }
 
 .table-nav {
+  /* padding: 0 40px; */
+  width: 17%;
+  /* height: 2vh !important; */
+  /* margin: 20px 0; */
+  border-top-left-radius: 6px;
   background-color: #f4f4f4 !important;
   border-right: 1px solid rgb(165, 165, 165);
 }
 .table-navs {
+  border-top-right-radius: 6px;
+  width: 15%;
+  padding: 0 40px;
   background-color: #f4f4f4 !important;
   /* border-right: 1px solid gray; */
 
   /* width: 00px; */
 }
+.table-thead th {
+  /* height: -80px; Set your preferred height */
+}
+
+.table-thead p {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* Remove default margin on <p> inside <th> */
+}
+
+/* .table-navss {
+  background-color: #000000;
+} */
 .table-th {
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-bottom: -2px;
+  /* display: inline-block; */
+  font-size: 0.8rem;
+  /* margin-bottom: -4px; */
+  font-family: "Roboto", sans-serif;
 }
 .table-ths {
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-bottom: -2px;
+  /* margin-bottom: -2px; */
   visibility: hidden;
 }
 .th-svg-div {
   display: flex;
   justify-content: end;
+  text-align: end;
+  padding-right: 20px;
 }
 
 .pagination {
@@ -210,27 +263,32 @@
 }
 
 .data-td {
+  padding-top: 10px; /* Adjust the top padding as needed */
+  padding-bottom: 10px; /* Adjust the bottom padding as needed */
 }
 .data-tr {
+  margin-top: 0;
+  margin-bottom: 0;
   border: 1px solid rgb(235, 235, 235);
-  gap: 10px;
-
   border-radius: 5px;
-  margin: 2% 0 !important;
 }
 
 .data-th-text {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: -10px;
+  text-align: justify;
+
+  margin: 1px 20px;
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 .data-th-texts {
   display: flex;
+  text-align: justify;
   justify-content: center;
-  margin-bottom: -10px;
+  /* margin-bottom: -10px; */
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -238,6 +296,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%;
+}
+.table-thead {
+  border-radius: 15px !important;
 }
 
 /* Issue Details  */
@@ -248,22 +309,31 @@
 .issue-upload-full-div {
   border: 1px solid gray;
 }
-
-.csv-a {
-  margin-bottom: 10px;
-  color: #00b3ff;
-  font-size: 0.8rem;
-}
 .issue-upload-div {
   display: grid;
   place-items: center;
-  padding: 10px 0;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* .issue-upload-div:hover .file-image {
+  display: none; 
+} */
+
+.csv-a {
+  display: grid;
+  place-items: center;
+  margin: 10px 0 0 0;
+  color: #00b3ff;
+  font-size: 0.8rem;
 }
 
 .csv-textp {
   font-size: 0.9rem;
-  color: #8f8f8f;
+  color: #000000;
   margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 .csv-textp2 {
   color: #8f8f8f;
@@ -282,7 +352,11 @@
   justify-content: center;
   /* align-items: center; */
   text-align: center;
+  margin-top: 7px;
   gap: 20px;
+}
+.previe-issue-text a {
+  text-decoration: none;
 }
 .previe-issue-btn-text {
   color: #00a5bd;
@@ -291,7 +365,8 @@
 .previe-issue-btn {
   background-color: #00a5bd;
   color: white;
-  padding: 3px 60px;
+  text-decoration: none;
+  padding: 5px 60px;
   /* height: 5vh; */
   border-radius: 2px;
   outline: none;

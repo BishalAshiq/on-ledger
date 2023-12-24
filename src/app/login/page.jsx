@@ -12,6 +12,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "../login/login.module.css";
+import Link from "next/link";
 
 const page = () => {
   var settings = {
@@ -75,17 +76,27 @@ const page = () => {
                   />
                 </div>
                 <div className='login-banner-inputs-div'>
-                  <h6 className='ad-tag'>Admin Login</h6>
+                  <h6 className='brand-add-tag'>Admin Login</h6>
 
                   <div>
                     {" "}
                     <label for='email'>Email</label> <br />
-                    <input type='email' id='email' name='email' />
+                    <input
+                      className='admin-login-inpu'
+                      type='email'
+                      id='email'
+                      name='email'
+                    />
                   </div>
                   <div>
                     {" "}
                     <label for='email'>Password</label> <br />
-                    <input type='password' id='Password' name='password' />
+                    <input
+                      className='admin-login-inpu'
+                      type='password'
+                      id='Password'
+                      name='password'
+                    />
                   </div>
 
                   <p className='forget-text'>Forget Password</p>
@@ -111,12 +122,22 @@ const page = () => {
                   <div>
                     {" "}
                     <label for='password'>New password</label> <br />
-                    <input type='password' id='password' name='Password' />
+                    <input
+                      className='admin-login-inpu'
+                      type='password'
+                      id='password'
+                      name='Password'
+                    />
                   </div>
                   <div className='mt-2'>
                     {" "}
                     <label for='email'>Repeat your new password</label> <br />
-                    <input type='password' id='Password' name='password' />
+                    <input
+                      className='admin-login-inpu'
+                      type='password'
+                      id='Password'
+                      name='password'
+                    />
                   </div>
 
                   <div className='submit-btn-div'>
@@ -146,7 +167,7 @@ const page = () => {
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
                   For inquiries or more information <br /> please contact:
-                  enquiries@esgledger.co
+                  enquiries@oneledger.co
                 </p>
               </div>
 
@@ -154,10 +175,22 @@ const page = () => {
                 <p className='footer-textpp'>Join the Community</p>
 
                 <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon1.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
-                  <img className='social-icon' src={pageicon4.src} alt='' />
+                  <Link href='https://www.facebook.com/onechainagency'>
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </Link>
+
+                  <Link href='https://www.instagram.com/one.chain.io/'>
+                    {" "}
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                  </Link>
+                  <Link href='https://www.linkedin.com/company/77163564/admin/feed/posts/'>
+                    {" "}
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                  </Link>
+                  <Link href='https://www.youtube.com/@onechainblockchain'>
+                    {" "}
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -185,7 +218,7 @@ export default page;
               <img className='footer-img' src={pageLogo.src} alt='' />
               <p className='fotter-ptext'>
                 For inquiries or more information please contact:
-                enquiries@esgledger.co
+                enquiries@oneledger.co
               </p>
             </div>
             <div className='footer-text-div'>

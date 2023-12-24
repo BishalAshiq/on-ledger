@@ -7,6 +7,7 @@ import axiosInstance from "../../../utils/axios";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import QRCodeComponent from "./QRCodeComponent";
+import qrcode from "qrcode";
 
 const ViewAllItemsData = () => {
   const itemsPerPage = 15;
@@ -16,7 +17,16 @@ const ViewAllItemsData = () => {
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
-    axiosInstance.get('/item-list').then((res) => {
+    let token = "";
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+    axiosInstance.get("/item-list" ,{
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => {
       if (res.data.status == 200) {
         setHeaders(res.data.header);
         setColumns(res.data.data);
@@ -30,10 +40,10 @@ const ViewAllItemsData = () => {
           },
         });
         localStorage.removeItem("refreshToken");
-        router.push('/');
+        router.push("/");
       }
-    })
-  }, [])
+    });
+  }, []);
   const totalPages = Math.ceil(columns.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -44,41 +54,67 @@ const ViewAllItemsData = () => {
     setCurrentPage(newPage);
   };
 
-
   const [copySuccess, setCopySuccess] = useState(null);
 
-  const copyToClipboard = (e,copy_url) => {
+  const copyToClipboard = (e, copy_url) => {
+    e.stopPropagation();
     try {
       // Get the current URL
-      const currentURL = 'http://oneledger.co/' + copy_url;
-      console.log(copy_url);  
+      const currentURL = "http://oneledger.co/" + copy_url;
+      console.log(copy_url);
       if (navigator.clipboard) {
         navigator.clipboard.writeText(currentURL);
-        setCopySuccess('URL copied to clipboard!');
+        setCopySuccess("URL copied to clipboard!");
       } else {
         // Fallback for non-secure contexts (HTTP)
-        const textArea = document.createElement('textarea');
+        const textArea = document.createElement("textarea");
         textArea.value = currentURL;
         document.body.appendChild(textArea);
         textArea.select();
-        document.execCommand('copy');
+        document.execCommand("copy");
         document.body.removeChild(textArea);
-        setCopySuccess('URL copied to clipboard!');
-        toast.success("URL copied to clipboard!", {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
+        setCopySuccess("URL copied to clipboard!");
       }
+
+      toast.success("URL copied to clipboard!", {
+        position: "top-right",
+        style: {
+          background: "white",
+          color: "black",
+        },
+      });
     } catch (error) {
       // Handle errors
-      console.error('Error copying to clipboard:', error);
-      setCopySuccess('Copy to clipboard failed');
+      console.error("Error copying to clipboard:", error);
+      setCopySuccess("Copy to clipboard failed");
     }
   };
 
+  const initialSize = 550;
+  const handleDownload = async (e, slug) => {
+    e.stopPropagation();
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    let value = "https://oneledger.co/" + slug;
+    await qrcode.toCanvas(canvas, value, { width: initialSize });
+
+    canvas.toBlob((blob) => {
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${slug}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(url);
+    });
+  };
+  const handleRowClick = (slug) => {
+    // Handle redirection logic here
+    window.location.href = "https://oneledger.co/" + slug;
+  };
   return (
     <div className='container-fluid'>
       <div>
@@ -270,71 +306,86 @@ const ViewAllItemsData = () => {
             </tbody>
           </table> */}
           <div className='mt-4'>
-            <table className='table'>
-              <thead>
+            <table className='full-table'>
+              <thead className=''>
                 <tr>
-                  {
-                    headers.length > 0 &&
+                  {headers.length > 0 &&
                     headers.map((item) => (
                       <th className='table-nav' scope='col'>
-                        <p className='table-th'> {item}</p>
+                        <span className='table-th'> {item}</span>
                       </th>
-                    ))
-                  }
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> QR code</p>
+                    ))}
+                  <th className='table-navs' scope='col'>
+                    <span className='table-th'> QR code</span>
                   </th>
                   <th className='table-navs' scope='col'>
-                    <p className='table-th'> Action</p>
+                    <span className='table-ths'> QR code</span>
                   </th>
+
                   {/* <th className='table-navs' scope='col'>
-                    <p className='table-ths'> QR code</p>
+                    <span className='table-ths'> QR code</span>
                   </th> */}
                 </tr>
               </thead>
               <tbody>
                 {columns.length > 0 &&
                   columns.map((item, index) => (
-                    <tr key={index} className='data-tr'>
-                      {headers.length > 0 &&
-                        headers.map((head) => (
-                          <td className='data-td'>
-                            <p className='data-th-text'>{item[head]}</p>
-                          </td>
-                        ))}
-                      <td>
-                        <div className='tabl-icon'>
-                          {/* {item.img1} {item.img1} */}
-                          <QRCodeComponent value={'https://esgledger.co/' + item['slug']} size={50} slug={item['slug']} />
-
-                        </div>
-                      </td>
-                      <td>
-                        <svg onClick={(e) => copyToClipboard(e, item['slug'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
-                        </svg>
-                      </td>
-                      {/* <td>
+                    <>
+                      <tr>
+                        <td colSpan={9}></td>
+                      </tr>
+                      <tr
+                        key={index}
+                        className='data-tr'
+                        onClick={() => handleRowClick(item["slug"])}>
+                        {headers.length > 0 &&
+                          headers.map((head) => (
+                            <td className='data-td'>
+                              <span className='data-th-text'>{item[head]}</span>
+                            </td>
+                          ))}
+                        <td>
+                          <div className='tabl-icon'>
+                            {/* {item.img1} {item.img1} */}
+                            <QRCodeComponent
+                              value={"https://oneledger.co/" + item["slug"]}
+                              size={30}
+                              slug={item["slug"]}
+                            />
+                            <Image
+                              onClick={(e) => copyToClipboard(e, item["slug"])}
+                              src={Downloadicon.src}
+                              height={35}
+                              width={35}
+                              alt=''
+                            />
+                          </div>
+                        </td>
+                        {/* <td className='tabl-icon'></td> */}
+                        {/* <td>
                       <div className='tabl-icon'>
                         QR code and download icon
                       </div>
                     </td> */}
-                      <td>
-                        <div className='th-svg-div'>
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='24'
-                            height='24'
-                            fill='#155C79'
-                            className='bi bi-three-dots'
-                            viewBox='0 0 16 16'>
-                            <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
-                          </svg>
-                        </div>
-                      </td>
-                    </tr>
-                  ))
-                }
+                        <td>
+                          <div className='th-svg-div'>
+                            <svg
+                              xmlns='http://www.w3.org/2000/svg'
+                              width='24'
+                              height='24'
+                              fill='#155C79'
+                              className='bi bi-three-dots'
+                              viewBox='0 0 16 16'>
+                              <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                            </svg>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colSpan={9}></td>
+                      </tr>
+                    </>
+                  ))}
               </tbody>
             </table>
 
