@@ -144,7 +144,7 @@ const page = () => {
         return values;
       }
     } else {
-      return inputString;
+      return 'N/A';
     }
   };
 
@@ -367,12 +367,16 @@ const page = () => {
                               </div>
                             </>
                           ) : (
-                            <div className='Blockchain-ptag-divs'>
-                              <p className='block-ptext'>{key} </p>
-                              <h5 className='blockchain-h5'>
-                                {processString(attribute[key])}
-                              </h5>
-                            </div>
+
+                              <div className='Blockchain-ptag-divs'>
+                                <p className='block-ptext'>{key} </p>
+                                <h5 className='blockchain-h5'>
+                                  {processString(attribute[key])}
+                                </h5>
+                              </div>
+                             
+
+
                           )}
                         </>
                       )

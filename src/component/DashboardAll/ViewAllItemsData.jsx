@@ -348,9 +348,9 @@ const ViewAllItemsData = () => {
                           <div className='tabl-icon'>
                             {/* {item.img1} {item.img1} */}
                             <QRCodeComponent
-                              value={"https://oneledger.co/" + item["slug"]}
+                              value={"https://oneledger.co/" + item["model_no"]}
                               size={30}
-                              slug={item["slug"]}
+                              slug={item["product_name"]}
                             />
                             <Image
                               onClick={(e) => copyToClipboard(e, item["slug"])}
