@@ -85,7 +85,7 @@ const Nav = () => {
           <nav class='navbar navbar-expand-lg mob-nav fixed-top'>
             <div class=''>
               <div className='nav-mob-logo-img-div'>
-                <Link href='/'>
+                <Link href='#'>
                   <img
                     className='nav-mob-logo-img'
                     src={PageLogomob.src}
@@ -94,11 +94,11 @@ const Nav = () => {
                 </Link>
                 <button
                   className='navbar-toggler'
-                  type='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#navbarTogglerDemo02'
-                  aria-controls='navbarTogglerDemo02'
-                  aria-expanded='false'
+                  // type='button'
+                  // data-bs-toggle='collapse'
+                  // data-bs-target='#navbarTogglerDemo02'
+                  // aria-controls='navbarTogglerDemo02'
+                  // aria-expanded='false'
                   aria-label='Toggle navigation'>
                   <span className=''>
                     {" "}
@@ -117,7 +117,7 @@ const Nav = () => {
                   </span>
                 </button>
               </div>
-              <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
+              {/* <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
                 <div className='nav-items-div-mob'>
                   <Link className='contact-nav-a-mov' href='/'>
                     <p> Home</p>
@@ -141,7 +141,7 @@ const Nav = () => {
                     </span>
                   </Link>
                   <Link className='contact-nav-a-mov' href='/about'>
-                    <p> About ESGLedger</p>
+                    <p> About OneLedger</p>
                   </Link>
                   <Link className='contact-nav-a-mov' href='/'>
                     <p>Explorer</p>{" "}
@@ -178,7 +178,7 @@ const Nav = () => {
                     </span>
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
           </nav>
         </div>

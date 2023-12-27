@@ -810,9 +810,9 @@ body {
     justify-content: center;
     background-color: #00a5bd;
     gap: 20px;
-    padding: 30px 100% 10px 90%;
+    padding: 30px 100% 10px 83%;
     margin-top: -20px;
-    /* width: 200%; */
+    width: 100%;
   }
   .nav-mob-logo-img {
     width: 188px;
@@ -991,6 +991,7 @@ body {
 
   .mob-certificate-ptag {
     font-size: 0.7rem;
+    margin: 2px 0;
     font-weight: 700;
     display: inline-block;
     font-family: "Roboto", sans-serif;
