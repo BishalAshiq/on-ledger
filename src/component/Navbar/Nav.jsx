@@ -102,7 +102,7 @@ const Nav = () => {
                   aria-label='Toggle navigation'>
                   <span className=''>
                     {" "}
-                    <svg
+                    {/* <svg
                       xmlns='http://www.w3.org/2000/svg'
                       width='26'
                       height='26'
@@ -113,7 +113,13 @@ const Nav = () => {
                         fill-rule='evenodd'
                         d='M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5'
                       />
+                    </svg> */}
+                    <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1H22.6176" stroke="white" stroke-linecap="round" />
+                      <path d="M1 11.5H22.6176" stroke="white" stroke-linecap="round" />
+                      <path d="M1 22H22.6176" stroke="white" stroke-linecap="round" />
                     </svg>
+
                   </span>
                 </button>
               </div>

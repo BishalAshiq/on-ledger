@@ -822,6 +822,7 @@ body {
   .navbar-toggler {
     margin-left: 20px;
     border: none !important;
+    margin-left:30px ;
   }
   .navbar-toggler-color {
     color: white !important;
@@ -983,14 +984,14 @@ body {
   }
 
   .mob-certificate-tags {
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 700;
     display: inline-block;
     font-family: "Roboto", sans-serif;
   }
 
   .mob-certificate-ptag {
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin: 2px 0;
     font-weight: 700;
     display: inline-block;
