@@ -120,7 +120,7 @@ const page = () => {
       </div>
       <div className='login-full-div'>
         {/* <div className='hr' /> */}
-        <Slider {...settings} className='slider-login'>
+        <div className='slider-login'>
           <div>
             <div className=''>
               <div className=' login-banner-img-input-div'>
@@ -131,24 +131,30 @@ const page = () => {
                     alt=''
                   />
                 </div>
-                <div className='login-brand-inputs-div'>
-                  <h6 className='brand-add-tag'>Brand Login</h6>
-                  <form className='' onSubmit={handleLogin} method='post'>
+                <div className='login-banner-inputs-div'>
+                  <h6 className='heading-tag'>Brands Login</h6>
+                  <form
+                    className='content'
+                    onSubmit={handleLogin}
+                    method='post'>
                     <div>
                       {" "}
                       <label for='email'>Email</label> <br />
                       <input
-                        className='admin-login-inpu'
+                        className='brand-inp'
                         type='email'
                         id='email'
                         name='email'
                         onChange={handleFormChange}
                         value={formData.email}
                         required
-                      />{" "}
+                      />
+                    </div>
+                    <div>
+                      {" "}
                       <label for='email'>Password</label> <br />
                       <input
-                        className='admin-login-inpu'
+                        className='brand-inp'
                         type='password'
                         id='Password'
                         name='password'
@@ -161,14 +167,16 @@ const page = () => {
                     <p className='forget-text'>Forget Password</p>
 
                     <div className='submit-btn-div'>
-                      <button className='submit-btn'>Log in</button>
+                      <button type='submit' className='submit-btn'>
+                        Log in
+                      </button>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <div className=''>
               <hr className='hr' />
               <div className=' login-banner-img-input-div'>
@@ -217,7 +225,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div>
             <div className='fist-slider-text-div'>
@@ -226,7 +234,7 @@ const page = () => {
               </h1> */}
             </div>
           </div>
-        </Slider>
+        </div>
         {/* <div className='hrs' /> */}
 
         {/* <div className='pioneeringtext'>

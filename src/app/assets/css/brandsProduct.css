@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Inter:wght@100;300;400;500;700&family=Libre+Bodoni:ital@0;1&family=Libre+Franklin:wght@100;400;500;600;700;800&family=Montserrat:wght@100;400&family=Noto+Sans+Osmanya&family=Poppins:wght@100;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,500;1,700&display=swap");
+
+.full-single-product {
+  /* border: 1px solid gray; */
+  padding: 6% 7% 4% 11%;
+}
+
+.single-products-full-div {
+  margin-top: 5%;
+}
+
+.single-product-checkbox-div {
+  display: flex;
+  gap: 10px;
+}
+
+.single-checkbox-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.single-products-div {
+  border-top: 0.5px solid #86c6ca;
+  border-bottom: -0.5px solid #86c6ca !important;
+  /* padding: -7px; */
+}
+
+.tag-brands {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+}
+
+.tag-kinbo {
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+}
+
+.qr-download-div {
+  display: flex;
+  align-items: center;
+  padding: 70px 0 0 30px;
+}
+
+.single-product-qr-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.tag-kinbo-text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.single-hr {
+  color: #86c6ca;
+}
+
+/* Individual Brands  */
+
+.individual-product-div {
+  padding: 6% 10%;
+}
+
+.indi-brand-head-tags {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #88c9d7;
+  margin: 0 0 60px 0;
+}
+
+.kibo-upload-icon {
+  /* margin-top: 25px; */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.kibo-imgs-div {
+}
+
+.kibo-imgs {
+  width: 100%;
+  /* height: 55px; */
+  object-fit: cover;
+}
+
+.kibo-upload {
+  color: #00b3ff;
+  font-weight: 600;
+  /* margin-left: 10px; */
+}
+
+.kibo-inputs {
+  width: 100%;
+  outline: none;
+  margin-top: 7px;
+  font-size: 0.8rem;
+}
+
+.number-of-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.edit-delete-div {
+  display: flex;
+  gap: 10px;
+}
+
+.indi-brand-ico-tag {
+  display: flex;
+  gap: 10px;
+}
+
+.indu-brand-edit {
+  color: #00b3ff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.indu-brand-edits {
+  color: #ff0000;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.Modal-header-div {
+  display: flex;
+
+  padding: 50px 20px;
+  color: white;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.yes-modal-btn {
+  background-color: #86c6ca;
+  color: white;
+  padding: 2px 30px;
+  border: 1px solid #86c6ca;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  font-weight: 300;
+  outline: none;
+}
+
+.no-modal-btn {
+  background-color: #066f69;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  color: white;
+  padding: 2px 30px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-weight: 300;
+  outline: none;
+}
+
+.created-modal-save-btn-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-word {
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.indi-brand-hr {
+  padding-top: -30%;
+  color: #00b3ff;
+}
+
+.button-of-div {
+  display: flex;
+  justify-content: end;
+}
+
+.reset-btn {
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  background-color: #066f69;
+  color: white;
+  font-family: "Roboto", sans-serif;
+
+  padding: 5px 40px;
+}
+
+.accordion-item {
+  background-color: #066f69 !important;
+  color: white !important;
+}
+
+.accordion-body {
+  background-color: #e9ebe6 !important;
+  color: rgb(15, 14, 14) !important;
+  border: none !important;
+}
+
+.uppor {
+}
+
+.accor-tag-div {
+  display: flex;
+  justify-content: space-between;
+
+  /* background-color: #066f69 !important;
+  color: white !important; */
+}
+
+.accordion-header {
+  margin-left: 38%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.accordion-button {
+  /* padding: 0 10px; */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  background-color: #066f69 !important;
+  color: white !important;
+  width: 100% !important;
+  /* Ensure the button takes up the full width */
+  /* border: 1px solid rgb(255, 255, 255); */
+}
+
+.accordion-button::after {
+  visibility: hidden;
+}
+.accordion-button:focus {
+  outline: none;
+}
+
+.chevron-icon {
+  margin: 12px 10px 0 0;
+  cursor: pointer;
+}
+
+.created-modal-success {
+  color: #86c6ca;
+}
+/* #chevron-btn-down {
+  margin-top: 20px !important;
+} */
+@media only screen and (max-width: 3000px) and (min-width: 1370px) {
+  .accordion-button::after {
+    visibility: hidden;
+  }
+  .accordion-button:focus {
+    outline: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .accordion-button {
+    /* padding: 0 10px; */
+
+    /* Ensure the button takes up the full width */
+    border: none !important;
+  }
+
+  .accordion-button:focus {
+    outline: none !important;
+  }
+  .chevron-icon {
+    margin: 12px 10px 0 0;
+    cursor: pointer;
+  }
+}
+
+/* Macbook PRo  */
+@media (max-width: 1680px) and (min-width: 1368px) {
+  /* .fist-slider-text-tag {
+    font-size: 55px;
+    margin-top: 50px;
+    line-height: 1.1;
+  } */
+}

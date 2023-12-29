@@ -3,6 +3,7 @@ import DashnavLogo from "../../../public/pageLogomd.png";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Link from "next/link";
+import "./dashnav.css";
 
 const dashNav = () => {
   const router = useRouter();
@@ -17,7 +18,6 @@ const dashNav = () => {
     Cookies.remove("refreshToken");
     router.push("/");
   };
-
   return (
     <div>
       <div className='dashnav-div'>
@@ -27,63 +27,7 @@ const dashNav = () => {
           </Link>
         </div>
 
-        <div className='dashnav-links'>
-          <div className='dashnav-linksa'>
-            <Link href='/'>Home </Link>
-            <Link href='/brands/login' className='contact-nav-a'>
-              {" "}
-              Brands{" "}
-              <span>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='10'
-                  height='10'
-                  fill='currentColor'
-                  class='bi bi-chevron-down'
-                  viewBox='0 0 16 16'>
-                  <path
-                    fill-rule='evenodd'
-                    d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
-                  />
-                </svg>
-              </span>
-            </Link>
-            <Link href='/'>About OneLedger</Link>
-            <Link href='/' className='contact-nav-a'>
-              Explorer{" "}
-              <span>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='10'
-                  height='10'
-                  fill='currentColor'
-                  class='bi bi-chevron-down'
-                  viewBox='0 0 16 16'>
-                  <path
-                    fill-rule='evenodd'
-                    d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
-                  />
-                </svg>
-              </span>
-            </Link>
-            <Link className='contact-nav-a' href='/'>
-              Contact
-              <span>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='10'
-                  height='10'
-                  fill='currentColor'
-                  class='bi bi-chevron-down'
-                  viewBox='0 0 16 16'>
-                  <path
-                    fill-rule='evenodd'
-                    d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
-                  />
-                </svg>
-              </span>
-            </Link>
-          </div>
+        <div className='logout-btn'>
           <svg
             onClick={handleLogout}
             xmlns='http://www.w3.org/2000/svg'
