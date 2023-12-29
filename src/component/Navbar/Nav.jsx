@@ -197,11 +197,17 @@ const Nav = () => {
                 <Link className='contact-nav-a-mov' href='#'>
                   <p> Home</p>
                 </Link>
-                <Link className='contact-nav-a-mov' href='#'>
-                  {" "}
-                  <p>Brands</p>{" "}
-                  <span>
-                    <svg
+                <button
+                  className='navbar-toggler'
+                  // type='button'
+                  // data-bs-toggle='collapse'
+                  // data-bs-target='#navbarTogglerDemo02'
+                  // aria-controls='navbarTogglerDemo02'
+                  // aria-expanded='false'
+                  aria-label='Toggle navigation'>
+                  <span className=''>
+                    {" "}
+                    {/* <svg
                       xmlns='http://www.w3.org/2000/svg'
                       width='10'
                       height='10'
@@ -212,7 +218,13 @@ const Nav = () => {
                         fill-rule='evenodd'
                         d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
                       />
+                    </svg> */}
+                    <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1H22.6176" stroke="white" stroke-linecap="round" />
+                      <path d="M1 11.5H22.6176" stroke="white" stroke-linecap="round" />
+                      <path d="M1 22H22.6176" stroke="white" stroke-linecap="round" />
                     </svg>
+
                   </span>
                 </Link>
                 <Link className='contact-nav-a-mov' href='#'>

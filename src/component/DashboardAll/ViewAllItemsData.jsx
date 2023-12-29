@@ -348,7 +348,7 @@ const ViewAllItemsData = () => {
                           <div className='tabl-icon'>
                             {/* {item.img1} {item.img1} */}
                             <QRCodeComponent
-                              value={"https://oneledger.co/" + item["model_no"]}
+                              value={"https://oneledger.co/" + item["slug"]}
                               size={30}
                               slug={item["product_name"]}
                             />
