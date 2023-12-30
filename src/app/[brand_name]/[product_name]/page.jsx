@@ -15,6 +15,10 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import axiosInstance from "../../../../utils/axios";
 import Link from "next/link";
+import NoImage from "../../../../public/no-image.jpg";
+
+
+
 const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
@@ -218,7 +222,14 @@ const page = () => {
                   </div>
 
                   <div className='certificate-imageSec-div'>
-                    <img src={redix.src} alt='' />
+                    {
+                      item?.brand_details?.logo != null ?
+                        <img src={`${base_url}/uploads/${item?.brand_details?.logo}`} className="certificate-image-img" />
+                        :
+                        <>
+                          <img src={NoImage.src} alt='' />
+                        </>
+                    }
                   </div>
                 </div>
               </div>
@@ -368,13 +379,13 @@ const page = () => {
                             </>
                           ) : (
 
-                              <div className='Blockchain-ptag-divs'>
-                                <p className='block-ptext'>{key} </p>
-                                <h5 className='blockchain-h5'>
-                                  {processString(attribute[key])}
-                                </h5>
-                              </div>
-                             
+                            <div className='Blockchain-ptag-divs'>
+                              <p className='block-ptext'>{key} </p>
+                              <h5 className='blockchain-h5'>
+                                {processString(attribute[key])}
+                              </h5>
+                            </div>
+
 
 
                           )}

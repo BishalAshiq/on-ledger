@@ -5,3 +5,6 @@ export const isAuthenticated = () => {
     }
     return false;
 };
+
+
+export const base_url = "https://oneledger.co:84/";

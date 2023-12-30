@@ -197,6 +197,7 @@ const Nav = () => {
                 <Link className='contact-nav-a-mov' href='#'>
                   <p> Home</p>
                 </Link>
+                <Link className='contact-nav-a-mov' href='#'>
                 <button
                   className='navbar-toggler'
                   // type='button'
@@ -226,6 +227,7 @@ const Nav = () => {
                     </svg>
 
                   </span>
+                  </button>
                 </Link>
                 <Link className='contact-nav-a-mov' href='#'>
                   <p> About ESGLedger</p>
