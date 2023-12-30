@@ -423,6 +423,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 5px 0 25px 0;
+  height: 120px;
 }
 
 .certificate-tags-div {
