@@ -21,28 +21,30 @@ const ViewAllItemsData = () => {
     if (typeof window !== "undefined") {
       token = localStorage.getItem("refreshToken");
     }
-    axiosInstance.get("/item-list" ,{
-      headers: {
-        "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((res) => {
-      if (res.data.status == 200) {
-        setHeaders(res.data.header);
-        setColumns(res.data.data);
-      }
-      if (res.data.status == 401) {
-        toast.error(res.data.message, {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-        localStorage.removeItem("refreshToken");
-        router.push("/");
-      }
-    });
+    axiosInstance
+      .get("/item-list", {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.status == 200) {
+          setHeaders(res.data.header);
+          setColumns(res.data.data);
+        }
+        if (res.data.status == 401) {
+          toast.error(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+          localStorage.removeItem("refreshToken");
+          router.push("/");
+        }
+      });
   }, []);
   const totalPages = Math.ceil(columns.length / itemsPerPage);
 

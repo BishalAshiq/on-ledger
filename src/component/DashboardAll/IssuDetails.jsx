@@ -179,7 +179,7 @@ const IssuDetails = () => {
       <div>
         <h6 className='uptag-text'>Upload new product data</h6>
         <div className='issue-upload-full-div'>
-          <a className='csv-a' onClick={handleDownload}>
+          <a className='csvs-a' onClick={handleDownload}>
             Download the CSV template
           </a>
           <div className='issue-upload-div' onClick={handleFileClick}>

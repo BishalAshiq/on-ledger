@@ -26,3 +26,35 @@
   position: relative;
   /* padding-top: 2%; */
 }
+
+@media (max-width: 768px) {
+  .background-img {
+    background-image: url("/onback-mob.png"); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    height: 130vh; /* Adjust as needed */
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+    position: relative;
+    /* padding-top: 2%; */
+  }
+
+  .background-imgs {
+    background-image: url("/onback-mob.png"); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Adjust as needed */
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    /* padding-top: 2%; */
+  }
+}

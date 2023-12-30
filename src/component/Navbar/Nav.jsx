@@ -5,7 +5,7 @@ import PageLogo from "../../../public/pageLogonav.png";
 import PageLogomob from "../../../public/pageLogomd.png";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import companyLogo from "../../../public/pageLogonavas.png";
+import companyLogo from "../../../public/pageLogonav.png";
 import companyLogo1 from "../../../public/pageLogomd.png";
 
 const Nav = () => {
@@ -28,15 +28,20 @@ const Nav = () => {
   }, [router]);
 
   useEffect(() => {
-    switch (router.pathname) {
+    switch (location.pathname) {
       case "/landingPage":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
         setDropdownColor("");
         setButtonColor("black");
         break;
-
-      case "/login":
+      case "/admin":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
+      case "/":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
         setDropdownColor("");
@@ -67,6 +72,7 @@ const Nav = () => {
         setButtonColor("black");
         break;
     }
+    console.log("Navbar Color:", navbarColor);
   }, [router.pathname]);
 
   return (
@@ -85,7 +91,7 @@ const Nav = () => {
           <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 '>
             <div>
               <div className='nav-items-div'>
-                <Link href='/'>Home</Link>
+                <Link href='/login'>Home</Link>
                 <Link className='contact-nav-a' href='/brands/login'>
                   {" "}
                   <p>Brands</p>{" "}
@@ -194,45 +200,16 @@ const Nav = () => {
             </div>
             <div className='collapse navbar-collapse' id='navbarTogglerDemo01'>
               <div className='nav-items-div-mob'>
-                <Link className='contact-nav-a-mov' href='#'>
+                <Link className='contact-nav-a-mov' href='/landingPage'>
                   <p> Home</p>
                 </Link>
-                <Link className='contact-nav-a-mov' href='#'>
-                <button
-                  className='navbar-toggler'
-                  // type='button'
-                  // data-bs-toggle='collapse'
-                  // data-bs-target='#navbarTogglerDemo02'
-                  // aria-controls='navbarTogglerDemo02'
-                  // aria-expanded='false'
-                  aria-label='Toggle navigation'>
-                  <span className=''>
-                    {" "}
-                    {/* <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='10'
-                      height='10'
-                      fill='currentColor'
-                      class='bi bi-chevron-down'
-                      viewBox='0 0 16 16'>
-                      <path
-                        fill-rule='evenodd'
-                        d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
-                      />
-                    </svg> */}
-                    <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1H22.6176" stroke="white" stroke-linecap="round" />
-                      <path d="M1 11.5H22.6176" stroke="white" stroke-linecap="round" />
-                      <path d="M1 22H22.6176" stroke="white" stroke-linecap="round" />
-                    </svg>
-
-                  </span>
-                  </button>
+                <Link className='contact-nav-a-mov' href='/brands/login'>
+                  <p>Brands</p>
                 </Link>
-                <Link className='contact-nav-a-mov' href='#'>
+                <Link className='contact-nav-a-mov' href='/about'>
                   <p> About ESGLedger</p>
                 </Link>
-                <Link className='contact-nav-a-mov' href='#'>
+                <Link className='contact-nav-a-mov' href='/'>
                   <p>Explorer</p>{" "}
                   <span>
                     <svg
@@ -249,7 +226,7 @@ const Nav = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link className='contact-nav-a-mov' href='#'>
+                <Link className='contact-nav-a-mov' href='/contact'>
                   <p>Contact</p>{" "}
                   <span>
                     <svg

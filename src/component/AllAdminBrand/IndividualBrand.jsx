@@ -1,18 +1,18 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Kibo from "../../../public/kibo.png";
 import BackIcon from "../../../public/back.svg";
 import ProCopy from "../../../public/procopy.svg";
 import Image from "next/image";
 import IndiEditBrands from "./IndiEditBrands";
 import axiosInstance from "../../../utils/axios";
-import {base_url} from "../../../utils/auth";
-import {useRouter} from "next/navigation";
-import {toast} from "react-toastify";
+import { base_url } from "../../../utils/auth";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 
-const IndividualBrand = ({brandId}) => {
+const IndividualBrand = ({ brandId }) => {
   const router = useRouter();
   const [showBrandSingleProducts, setShowBrandSingleProducts] = useState(false);
   const handleThreeDotsClick = () => {
@@ -100,7 +100,7 @@ const IndividualBrand = ({brandId}) => {
   }, []);
 
   const handleFormData = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
 
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -199,16 +199,15 @@ const IndividualBrand = ({brandId}) => {
     <div>
       {!showBrandSingleProducts ? (
         <div>
-          <div className="individual-product-div">
-            <div className="row">
-              <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <div className="indi-brand-head-tags">
-                  <div className="indi-brand-ico-tag">
-                    <Image src={BackIcon.src} width={20} height={20} alt="" />
+          <div className='individual-product-div'>
+            <div className='row'>
+              <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+                <div className='indi-brand-head-tags'>
+                  <div className='indi-brand-ico-tag'>
+                    <Image src={BackIcon.src} width={20} height={20} alt='' />
                     <label
-                      className="form-check-label single-checkbox-text"
-                      for="flexCheckDefault"
-                    >
+                      className='form-check-label single-checkbox-text'
+                      for='flexCheckDefault'>
                       View all brands - brand details
                     </label>
                     {/* <label
@@ -217,16 +216,16 @@ const IndividualBrand = ({brandId}) => {
                   Account
                 </label> */}
                   </div>
-                  <div className="edit-delete-div">
+                  <div className='edit-delete-div'>
                     <p
-                      className="indu-brand-edit"
+                      className='indu-brand-edit'
                       onClick={handleOpen}
                       // onClick={handleFormEdit}
                     >
                       Save
                     </p>
                     <p
-                      className="indu-brand-edits"
+                      className='indu-brand-edits'
                       onClick={handleOpenD}
                       // onClick={hanleBrandDelete}
                     >
@@ -237,14 +236,13 @@ const IndividualBrand = ({brandId}) => {
                   <Modal
                     open={open}
                     onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                  >
+                    aria-labelledby='modal-modal-title'
+                    aria-describedby='modal-modal-description'>
                     <Box sx={style}>
-                      <div className="Modal-header-div">
+                      <div className='Modal-header-div'>
                         {success == true ? (
                           <>
-                            <p className="created-modal-success ">
+                            <p className='created-modal-success '>
                               {" "}
                               Changes have been saved successfully!
                             </p>
@@ -252,17 +250,15 @@ const IndividualBrand = ({brandId}) => {
                         ) : (
                           <>
                             <p>Do you wish to save the changes?</p>
-                            <div className="created-modal-save-btn-div">
+                            <div className='created-modal-save-btn-div'>
                               <button
-                                className="yes-modal-btn"
-                                onClick={handleFormEdit}
-                              >
+                                className='yes-modal-btn'
+                                onClick={handleFormEdit}>
                                 Yes
                               </button>
                               <button
-                                className="no-modal-btn"
-                                onClick={handleClose}
-                              >
+                                className='no-modal-btn'
+                                onClick={handleClose}>
                                 No
                               </button>
                             </div>
@@ -284,14 +280,13 @@ const IndividualBrand = ({brandId}) => {
                   <Modal
                     open={openD}
                     onClose={handleCloseD}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                  >
+                    aria-labelledby='modal-modal-title'
+                    aria-describedby='modal-modal-description'>
                     <Box sx={styleDelete}>
-                      <div className="Modal-header-div">
+                      <div className='Modal-header-div'>
                         {success == true ? (
                           <>
-                            <p className="created-modal-success ">
+                            <p className='created-modal-success '>
                               {" "}
                               Brand have been deleted successfully!
                             </p>
@@ -302,17 +297,15 @@ const IndividualBrand = ({brandId}) => {
                               Are you sure you want to delete this brand
                               account?{" "}
                             </p>
-                            <div className="created-modal-save-btn-div">
+                            <div className='created-modal-save-btn-div'>
                               <button
-                                className="yes-modal-btn"
-                                onClick={handleCloseD}
-                              >
+                                className='yes-modal-btn'
+                                onClick={handleCloseD}>
                                 Cancel
                               </button>
                               <button
-                                className="no-modal-btn"
-                                onClick={hanleBrandDelete}
-                              >
+                                className='no-modal-btn'
+                                onClick={hanleBrandDelete}>
                                 Delete
                               </button>
                             </div>
@@ -334,18 +327,18 @@ const IndividualBrand = ({brandId}) => {
                 </div>
               </div>
 
-              <div className="container">
-                <div className="mb-2 row">
-                  <div className="col-12 col-md-2 ">
-                    <div className="kibo-img-div">
-                      <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
-                        <div className="kibo-img-div">
+              <div className='container'>
+                <div className='mb-2 row'>
+                  <div className='col-12 col-md-2 '>
+                    <div className='kibo-img-div'>
+                      <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
+                        <div className='kibo-img-div'>
                           {formData.logo == "" ? (
                             <></>
                           ) : (
                             <img
                               src={`${base_url}/uploads/${formData.logo}`}
-                              className="kibo-img"
+                              className='kibo-img'
                               height={50}
                               width={70}
                             />
@@ -354,16 +347,18 @@ const IndividualBrand = ({brandId}) => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-12 col-md-10">
-                    <input
-                      className="kibo-inputs"
-                      type="text"
-                      placeholder="KIBO"
-                      // value={formData.name}
-                      name="name"
-                      onChange={handleFormData}
-                      required
-                    />
+                  <div className='col-12 col-md-10'>
+                    <div className='kibo-inputs-div mt-4'>
+                      <input
+                        className='kibo-inputs'
+                        type='text'
+                        placeholder='KIBO'
+                        // value={formData.name}
+                        name='name'
+                        onChange={handleFormData}
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -386,21 +381,21 @@ const IndividualBrand = ({brandId}) => {
                   value: formData.website,
                 },
               ].map((each, index) => (
-                <div key={index} className="container">
-                  <div className=" row">
-                    <div className="col-12 col-md-2 ">
-                      <div className="kibo-img-div">
-                        <p className="contact-word mb-0 ">{each.title}</p>
+                <div key={index} className='container'>
+                  <div className=' row'>
+                    <div className='col-12 col-md-2 '>
+                      <div className='kibo-img-div'>
+                        <p className='contact-word mb-0 '>{each.title}</p>
                       </div>
                     </div>
 
-                    <div className="col-12 col-md-10">
+                    <div className='col-12 col-md-10'>
                       <input
-                        className="kibo-inputs"
-                        type="text"
-                        placeholder="KIBO"
+                        className='kibo-inputs'
+                        type='text'
+                        placeholder='KIBO'
                         value={each.value}
-                        name="name"
+                        name='name'
                         onChange={handleFormData}
                         required
                       />
@@ -409,14 +404,14 @@ const IndividualBrand = ({brandId}) => {
                 </div>
               ))}
 
-              <div className="number-of-div d-flex justify-content-between mt-4 ">
-                <div className="d-flex justify-content-between ">
-                  <p className="font-weight-bold">Number of Products</p>
-                  <p className="pl-4">{formData.brands_item_count}</p>
+              <div className='number-of-div d-flex justify-content-between mt-4 '>
+                <div className='d-flex justify-content-between '>
+                  <p className='font-weight-bold'>Number of Products</p>
+                  <p className='pl-4'>{formData.brands_item_count}</p>
                 </div>
-                <p className="indu-brand-edit">View all</p>
+                <p className='indu-brand-edit'>View all</p>
               </div>
-              <hr className="indi-brand-hr" />
+              <hr className='indi-brand-hr' />
               {/* <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
               <p className='contact-word'>Number of items</p>
@@ -429,12 +424,12 @@ const IndividualBrand = ({brandId}) => {
             </div>
           </div> */}
               {/* <hr className='indi-brand-hr' /> */}
-              <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <div className="button-of-div">
-                  <button className="reset-btn d-md-none w-100 mt-3">
+              <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+                <div className='button-of-div'>
+                  <button className='reset-btn d-md-none w-100 mt-3'>
                     Reset password
                   </button>
-                  <button className="reset-btn d-none d-md-block mt-3">
+                  <button className='reset-btn d-none d-md-block mt-3'>
                     Reset password
                   </button>
                 </div>
