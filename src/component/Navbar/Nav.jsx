@@ -18,17 +18,17 @@ const Nav = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (location.pathname === "/landingPage") {
+    if (router.pathname === "/landingPage") {
       setLogoUrl(companyLogo);
-    } else if (location.pathname === "/") {
+    } else if (router.pathname === "/") {
       setLogoUrl(companyLogo1);
     } else {
       setLogoUrl(companyLogo);
     }
-  }, [location]);
+  }, [router]);
 
   useEffect(() => {
-    switch (location.pathname) {
+    switch (router.pathname) {
       case "/landingPage":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
@@ -67,7 +67,7 @@ const Nav = () => {
         setButtonColor("black");
         break;
     }
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   return (
     <div>
