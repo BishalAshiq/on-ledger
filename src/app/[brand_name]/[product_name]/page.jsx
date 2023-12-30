@@ -16,6 +16,7 @@ import { useParams } from "next/navigation";
 import axiosInstance from "../../../../utils/axios";
 import Link from "next/link";
 import NoImage from "../../../../public/no-image.jpg";
+import { base_url } from "../../../../utils/auth"
 
 
 
