@@ -13,7 +13,10 @@
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
-
+.slider-login {
+  display: none;
+  visibility: hidden;
+}
 .contactUs-tag {
   font-family: "Roboto", sans-serif;
   color: black;
@@ -67,7 +70,7 @@
 }
 
 .send-btn {
-  background-color: #86c6ca;
+  background-color: #00a5bd;
   border: none;
   font-size: 0.8rem;
   color: white;
@@ -149,6 +152,11 @@
   }
   .contactUs-inpu-div {
     border-radius: 3px !important;
+    padding: 20px;
+  }
+  .slider-login {
+    display: block;
+    visibility: visible;
   }
   .contactUs-full-div {
     padding: 0 0 0 0;
@@ -231,7 +239,7 @@
   }
   .send-btn {
     border-radius: 0 !important;
-    background: #066f69;
+    background: #00a5bd;
     width: 158px;
     height: 45px;
     margin: 10px 0 0 0;

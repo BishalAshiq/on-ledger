@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../app/assets/css/main.css";
 import "../app/assets/css/contact.css";
+import "../app/assets/css/about.css";
 import "../app/assets/css/dashboard.css";
 import "../app/assets/css/brandsProduct.css";
 // import "../app/assets/css/testAbout.css";

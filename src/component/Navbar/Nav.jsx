@@ -29,6 +29,12 @@ const Nav = () => {
 
   useEffect(() => {
     switch (location.pathname) {
+      case "/":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
       case "/landingPage":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
@@ -41,7 +47,7 @@ const Nav = () => {
         setDropdownColor("");
         setButtonColor("black");
         break;
-      case "/":
+      case "/login":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
         setDropdownColor("");
@@ -200,7 +206,7 @@ const Nav = () => {
             </div>
             <div className='collapse navbar-collapse' id='navbarTogglerDemo01'>
               <div className='nav-items-div-mob'>
-                <Link className='contact-nav-a-mov' href='/landingPage'>
+                <Link className='contact-nav-a-mov' href='/login'>
                   <p> Home</p>
                 </Link>
                 <Link className='contact-nav-a-mov' href='/brands/login'>
@@ -226,7 +232,7 @@ const Nav = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link className='contact-nav-a-mov' href='/contact'>
+                <Link className='contact-nav-a-mov' href='/contactUs'>
                   <p>Contact</p>{" "}
                   <span>
                     <svg

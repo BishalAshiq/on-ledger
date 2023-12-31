@@ -22,23 +22,28 @@ const page = () => {
       <div>
         <Nav />
       </div>
-      {/* <div className='login-full-div'>
-        <div className='hr' />
+      <div className='login-full-div'>
+        {/* <div className='hr' /> */}
         <div className='slider-login'>
           <div>
-            <div className='fist-slider-text-div'>
-              <h1 className='fist-slider-text-tag'>
-                Unlocking ESG Trust and Transparency with Blockchain Integrity
-              </h1>
+            <div>
+              <div className='fist-slider-text-div'>
+                <h1 className='fist-slider-text-tag'>
+                  Unlocking ESG Trust and Transparency with Blockchain Integrity
+                </h1>
+              </div>
             </div>
           </div>
-        </div>
-        <div className='hrs' />
+          <div className='hrs' />
 
-        <div className='pioneeringtext'>
-          <p>A pioneering blockchain-driven platform under OneChain®</p>
+          <div className='pioneeringtext'>
+            <p>
+              A pioneering blockchain-driven traceability
+              platform under OneChain®
+            </p>
+          </div>
         </div>
-      </div> */}
+      </div>
 
       <div className='login-footer-banner-full-div '>
         <div className='row '>
