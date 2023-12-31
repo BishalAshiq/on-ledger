@@ -24,7 +24,7 @@ const page = () => {
       </div>
       <div className='login-full-div'>
         {/* <div className='hr' /> */}
-        <div className='slider-login'>
+        <div className='sliders-login'>
           <div>
             <div>
               <div className='fist-slider-text-div'>
