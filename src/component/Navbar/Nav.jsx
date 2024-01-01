@@ -77,12 +77,14 @@ const Nav = () => {
         setDropdownColor("");
         setButtonColor("black");
         break;
-      case "/planetplus/104-2023":
+      default:
         setNavbarColor("white");
         setNavbarTextColor("#404040");
         setDropdownColor("");
         setButtonColor("white");
         break;
+
+
     }
     console.log("Navbar Color:", navbarColor);
   }, [router.pathname]);
