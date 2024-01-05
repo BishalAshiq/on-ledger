@@ -78,13 +78,28 @@ const Nav = () => {
         setButtonColor("#066F69");
         setborderColor("#066F69");
         break;
+<<<<<<< HEAD
       default:
         setLogoUrl(PageLogomob);
         setNavbarColor("#066F69");
         setNavbarTextColor("white");
         setDropdownColor("#066F69");
+=======
+      case "/brands/dashboard":
+        setNavbarColor("black");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
+      default:
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+>>>>>>> b515c46dea75f4d83efa0d9e374ce2bfa88679a5
         setButtonColor("white");
         break;
+
+
     }
   }, [router.pathname]);
 
