@@ -483,7 +483,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  line-height: 0.7;
+  line-height: 0.8;
   align-items: center;
   text-align: center;
   margin: 10px 0;
@@ -525,7 +525,7 @@ body {
 }
 
 .Blockchain-tagone-div {
-  background-color: #066f69;
+  background-color: #00a5bd;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1000,6 +1000,16 @@ body {
 
     /* margin: 0 0 0 40px; */
   }
+  .landing-page-login-full-div {
+    display: block;
+    visibility: visible;
+    margin: 20% 0 110% 0;
+  }
+  .mob-hrs {
+    display: block;
+    visibility: visible;
+    /* margin: 0 0 30% 0; */
+  }
 
   .Toastify__toast {
     border-radius: 8px;
@@ -1065,7 +1075,7 @@ body {
     /* height: 5vh; */
     border: 2px solid #ffffff;
     width: 40%;
-    margin: 0 0 0 40px;
+    margin: 0 0 0 60px;
     border-radius: 5px;
   }
   .login-full-div {
@@ -1150,7 +1160,7 @@ body {
     /* opacity: 10; */
   }
   .hrs {
-    visibility: hidden;
+    /* visibility: hidden; */
   }
   .green-mob-div {
     width: 98%;
@@ -1180,9 +1190,11 @@ body {
     justify-content: start !important;
     flex-direction: column !important; */
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     line-height: 1.3;
     margin: -1.4% 30% 0 10%;
+    opacity: 100;
+    font-weight: 600;
   }
 
   .nav-items-div {
@@ -1357,6 +1369,14 @@ body {
     margin-top: 10px;
     background-color: #00a5bd;
   }
+  /* .login-footer-banner-full-div {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 4px 0 0 0;
+    margin-top: 30px;
+    background-color: #00a5bd;
+  } */
   .redix-footer-banner-full-div {
     /* padding: 15px 10px 10px 10px; */
 

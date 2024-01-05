@@ -21,85 +21,71 @@ const Nav = () => {
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/":
+      case "/landingPage":
         setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#066F69");
+        setNavbarTextColor("#00A5BD");
         setDropdownColor("white");
         setButtonColor("#00A5BD");
-        setborderColor("#066F69");
+        setborderColor("#00A5BD");
         break;
       case "/admin":
         setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#066F69");
+        setNavbarTextColor("#00A5BD");
         setDropdownColor("white");
-        setButtonColor("#066F69");
-        setborderColor("#066F69");
+        setButtonColor("#00A5BD");
+        setborderColor("#00A5BD");
         break;
       case "/landingPage":
         setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#066F69");
+        setNavbarTextColor("#00A5BD");
         setDropdownColor("white");
-        setButtonColor("#066F69");
-        setborderColor("#066F69");
+        setButtonColor("#00A5BD");
+        setborderColor("#00A5BD");
         break;
 
       case "/login":
         setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#066F69");
+        setNavbarTextColor("#00A5BD");
         setDropdownColor("white");
-        setButtonColor("#066F69");
-        setborderColor("#066F69");
+        setButtonColor("#00A5BD");
+        setborderColor("#00A5BD");
         break;
       case "/about":
         setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#066F69");
+        setNavbarTextColor("#00A5BD");
         setDropdownColor("white");
-        setButtonColor("#066F69");
-        setborderColor("#066F69");
+        setButtonColor("#00A5BD");
+        setborderColor("#00A5BD");
         break;
       case "/brands/login":
         setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#066F69");
+        setNavbarTextColor("#00A5BD");
         setDropdownColor("white");
-        setButtonColor("#066F69");
-        setborderColor("#066F69");
+        setButtonColor("#00A5BD");
+        setborderColor("#00A5BD");
         break;
       case "/contactUs":
         setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#066F69");
+        setNavbarTextColor("#00A5BD");
         setDropdownColor("white");
-        setButtonColor("#066F69");
-        setborderColor("#066F69");
+        setButtonColor("#00A5BD");
+        setborderColor("#00A5BD");
         break;
-<<<<<<< HEAD
       default:
         setLogoUrl(PageLogomob);
-        setNavbarColor("#066F69");
-        setNavbarTextColor("white");
-        setDropdownColor("#066F69");
-=======
-      case "/brands/dashboard":
-        setNavbarColor("black");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarColor("#00A5BD");
+        setNavbarTextColor("#00A5BD");
+        setDropdownColor("white");
+        setButtonColor("#00A5BD");
+        setborderColor("#00A5BD");
         break;
-      default:
-        setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
->>>>>>> b515c46dea75f4d83efa0d9e374ce2bfa88679a5
-        setButtonColor("white");
-        break;
-
-
     }
   }, [router.pathname]);
 
@@ -268,7 +254,7 @@ const Nav = () => {
                   //   textAlign: "center",
                   // }}
                   className='nav-items-div-mob '>
-                  <Link className='contact-nav-a-mov' href='/'>
+                  <Link className='contact-nav-a-mov' href='/admin'>
                     <p style={{ color: navbarTextColor }}> Home</p>
                   </Link>
                   <Link className='contact-nav-a-mov' href='/brands/login'>

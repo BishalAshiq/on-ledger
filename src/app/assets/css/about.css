@@ -124,14 +124,6 @@
 }
 
 @media (max-width: 768px) {
-  .login-footer-banner-full-div {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    padding: 4px 0 0 0;
-    margin-top: 30px;
-    background-color: #066f69;
-  }
   .about-main-div {
     margin: 20% 0% 2% 2%;
     color: white;
@@ -153,7 +145,7 @@
   }
   .about-contacts-btn {
     color: #494949;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -164,7 +156,7 @@
   .about-header-des-p {
     color: #494949;
     text-align: justify;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -173,7 +165,7 @@
   .about-contacts-desp {
     color: #494949;
     text-align: justify;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -191,7 +183,7 @@
   }
   .abt-tags {
     color: #066f69;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -199,7 +191,7 @@
   }
   .about-header-des-h6 {
     /* color: #066f69; */
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -207,7 +199,7 @@
   }
   .about-header-desc-h6 {
     color: #066f69;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;

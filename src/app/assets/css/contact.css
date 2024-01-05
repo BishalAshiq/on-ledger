@@ -223,7 +223,7 @@
     line-height: normal;
   }
   .cont-add-text {
-    color: #000;
+    color: #ffffff;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -232,7 +232,7 @@
   }
   .send-btn {
     border-radius: 5px !important;
-    background: #066f69;
+    background-color: #00a5bd;
     width: 158px;
     height: 45px;
     margin: 10px 0 0 0;

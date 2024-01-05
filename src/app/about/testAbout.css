@@ -98,7 +98,7 @@
 
 .contact__wrapper .content__text {
   color: #fff;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -167,4 +167,15 @@
 
 /* _______ For Mobile Version Responsive ________ */
 @media screen and (max-width: 767px) {
+  .contact__wrapper .content__text {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+    padding: 0 0 20px 0;
+    /* 135.714% */
+  }
 }

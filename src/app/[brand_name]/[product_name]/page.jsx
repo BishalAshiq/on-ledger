@@ -1,7 +1,7 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./brandsProduct.module.css";
-import Nav from "@/component/Navbar/Nav";
+import DashNav from "@/component/Navbar/dashNav";
 import checkdash from "../../../../public/checkdash.svg";
 import pageLogo from "../../../../public/pageLogomd.png";
 import pageicon1 from "../../../../public/social1.svg";
@@ -14,10 +14,10 @@ import copy from "../../../../public/copy.svg";
 import redix from "../../../../public/redix.png";
 import NoImage from "../../../../public/no-image.jpg";
 import Image from "next/image";
-import {useParams} from "next/navigation";
+import { useParams } from "next/navigation";
 import axiosInstance from "../../../../utils/axios";
 import Link from "next/link";
-import {base_url} from "../../../../utils/auth";
+import { base_url } from "../../../../utils/auth";
 const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
@@ -40,7 +40,7 @@ const page = () => {
     const dateObject = new Date(dateString);
 
     // Format the date as "d M, Y"
-    const options = {day: "numeric", month: "short", year: "numeric"};
+    const options = { day: "numeric", month: "short", year: "numeric" };
     const formatted = dateObject.toLocaleDateString("en-US", options);
     return formatted;
   };
@@ -168,65 +168,69 @@ const page = () => {
     }
   };
   return (
-    <div className="individual">
+    <div className='individual'>
       {" "}
       <div className={styles["background-img"]}>
         <div>
-          <Nav />
+          {/* <Nav /> */}
+          <DashNav />
         </div>
 
-        <div className="certificate-full-div">
-          <div className="row mt-4">
-            <div className="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+        <div className='certificate-full-div'>
+          <div className='row mt-4'>
+            <div className='col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
 
-            <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-              <div className=" redix-div">
-                <div className="redix-divs">
-                  <div className="certificate-image-div">
+            <div className='col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3'>
+              <div className=' redix-div'>
+                <div className='redix-divs'>
+                  <div className='certificate-image-div'>
                     <Image
-                      className="certificate-image"
+                      className='certificate-image'
                       src={certified.src}
                       width={44}
                       height={40}
-                      alt=""
+                      alt=''
                     />
                   </div>
 
-                  <div className="certificate-tags-div">
+                  <div className='certificate-tags-div'>
                     <h2
                       style={{
                         whiteSpace: "nowrap",
                       }}
-                      className="certificate-tags"
-                    >
-                      THE BLOCKCHAIN CERTIFICATE
+                      className='certificate-tags'>
+                      ONECHAIN®
                     </h2>
-                    <span className="certificate-ptag ">區塊鏈防偽證書</span>
-                    <span className="certificate-ptag mt-2">by OneChain®</span>
+                    <span className='certificate-ptag '>
+                      CERTIFIED BLOCKCHAIN SEAL
+                    </span>
+                    <span className='certificate-ptag mt-2'>
+                      OneChain®區塊鏈認證封印
+                    </span>
                   </div>
 
-                  <div className="certificate-des-div">
-                    <h5 className="certificate-h5Tag">
+                  <div className='certificate-des-div'>
+                    <h5 className='certificate-h5Tag'>
                       This Certificate has been securely recorded on the
                       blockchain, ensuring its transparency and immutable
-                      record. It is applicable to products produced in strict
-                      compliance with ESG requirements as listed below.
+                      record. It is applicable to products produced with the
+                      utmost commitment to quality and integrity.
                     </h5>
 
-                    <h5 className="certificate-h5Tag">
-                      此證書已安全記錄於區塊鏈上，確保其透明性和不可變紀錄。適用於嚴格符合以下列出的ESG要求的產品
+                    <h5 className='certificate-h5Tag'>
+                      此證書已經安全記錄在區塊鏈上，確保了其透明性和不可變記錄。適用於以最高的品質和誠信承諾生產的產品
                     </h5>
                   </div>
 
-                  <div className="certificate-imageSec-div">
+                  <div className='certificate-imageSec-div'>
                     {item?.brand_details?.logo != null ? (
                       <img
                         src={`${base_url}/uploads/${item?.brand_details?.logo}`}
-                        className="certificate-image-img"
+                        className='certificate-image-img'
                       />
                     ) : (
                       <>
-                        <img src={NoImage.src} alt="" />
+                        <img src={NoImage.src} alt='' />
                       </>
                     )}
                   </div>
@@ -234,33 +238,32 @@ const page = () => {
               </div>
             </div>
 
-            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 ">
-              <div className="redix-sec-div">
-                <div className="redixSec-div">
-                  <div className="Blockchain-tagone-div">
-                    <h5 className="Blockchain-tagone">
+            <div className='col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 '>
+              <div className='redix-sec-div'>
+                <div className='redixSec-div'>
+                  <div className='Blockchain-tagone-div'>
+                    <h5 className='Blockchain-tagone'>
                       Blockchain Transaction Hx 區塊鏈上鏈紀錄
                     </h5>
                   </div>
                   <Link
-                    className="no-decoration"
+                    className='no-decoration'
                     href={`https://www.onechainscan.io/transaction/${item.block_chain_url}`}
-                    target="_blank"
-                  >
-                    <div className="Blockchain-tagotwo-div">
-                      <Image src={copy.src} width={20} height={20} alt="" />
-                      <h5 className="Blockchain-tagotwo">
+                    target='_blank'>
+                    <div className='Blockchain-tagotwo-div'>
+                      <Image src={copy.src} width={20} height={20} alt='' />
+                      <h5 className='Blockchain-tagotwo'>
                         {item.block_chain_url}
                       </h5>
                     </div>
                   </Link>
-                  <div className="Blockchain-tagone-div">
-                    <h5 className="Blockchain-tagone">
+                  <div className='Blockchain-tagone-div'>
+                    <h5 className='Blockchain-tagone'>
                       Issue Date 區塊鏈上鏈日期
                     </h5>
                   </div>
 
-                  <div className="Blockchain-ptag-div">
+                  <div className='Blockchain-ptag-div'>
                     <p>{formateDate(item.created_at)}</p>
                   </div>
 
@@ -271,13 +274,12 @@ const page = () => {
                           {typeof attribute[key] === "object" &&
                           attribute[key] !== null ? (
                             <>
-                              <div className="">
+                              <div className=''>
                                 <div
-                                  className="accordion"
-                                  id="accordionExample"
-                                >
-                                  <div className="accordion-item">
-                                    <div className="accor-tag-div">
+                                  className='accordion'
+                                  id='accordionExample'>
+                                  <div className='accordion-item'>
+                                    <div className='accor-tag-div'>
                                       {/* <h6 className='accordion-header'> */}
                                       <div
                                         className={`accordion-button ${
@@ -285,7 +287,7 @@ const page = () => {
                                             ? ""
                                             : "collapsed"
                                         }`}
-                                        type="button"
+                                        type='button'
                                         data-bs-target={`#collapse${key}`}
                                         aria-expanded={isAccordionExpanded(
                                           `collapse${key}`
@@ -295,52 +297,49 @@ const page = () => {
                                           handleAccordionClicks(
                                             `collapse${key}`
                                           )
-                                        }
-                                      >
-                                        <span className="kwy"> {key}</span>
+                                        }>
+                                        <span className='kwy'> {key}</span>
                                       </div>
                                       {/* </h6> */}
 
-                                      <div className="chevron-icon">
+                                      <div className='chevron-icon'>
                                         {isAccordionExpanded(
                                           `collapse${key}`
                                         ) ? (
                                           <svg
-                                            id="chevron-btn-down"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            className="bi bi-chevron-up "
-                                            viewBox="0 0 16 16"
+                                            id='chevron-btn-down'
+                                            xmlns='http://www.w3.org/2000/svg'
+                                            width='16'
+                                            height='16'
+                                            fill='currentColor'
+                                            className='bi bi-chevron-up '
+                                            viewBox='0 0 16 16'
                                             onClick={() =>
                                               handleAccordionClicks(
                                                 `collapse${key}`
                                               )
-                                            }
-                                          >
+                                            }>
                                             <path
-                                              fill-rule="evenodd"
-                                              d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+                                              fill-rule='evenodd'
+                                              d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'
                                             />
                                           </svg>
                                         ) : (
                                           <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            className="bi bi-chevron-down"
-                                            viewBox="0 0 16 16"
+                                            xmlns='http://www.w3.org/2000/svg'
+                                            width='16'
+                                            height='16'
+                                            fill='currentColor'
+                                            className='bi bi-chevron-down'
+                                            viewBox='0 0 16 16'
                                             onClick={() =>
                                               handleAccordionClicks(
                                                 `collapse${key}`
                                               )
-                                            }
-                                          >
+                                            }>
                                             <path
-                                              fill-rule="evenodd"
-                                              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                                              fill-rule='evenodd'
+                                              d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
                                             />
                                           </svg>
                                         )}
@@ -354,19 +353,18 @@ const page = () => {
                                           ? "show"
                                           : ""
                                       }`}
-                                      data-bs-parent="#accordionExample"
-                                    >
-                                      <div className="accordion-body">
+                                      data-bs-parent='#accordionExample'>
+                                      <div className='accordion-body'>
                                         {Object.entries(attribute[key]).map(
                                           ([innerKey, innerValue], index) => (
                                             <>
                                               {innerKey != "" &&
                                               innerValue != "" ? (
-                                                <div className="Blockchain-ptag-divs">
-                                                  <p className="block-ptext">
+                                                <div className='Blockchain-ptag-divs'>
+                                                  <p className='block-ptext'>
                                                     {innerKey}{" "}
                                                   </p>
-                                                  <h5 className="blockchain-h5">
+                                                  <h5 className='blockchain-h5'>
                                                     {innerValue} <br />{" "}
                                                   </h5>
                                                 </div>
@@ -383,9 +381,9 @@ const page = () => {
                               </div>
                             </>
                           ) : (
-                            <div className="Blockchain-ptag-divs">
-                              <p className="block-ptext">{key} </p>
-                              <h5 className="blockchain-h5">
+                            <div className='Blockchain-ptag-divs'>
+                              <p className='block-ptext'>{key} </p>
+                              <h5 className='blockchain-h5'>
                                 {processString(attribute[key])}
                               </h5>
                             </div>
@@ -394,31 +392,31 @@ const page = () => {
                       )
                   )}
 
-                  <div className="Information-full-divs">
+                  <div className='Information-full-divs'>
                     <p>Important Information:</p>
-                    <ol className="">
-                      <li className="block-ptwotext">
+                    <ol className=''>
+                      <li className='block-ptwotext'>
                         This certificate is non-transferable and is permanently
                         recorded on the blockchain
                       </li>
-                      <li className="block-ptwotext">
+                      <li className='block-ptwotext'>
                         For any inquiries or concerns, feel free to contact us
                         at enquiries@esgledger.co
                       </li>
                     </ol>
                   </div>
 
-                  <div className="Information-full-div">
-                    <p className="block-ptwotextcs">重要信息:</p>
+                  <div className='Information-full-div'>
+                    <p className='block-ptwotextcs'>重要信息:</p>
 
                     <ol>
-                      <li className="block-ptwotextc">
+                      <li className='block-ptwotextc'>
                         此證書不可轉讓，已永久記錄在區塊鏈上。
                       </li>
-                      <li className="block-ptwotextc cc-mob">
+                      <li className='block-ptwotextc cc-mob'>
                         如有任何疑問或關切事項 可電郵至:
-                        <span className="block-ptwotext-add">
-                          enquiries@esgledger.co
+                        <span className='block-ptwotext-add'>
+                          enquiries@certledger.io
                         </span>
                         。
                       </li>
@@ -427,80 +425,80 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+            <div className='col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
           </div>
         </div>
 
-        <div className="redix-footer-banner-full-div ">
-          <div className="row ">
-            <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
-            <div className="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-              <div className="login-footer-banner-div web-view">
-                <div className="">
-                  <img className="footer-img" src={pageLogo.src} alt="" />
-                  <p className="fotter-ptext">
+        <div className='redix-footer-banner-full-div '>
+          <div className='row '>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+            <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
+              <div className='login-footer-banner-div web-view'>
+                <div className=''>
+                  <img className='footer-img' src={pageLogo.src} alt='' />
+                  <p className='fotter-ptext'>
                     For inquiries or more information <br />
                     please contact: enquiries@esgledger.co
                   </p>
                 </div>
 
-                <div className="">
-                  <p className="footer-textpp">Join the Community</p>
+                <div className=''>
+                  <p className='footer-textpp'>Join the Community</p>
 
-                  <div className="footer-text-icon">
-                    <a href="https://www.facebook.com/onechainhk">
-                      <img className="social-icon" src={pageicon4.src} alt="" />
+                  <div className='footer-text-icon'>
+                    <a href='https://www.facebook.com/onechainhk'>
+                      <img className='social-icon' src={pageicon4.src} alt='' />
                     </a>
-                    <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
-                      <img className="social-icon" src={pageicon3.src} alt="" />
+                    <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
+                      <img className='social-icon' src={pageicon3.src} alt='' />
                     </a>
-                    <a href="https://www.linkedin.com/company/one-chain/">
-                      <img className="social-icon" src={pageicon2.src} alt="" />
+                    <a href='https://www.linkedin.com/company/one-chain/'>
+                      <img className='social-icon' src={pageicon2.src} alt='' />
                     </a>
-                    <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
-                      <img className="social-icon" src={pageicon1.src} alt="" />
+                    <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
+                      <img className='social-icon' src={pageicon1.src} alt='' />
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="mobile-version-div">
-                <p className="fotter-ptext-mob">
+              <div className='mobile-version-div'>
+                <p className='fotter-ptext-mob'>
                   For inquiries or more information <br />
                   please contact: enquiries@esgledger.co
                 </p>
 
-                <div className="footer-text-icon">
-                  <a href="https://www.facebook.com/onechainhk">
-                    <img className="social-icon" src={pageicon4.src} alt="" />
+                <div className='footer-text-icon'>
+                  <a href='https://www.facebook.com/onechainhk'>
+                    <img className='social-icon' src={pageicon4.src} alt='' />
                   </a>
-                  <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
-                    <img className="social-icon" src={pageicon3.src} alt="" />
+                  <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
+                    <img className='social-icon' src={pageicon3.src} alt='' />
                   </a>
-                  <a href="https://www.linkedin.com/company/one-chain/">
-                    <img className="social-icon" src={pageicon2.src} alt="" />
+                  <a href='https://www.linkedin.com/company/one-chain/'>
+                    <img className='social-icon' src={pageicon2.src} alt='' />
                   </a>
-                  <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
-                    <img className="social-icon" src={pageicon1.src} alt="" />
+                  <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
+                    <img className='social-icon' src={pageicon1.src} alt='' />
                   </a>
                   {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
                 </div>
-                <p className="fotter-joitext-mob">Join the Community</p>
+                <p className='fotter-joitext-mob'>Join the Community</p>
               </div>
-              <div className="f-hr-divweb">
-                <hr className="f-hr" />
-                <p className="f-text">© 2023 OneChain Ltd.</p>
+              <div className='f-hr-divweb'>
+                <hr className='f-hr' />
+                <p className='f-text'>© 2023 OneChain Ltd.</p>
               </div>
             </div>
-            <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3"></div>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3'></div>
           </div>
-          <div className="mobile-version-divs">
+          <div className='mobile-version-divs'>
             <div>
-              <hr className="f-hr" />
-              <p className="f-text">© 2023 OneChain Ltd.</p>
+              <hr className='f-hr' />
+              <p className='f-text'>© 2023 OneChain Ltd.</p>
             </div>
-            <div className="pol-mob-div">
-              <p className="polmob-text">Privacy Policy</p>
-              <p className="polmob-text">Terms of Service</p>
+            <div className='pol-mob-div'>
+              <p className='polmob-text'>Privacy Policy</p>
+              <p className='polmob-text'>Terms of Service</p>
             </div>
           </div>
         </div>

@@ -33,9 +33,9 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className='hrs' />
+        <div className='hrs mob-hrs' />
 
-        <div className='pioneeringtext'>
+        <div className='pioneeringtext mob-hrs'>
           <p>A pioneering blockchain-driven platform under OneChain®</p>
         </div>
       </div>
