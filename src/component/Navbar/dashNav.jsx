@@ -1,5 +1,5 @@
 import React from "react";
-import DashnavLogo from "../../../public/pageLogomd.png";
+import DashnavLogo from "../../../public/pageLogomds.png";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import Link from "next/link";
@@ -20,14 +20,16 @@ const dashNav = () => {
   };
   return (
     <div>
-      <div className='dashnav-div'>
-        <div>
-          <Link href='/'>
-            <img className='dashnav-img' src={DashnavLogo.src} alt='' />
+      <div className=' row dashnav-div'>
+        <div className='col-9 col-sm-6 col-lg-6 col-xl-6'>
+          <Link href='/admin'>
+            <div className='dashnav-img-div'>
+              <img className='dashnav-img' src={DashnavLogo.src} alt='' />
+            </div>
           </Link>
         </div>
 
-        <div className='logout-btn'>
+        <div className='col-3 col-sm-6 col-lg-6 col-xl-6 logout-btn'>
           <svg
             onClick={handleLogout}
             xmlns='http://www.w3.org/2000/svg'

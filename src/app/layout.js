@@ -1,30 +1,30 @@
 import { Inter } from "next/font/google";
 // import './globals.css'
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import "../app/assets/css/main.css";
-import "../app/assets/css/contact.css";
-import "../app/assets/css/about.css";
 import "../app/assets/css/dashboard.css";
+import "../app/assets/css/about.css";
+import "../app/assets/css/contact.css";
 import "../app/assets/css/brandsProduct.css";
-// import "../app/assets/css/testAbout.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const inter = Inter({ subsets: ["latin"] });
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "OneLedger",
-  description: "",
+  title: "ESGLedger by OneChain",
+  description: "Unlocking One Transparency & Trust with Blockchain Integrity",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className=''>
         {children}
         <ToastContainer />
+
         <script
           src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js'
           integrity='sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r'

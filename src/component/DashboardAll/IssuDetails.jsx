@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import upFile from "../../../public/download.png";
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
+import axios from "axios";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -19,6 +20,8 @@ const IssuDetails = () => {
   const endIndex = startIndex + itemsPerPage;
   const currentData = columns.slice(startIndex, endIndex);
   const [isGenerate, SetIsGenerate] = useState(0);
+  const [selectedFileName, setSelectedFileName] = useState("Doc name");
+
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
@@ -40,7 +43,7 @@ const IssuDetails = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      if (response.status == 401) {
+      if (response.data.status == 401) {
         toast.error("Token Failed Please Login", {
           position: "top-right",
           style: {
@@ -87,6 +90,8 @@ const IssuDetails = () => {
   const handleFileChange = (e) => {
     SetIsGenerate(1);
     // console.log("handlefile change");
+    const selectedFile = e.target.files[0];
+    setSelectedFileName(selectedFile.name || "Doc name");
     const formData = new FormData();
     formData.append("csv_file", e.target.files[0]);
 
@@ -173,11 +178,10 @@ const IssuDetails = () => {
         }
       });
   };
-
   return (
-    <div className='container-fluid mt-4'>
-      <div>
-        <h6 className='uptag-text'>Upload new product data</h6>
+    <div className='container-fluid'>
+      <div className='issuess-upload-full-div'>
+        <h6 className='tag-text pb-2'>Upload product data</h6>
         <div className='issue-upload-full-div'>
           <a className='csvs-a' onClick={handleDownload}>
             Download the CSV template
@@ -190,7 +194,7 @@ const IssuDetails = () => {
               height={40}
               alt=''
             />
-            <p className='csv-textp'>Doc name</p>
+            <p className='csv-textp'>{selectedFileName}</p>
             <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
             </p>
@@ -205,14 +209,16 @@ const IssuDetails = () => {
       </div>
 
       <div className='mt-2'>
-        <div className='previe-issue-div'>
-          <h6 className='uptag-textP'>Preview</h6>
-          <div className='previe-issue-text'>
-            <p className='previe-issue-btn-text'>Clear</p>
-            <Link href='/allitems'>
-              <span className='previe-issue-btn'> Mint</span>
-            </Link>
-          </div>
+        <div className='previe-issue-div pt-1'>
+          <h6 className='tag-text'>Preview</h6>
+          {isGenerate == 2 && (
+            <div className='previe-issue-text'>
+              <p className='previe-issue-btn-text'>Clear</p>
+              <Link className='previe-issue-btn-link' href='/allitems'>
+                <p className='previe-issue-btn'> Mint</p>
+              </Link>
+            </div>
+          )}
         </div>
 
         <div>
@@ -234,66 +240,87 @@ const IssuDetails = () => {
               </div>
             )}
             {isGenerate == 2 && (
-              <table className='table'>
+              <table className='full-table'>
                 <thead>
                   <tr>
                     {headers.length > 0 &&
                       headers.map((item) => (
                         <th className='table-nav' scope='col'>
-                          <p className='table-th'> {item}</p>
+                          <span className='table-th'> {item}</span>
                         </th>
                       ))}
 
                     <th className='table-navs' scope='col'>
-                      <p className='table-ths'> QR code</p>
+                      <span className='table-ths'> QR code</span>
                     </th>
                     {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
                   </th> */}
                     <th className='table-navs' scope='col'>
-                      <p className='table-ths'> QR code</p>
+                      <span className='table-ths'> QR code</span>
                     </th>
+                  </tr>
+                  <tr>
+                    <th
+                      colSpan={headers.length + 2}
+                      className='text-center'></th>
                   </tr>
                 </thead>
                 <tbody>
                   {columns.map((item, index) => (
-                    <tr key={index} className='data-tr'>
-                      {headers.length > 0 &&
-                        headers.map((head) => (
-                          <td className='data-td'>
-                            {/* <p className='data-th-text'>{item.brand}</p> */}
-                            <p className='data-th-text'>{item[head]}</p>
-                          </td>
-                        ))}
+                    <>
+                      <tr key={index} className='data-tr'>
+                        {headers.length > 0 &&
+                          headers.map((head) => (
+                            <td className='data-td'>
+                              {/* <p className='data-th-text'>{item.brand}</p> */}
+                              <span className='data-th-text'>
+                                {item[head] != null ? item[head] : "N/A"}
+                              </span>
+                            </td>
+                          ))}
 
-                      <td className='data-td'>
-                        <p
-                          className='data-th-text-delete'
-                          onClick={() => {
-                            handleDelete(item.id);
-                          }}>
-                          Delete
-                        </p>
-                      </td>
+                        <td className='data-td'>
+                          <span
+                            className='data-td cursor-pointer text-red'
+                            onClick={() => {
+                              handleDelete(item.id);
+                            }}>
+                            Delete
+                          </span>
+                        </td>
 
-                      <td>
-                        <div className='issue-svg-div'>
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='24'
-                            height='24'
-                            fill='#155C79'
-                            className='bi bi-three-dots'
-                            viewBox='0 0 16 16'>
-                            <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
-                          </svg>
-                        </div>
-                      </td>
-                    </tr>
+                        <td className='data-td'>
+                          <div className='issue-svg-div'>
+                            <svg
+                              xmlns='http://www.w3.org/2000/svg'
+                              width='24'
+                              height='24'
+                              fill='#155C79'
+                              className='bi bi-three-dots'
+                              viewBox='0 0 16 16'>
+                              <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                            </svg>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td
+                          colSpan={columns.length + 2}
+                          className='text-center'></td>
+                      </tr>
+                      <tr>
+                        <td
+                          colSpan={columns.length + 2}
+                          className='text-center'></td>
+                      </tr>
+                    </>
                   ))}
                 </tbody>
               </table>
             )}
+
             {/* <div className='pagination'>
               <svg
                 onClick={() => handlePageChange(currentPage - 1)}

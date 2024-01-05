@@ -72,8 +72,9 @@
 .indi-brand-head-tags {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #88c9d7;
-  margin: 0 0 60px 0;
+  /* margin: 0 0 60px 0; */
+  margin-bottom: 18px;
+  padding-bottom: 10px;
 }
 
 .kibo-upload-icon {
@@ -90,6 +91,17 @@
   width: 100%;
   /* height: 55px; */
   object-fit: cover;
+}
+.kibo-no-imgs {
+  border: 1px solid rgb(226, 226, 226);
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 12px;
 }
 
 .kibo-upload {
@@ -119,6 +131,10 @@
 .indi-brand-ico-tag {
   display: flex;
   gap: 10px;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #88c9d7;
 }
 
 .indu-brand-edit {
@@ -147,8 +163,8 @@
 }
 
 .yes-modal-btn {
-  background-color: #86c6ca;
-  color: white;
+  background-color: white;
+  color: rgb(3, 3, 3);
   padding: 2px 30px;
   border: 1px solid #86c6ca;
   font-family: "Roboto", sans-serif;
@@ -159,7 +175,7 @@
 }
 
 .no-modal-btn {
-  background-color: #066f69;
+  background-color: #00a5bd;
   font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
   color: white;
@@ -198,7 +214,7 @@
   border: none;
   border-radius: 5px;
   font-size: 0.8rem;
-  background-color: #066f69;
+  background-color: #00a5bd;
   color: white;
   font-family: "Roboto", sans-serif;
 
@@ -228,7 +244,7 @@
 }
 
 .accordion-header {
-  margin-left: 38%;
+  margin-left: 45%;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -246,6 +262,23 @@
   width: 100% !important;
   /* Ensure the button takes up the full width */
   /* border: 1px solid rgb(255, 255, 255); */
+}
+.kwy {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  bottom: 0;
+  left: 12px;
+  right: 0;
+  bottom: 15px;
+  color: #fff;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  position: absolute;
 }
 
 .accordion-button::after {

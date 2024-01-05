@@ -1,0 +1,170 @@
+.main {
+  min-height: 100vh;
+}
+
+.main_wrapper {
+  background-image: url("./_assets/about_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  overflow-x: hidden;
+  margin-top: 50px;
+}
+
+.main_wrapper .content_wrapper {
+  margin: 10px;
+  border-radius: 5px;
+  background: #86c6ca;
+  box-shadow: 4px 12px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+/*=============================================
+=            About Content Area CSS            =
+=============================================*/
+
+.about__content__wrapper {
+  border-radius: 5px;
+  background: #f8f8f8;
+  box-shadow: 2px 6px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 33px 15px 10px 15px;
+  /* margin: 10px 10px !important; */
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.About__Header {
+  color: #00a5bd;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.About__SubHeader {
+  color: #00a5bd;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.about__change_subHeader_color {
+  color: #00a5bd;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.About__Header_Logo .img {
+  display: none;
+}
+
+.About__Header_Logo .about {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.About__Article {
+  color: #00a5bd;
+  text-align: justify;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  /* 135.714% */
+}
+
+/*----------  Contact Us  ----------*/
+.contact__wrapper {
+  padding: 10px 15px 10px 15px;
+}
+
+.contact__wrapper .contact__button {
+  color: #494949;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 5px 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+}
+
+.contact__wrapper .content__text {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: -10px;
+  padding: 0 0 20px 0;
+  /* 135.714% */
+}
+
+/*=====  End of About Content Area CSS  ======*/
+
+.space {
+  height: 2px;
+  width: 100%;
+}
+
+/*___________ For Tablet Version Responsive ____________ */
+@media screen and (min-width: 1023px) {
+  .main_wrapper .content_wrapper {
+    /* height: 100vh; */
+    width: 70%;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+
+  .space {
+    height: 0px;
+    width: 100%;
+  }
+
+  .about__content__wrapper {
+    padding: 54px 60px 28px 73px;
+    /* margin: 10px 10px !important; */
+    margin: 0px 28px 0px 0px;
+  }
+
+  .contact__wrapper .contact__button {
+    margin: 54px 60px 28px 73px;
+  }
+
+  .contact__wrapper .content__text {
+    margin-left: 73px;
+    margin-right: 28px;
+  }
+
+  .About__Header_Logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .About__Header_Logo .about {
+    font-size: 40px;
+    margin-right: 20px;
+  }
+
+  .About__Header_Logo .img {
+    display: block;
+    margin-top: 4px;
+  }
+
+  .About__Article {
+    margin-bottom: 25px;
+  }
+}
+
+/* _______ For Mobile Version Responsive ________ */
+@media screen and (max-width: 767px) {
+}

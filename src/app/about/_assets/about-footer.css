@@ -1,0 +1,135 @@
+.footer__wrapper {
+  background-color: #066f69;
+  width: 100%;
+  margin: auto;
+  padding: 0px 0px 30px 0px;
+  position: relative;
+  bottom: 0;
+}
+
+.footer__content__wrapper {
+  /* width: 70%;  dig display*/
+  width: 100%;
+  margin: auto;
+  margin-top: 15px;
+  padding-top: 27px;
+}
+.logo__social {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+.logo__social .logo {
+  display: none;
+  /* big display block */
+}
+.logo__social .social {
+  margin-top: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social p {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.footer__bottom {
+  border-top: 2px solid rgb(255, 255, 255);
+  margin: 0px 25px;
+  text-align: center;
+  color: white;
+}
+.footer__bottom p {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.footer__bottom .link__area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.link__area .link {
+  color: white;
+  text-decoration: none;
+}
+
+.special__mobile {
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.social__ac__link {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.social__ac__link .social_icon_link {
+  margin: 0px 22px;
+}
+
+@media screen and (min-width: 1023px) {
+  .logo__social {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: row;
+  }
+  .logo__social .logo {
+    display: block;
+    /* big display block */
+  }
+  .footer__content__wrapper {
+    width: 70%;
+  }
+
+  .logo__social .social {
+    flex-direction: column-reverse;
+    margin-bottom: 23px;
+  }
+
+  .logo__social .logo p {
+    max-width: 377px;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 12px;
+  }
+
+  .footer__bottom {
+    text-align: start;
+    margin: 0px;
+  }
+
+  .footer__bottom p {
+    font-size: 10px;
+  }
+
+  .footer__bottom .link__area {
+    display: none;
+  }
+
+  .special__mobile {
+    display: none;
+  }
+}

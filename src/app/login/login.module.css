@@ -1,60 +1,81 @@
 .background-img {
-  background-image: url("/onledbackground.png"); /* Replace with the actual path to your image */
-  background-size: cover;
-  background-position: center;
-  /* background-repeat: no-repeat; */
-  height: 130vh; /* Adjust as needed */
-  /* overflow-y: hidden; */
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  /* min-height: 100vh; */
-  position: relative;
-  /* padding-top: 2%; */
-}
-.background-imgs {
-  background-image: url("/onledbackgrounds.png"); /* Replace with the actual path to your image */
+  background-image: url("/onledbackground.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Adjust as needed */
-  /* overflow-y: hidden; */
+  height: 120vh; /* Adjust as needed */
+  /* overflow-y: scroll; */
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   position: relative;
-  /* padding-top: 2%; */
+}
+.background-imgabout {
+  background-image: url("/onledbackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 10vh; /* Adjust as needed */
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+.background-imgContact {
+  background-image: url("/onledbackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 10vh; /* Adjust as needed */
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 138vh;
+  position: relative;
 }
 
 @media (max-width: 768px) {
   .background-img {
-    background-image: url("/onback-mob.png"); /* Replace with the actual path to your image */
-    background-size: cover;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    height: 130vh; /* Adjust as needed */
-    /* overflow-y: hidden; */
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    /* min-height: 100vh; */
-    position: relative;
-    /* padding-top: 2%; */
-  }
-
-  .background-imgs {
-    background-image: url("/onback-mob.png"); /* Replace with the actual path to your image */
+    background-image: url("/onback-mob.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh; /* Adjust as needed */
-    /* overflow-y: hidden; */
+    /* overflow-y: scroll; */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     position: relative;
-    /* padding-top: 2%; */
+  }
+  .background-imgabout {
+    background-image: url("/onback-mob.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Adjust as needed */
+    /* overflow-y: scroll; */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+  }
+  .background-imgContact {
+    background-image: url("/onledbackground.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 10vh; /* Adjust as needed */
+    /* overflow-y: scroll; */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh;
+    position: relative;
   }
 }

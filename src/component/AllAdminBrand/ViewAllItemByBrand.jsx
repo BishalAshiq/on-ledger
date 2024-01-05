@@ -17,13 +17,18 @@ const ViewAllItemByBrand = () => {
     const [brandList, setBrandList] = useState([]);
     const router = useRouter();
     const param = useParams();
-    const [totalPages,setTotalPages] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
     const [headers, setHeaders] = useState([]);
     const [columns, setColumns] = useState([]);
+    const [currentData, setCurrentData] = useState([]);
 
-    const [token, setToken] = useState(null);
-    const qrCodeRef = useRef();
-    // Step 1: Create a state variable for the new component visibility
+    // const startIndex = (currentPage - 1) * itemsPerPage;
+    // const endIndex = startIndex + itemsPerPage;
+    // const currentData = brandList.slice(startIndex, endIndex);
+    const [startIndex, setStartIndex] = useState((currentPage - 1) * itemsPerPage);
+    const [endIndex, setEndIndex] = useState(startIndex + itemsPerPage);
+
+
     const [showBrandSingleProducts, setShowBrandSingleProducts] = useState(false);
     const [showEditBrand, setShowEditBrand] = useState(false);
     const [brandId, setBrandId] = useState(0);
@@ -56,6 +61,7 @@ const ViewAllItemByBrand = () => {
                     setHeaders(res.data.header);
                     setColumns(res.data.data);
                     setTotalPages(Math.ceil(res.data.data.length / itemsPerPage))
+                    setCurrentData(res.data.data.slice(startIndex, endIndex));
                 }
                 if (res.data.status == 401) {
                     toast.error(res.data.message, {
@@ -73,12 +79,15 @@ const ViewAllItemByBrand = () => {
 
 
 
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentData = brandList.slice(startIndex, endIndex);
 
     const handlePageChange = (newPage) => {
+        const newStartIndex = (newPage - 1) * itemsPerPage;
+        const newEndIndex = newStartIndex + itemsPerPage;
+
         setCurrentPage(newPage);
+        setStartIndex(Math.min(newStartIndex, columns.length - 1));
+        setEndIndex(Math.min(newEndIndex, columns.length));
+        setCurrentData(columns.slice(newStartIndex, newEndIndex));
     };
 
     const [copySuccess, setCopySuccess] = useState(null);
@@ -181,8 +190,8 @@ const ViewAllItemByBrand = () => {
                                 </tr>
                             </thead>
                             <tbody >
-                                {columns.length > 0 ?
-                                    columns.map((item, index) => (
+                                {currentData.length > 0 ?
+                                    currentData.map((item, index) => (
                                         <>
                                             <tr
                                                 key={index}
@@ -225,31 +234,39 @@ const ViewAllItemByBrand = () => {
                         </table>
 
                         <div className='pagination'>
-                            <svg
+                            <button
+                                className="pagination-btn"
                                 onClick={() => handlePageChange(currentPage - 1)}
                                 disabled={currentPage === 1}
-                                xmlns='http://www.w3.org/2000/svg'
-                                width='20'
-                                height='20'
-                                fill='#86C6CA'
-                                class='bi bi-caret-left-fill'
-                                viewBox='0 0 16 16'>
-                                <path d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z' />
-                            </svg>
+                            >
+                                <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    width='20'
+                                    height='20'
+                                    fill='#86C6CA'
+                                    class='bi bi-caret-left-fill'
+                                    viewBox='0 0 16 16'>
+                                    <path d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z' />
+                                </svg>
+                            </button>
 
                             <span>{` ${currentPage} / ${totalPages}`}</span>
-
-                            <svg
+                            <button
+                                className="pagination-btn"
                                 onClick={() => handlePageChange(currentPage + 1)}
                                 disabled={currentPage === totalPages}
-                                xmlns='http://www.w3.org/2000/svg'
-                                width='16'
-                                height='16'
-                                fill='#86C6CA'
-                                class='bi bi-caret-right-fill'
-                                viewBox='0 0 16 16'>
-                                <path d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z' />
-                            </svg>
+                            >
+                                <svg
+
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    width='16'
+                                    height='16'
+                                    fill='#86C6CA'
+                                    class='bi bi-caret-right-fill'
+                                    viewBox='0 0 16 16'>
+                                    <path d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z' />
+                                </svg> </button>
+
                         </div>
                     </div>
                 </div>

@@ -51,7 +51,7 @@ const IndividualBrand = ({ brandId }) => {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
-    bgcolor: "#066F69",
+    bgcolor: "#00A5BD",
     boxShadow: 24,
     borderRadius: 2,
     p: 4,
@@ -63,7 +63,7 @@ const IndividualBrand = ({ brandId }) => {
     borderRadius: 2,
     transform: "translate(-50%, -50%)",
     width: 400,
-    bgcolor: "#066F69",
+    bgcolor: "#00A5BD",
     boxShadow: 24,
     p: 4,
   };
@@ -216,21 +216,24 @@ const IndividualBrand = ({ brandId }) => {
                   Account
                 </label> */}
                   </div>
-                  <div className='edit-delete-div'>
-                    <p
-                      className='indu-brand-edit'
-                      onClick={handleOpen}
-                      // onClick={handleFormEdit}
-                    >
-                      Save
-                    </p>
-                    <p
-                      className='indu-brand-edits'
-                      onClick={handleOpenD}
-                      // onClick={hanleBrandDelete}
-                    >
-                      Delete
-                    </p>
+
+                  <div className='d-none d-md-block'>
+                    <div className='edit-delete-div '>
+                      <p
+                        className='indu-brand-edit'
+                        onClick={handleOpen}
+                        // onClick={handleFormEdit}
+                      >
+                        Save
+                      </p>
+                      <p
+                        className='indu-brand-edits'
+                        onClick={handleOpenD}
+                        // onClick={hanleBrandDelete}
+                      >
+                        Delete
+                      </p>
+                    </div>
                   </div>
 
                   <Modal
@@ -348,17 +351,15 @@ const IndividualBrand = ({ brandId }) => {
                     </div>
                   </div>
                   <div className='col-12 col-md-10'>
-                    <div className='kibo-inputs-div mt-4'>
-                      <input
-                        className='kibo-inputs'
-                        type='text'
-                        placeholder='KIBO'
-                        // value={formData.name}
-                        name='name'
-                        onChange={handleFormData}
-                        required
-                      />
-                    </div>
+                    <input
+                      className='kibo-inputs'
+                      type='text'
+                      placeholder='KIBO'
+                      // value={formData.name}
+                      name='name'
+                      onChange={handleFormData}
+                      required
+                    />
                   </div>
                 </div>
               </div>
@@ -380,8 +381,12 @@ const IndividualBrand = ({ brandId }) => {
                   title: "Website",
                   value: formData.website,
                 },
+                {
+                  title: "Number of product",
+                  value: formData.brands_item_count,
+                },
               ].map((each, index) => (
-                <div key={index} className='container'>
+                <div key={index} className='container mb-2'>
                   <div className=' row'>
                     <div className='col-12 col-md-2 '>
                       <div className='kibo-img-div'>
@@ -390,28 +395,57 @@ const IndividualBrand = ({ brandId }) => {
                     </div>
 
                     <div className='col-12 col-md-10'>
-                      <input
-                        className='kibo-inputs'
-                        type='text'
-                        placeholder='KIBO'
-                        value={each.value}
-                        name='name'
-                        onChange={handleFormData}
-                        required
-                      />
+                      {each.title === "Number of product" ? (
+                        <>
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                            }}>
+                            <p className='pl-4'>{formData.brands_item_count}</p>
+                            <p className='indu-brand-edit'>View All</p>
+                          </div>
+                        </>
+                      ) : (
+                        <input
+                          className='kibo-inputs'
+                          type='text'
+                          placeholder='KIBO'
+                          value={each.value}
+                          name='name'
+                          onChange={handleFormData}
+                          required
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
               ))}
 
-              <div className='number-of-div d-flex justify-content-between mt-4 '>
-                <div className='d-flex justify-content-between '>
-                  <p className='font-weight-bold'>Number of Products</p>
-                  <p className='pl-4'>{formData.brands_item_count}</p>
+              <div
+                className='d-md-none'
+                style={{
+                  marginBottom: "20px",
+                }}>
+                <div className='d-flex justify-content-between align-items-center m-auto w-75 mb-6'>
+                  <button type='submit' className='view-add-btn'>
+                    Save
+                  </button>
+                  <button type='submit' className='view-add-btn bg-danger'>
+                    Delete
+                  </button>
                 </div>
-                <p className='indu-brand-edit'>View all</p>
               </div>
-              <hr className='indi-brand-hr' />
+
+              {/* <div className="number-of-div d-flex justify-content-between mt-4 ">
+                <div className="d-flex justify-content-between ">
+                  <p className="font-weight-bold">Number of Products</p>
+                  <p className="pl-4">{formData.brands_item_count}</p>
+                </div>
+                <p className="indu-brand-edit">View all</p>
+              </div> */}
               {/* <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
               <p className='contact-word'>Number of items</p>
@@ -424,16 +458,16 @@ const IndividualBrand = ({ brandId }) => {
             </div>
           </div> */}
               {/* <hr className='indi-brand-hr' /> */}
-              <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-                <div className='button-of-div'>
-                  <button className='reset-btn d-md-none w-100 mt-3'>
+              {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div className="button-of-div">
+                  <button className="reset-btn d-md-none w-100 mt-3">
                     Reset password
                   </button>
-                  <button className='reset-btn d-none d-md-block mt-3'>
+                  <button className="reset-btn d-none d-md-block mt-3">
                     Reset password
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

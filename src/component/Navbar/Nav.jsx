@@ -2,89 +2,90 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import PageLogo from "../../../public/pageLogonav.png";
-import PageLogomob from "../../../public/pageLogomd.png";
+import PageLogomob from "../../../public/pageLogomd.svg";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import companyLogo from "../../../public/pageLogonav.png";
 import companyLogo1 from "../../../public/pageLogomd.png";
+import "./mobileNav.css";
 
 const Nav = () => {
   const [navbarColor, setNavbarColor] = useState(null);
   const [navbarTextColor, setNavbarTextColor] = useState(null);
   const [dropdownColor, setDropdownColor] = useState(null);
   const [buttonColor, setButtonColor] = useState(null);
+  const [borderColor, setborderColor] = useState(null);
   const [logoColor, setLogoColor] = useState("black");
   const [logoUrl, setLogoUrl] = useState("");
   const router = useRouter();
 
   useEffect(() => {
-    if (router.pathname === "/landingPage") {
-      setLogoUrl(companyLogo);
-    } else if (router.pathname === "/") {
-      setLogoUrl(companyLogo1);
-    } else {
-      setLogoUrl(companyLogo);
-    }
-  }, [router]);
-
-  useEffect(() => {
     switch (location.pathname) {
       case "/":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
-        break;
-      case "/landingPage":
-        setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#00A5BD");
+        setborderColor("#066F69");
         break;
       case "/admin":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
-      case "/login":
+      case "/landingPage":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
+        break;
+
+      case "/login":
+        setLogoUrl(companyLogo);
+        setNavbarColor("white");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       case "/about":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       case "/brands/login":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       case "/contactUs":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
-      case "/brands/dashboard":
-        setNavbarColor("black");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
-        break;
-      case "/planetplus/104-2023":
-        setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
+      default:
+        setLogoUrl(PageLogomob);
+        setNavbarColor("#066F69");
+        setNavbarTextColor("white");
+        setDropdownColor("#066F69");
         setButtonColor("white");
         break;
     }
-    console.log("Navbar Color:", navbarColor);
   }, [router.pathname]);
 
   return (
@@ -103,7 +104,7 @@ const Nav = () => {
           <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 '>
             <div>
               <div className='nav-items-div'>
-                <Link href='/login'>Home</Link>
+                <Link href='/admin'>Home</Link>
                 <Link className='contact-nav-a' href='/brands/login'>
                   {" "}
                   <p>Brands</p>{" "}
@@ -122,7 +123,13 @@ const Nav = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link href='/about'>About ESGLedger</Link>
+                <Link
+                  style={{
+                    whiteSpace: "nowrap",
+                  }}
+                  href='/about'>
+                  About ESGLedger
+                </Link>
                 <Link
                   className='contact-nav-a'
                   href='https://www.onechainscan.io/'
@@ -168,93 +175,150 @@ const Nav = () => {
       </div>
       <div className='mobile-nav-div'>
         <nav
-          class='navbar navbar-expand-lg mob-nav fixed-top'
+          className='navbar navbar-expand-lg mob-nav fixed-top'
           style={{ backgroundColor: navbarColor }}>
-          <div class=''>
-            <div className='nav-mob-logo-img-div'>
-              <Link href='/landingPage'>
-                <img className='nav-mob-logo-img' src={logoUrl.src} alt='' />
-              </Link>
-              <button
-                style={{ backgroundColor: dropdownColor }}
-                className='navbar-toggler'
-                type='button'
-                data-bs-toggle='collapse'
-                data-bs-target='#navbarTogglerDemo01'
-                aria-controls='navbarTogglerDemo01'
-                aria-expanded='false'
-                aria-label='Toggle navigation'>
-                <span className='svg-iconic'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='18'
-                    height='18'
-                    viewBox='0 0 18 18'
-                    fill='none'>
-                    <path
-                      d='M1 1H17.4706'
-                      stroke='#066F69'
-                      stroke-linecap='round'
-                    />
-                    <path
-                      d='M1 9H17.4706'
-                      stroke='#066F69'
-                      stroke-linecap='round'
-                    />
-                    <path
-                      d='M1 17H17.4706'
-                      stroke='#066F69'
-                      stroke-linecap='round'
-                    />
-                  </svg>
-                </span>
-              </button>
+          <div
+            style={{
+              width: "100%",
+              padding: "0px 10px",
+            }}>
+            <div className='dsada'>
+              <div className='nav-mob-lgo-FULL-div'>
+                <div className='nav-mob-lgo-img-link-div'>
+                  <Link
+                    // style={{
+                    //   marginLeft: "50px",
+                    // }}
+                    href='/landingPage'
+                    className=''>
+                    <img className='nav-mob-lgo-img' src={logoUrl.src} alt='' />
+                  </Link>
+                </div>
+                <div className='nav-mob-toggle-div'>
+                  <button
+                    style={{
+                      backgroundColor: dropdownColor,
+                      border: "none",
+                    }}
+                    type='button'
+                    data-bs-toggle='collapse'
+                    data-bs-target='#navbarTogglerDemo01'
+                    aria-controls='navbarTogglerDemo01'
+                    aria-expanded='false'
+                    aria-label='Toggle navigation'>
+                    <span className=''>
+                      <svg
+                        style={{ color: buttonColor }}
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='18'
+                        height='18'
+                        viewBox='0 0 18 18'
+                        fill='none'>
+                        <path
+                          d='M1 1H17.4706'
+                          stroke={buttonColor}
+                          stroke-linecap='round'
+                        />
+                        <path
+                          d='M1 9H17.4706'
+                          stroke={buttonColor}
+                          stroke-linecap='round'
+                        />
+                        <path
+                          d='M1 17H17.4706'
+                          stroke={buttonColor}
+                          stroke-linecap='round'
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className='collapse navbar-collapse' id='navbarTogglerDemo01'>
-              <div className='nav-items-div-mob'>
-                <Link className='contact-nav-a-mov' href='/login'>
-                  <p> Home</p>
-                </Link>
-                <Link className='contact-nav-a-mov' href='/brands/login'>
-                  <p>Brands</p>
-                </Link>
-                <Link className='contact-nav-a-mov' href='/about'>
-                  <p> About ESGLedger</p>
-                </Link>
-                <Link className='contact-nav-a-mov' href='/'>
-                  <p>Explorer</p>{" "}
-                  <span>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='10'
-                      height='10'
-                      fill='currentColor'
-                      class='bi bi-chevron-down'
-                      viewBox='0 0 16 16'>
-                      <path
-                        fill-rule='evenodd'
-                        d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
-                      />
-                    </svg>
-                  </span>
-                </Link>
-                <Link className='contact-nav-a-mov' href='/contactUs'>
-                  <p>Contact</p>{" "}
-                  <span>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='10'
-                      height='10'
-                      fill='currentColor'
-                      class='bi bi-chevron-down'
-                      viewBox='0 0 16 16'>
-                      <path
-                        fill-rule='evenodd'
-                        d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
-                      />
-                    </svg>
-                  </span>
-                </Link>
+
+            <div
+              style={{
+                backgroundColor: navbarColor,
+              }}
+              className='collapse navbar-collapse '
+              id='navbarTogglerDemo01'>
+              <div>
+                <div
+                  // style={{
+                  //   display: "flex",
+                  //   flexDirection: "column",
+                  //   justifyContent: "center",
+                  //   alignItems: "center",
+                  //   height: "100%",
+                  //   textAlign: "center",
+                  // }}
+                  className='nav-items-div-mob '>
+                  <Link className='contact-nav-a-mov' href='/'>
+                    <p style={{ color: navbarTextColor }}> Home</p>
+                  </Link>
+                  <Link className='contact-nav-a-mov' href='/brands/login'>
+                    {" "}
+                    <p style={{ color: navbarTextColor }}>Brands</p>{" "}
+                    {/* <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="10"
+                        fill="currentColor"
+                        class="bi bi-chevron-down"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </span> */}
+                  </Link>
+                  <Link className='contact-nav-a-mov' href='/about'>
+                    <p style={{ color: navbarTextColor }}> About ESGLedger</p>
+                  </Link>
+                  <Link className='contact-nav-a-mov' href='#'>
+                    <p style={{ color: navbarTextColor }}>Explorer</p>{" "}
+                    {/* <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="10"
+                        fill="currentColor"
+                        class="bi bi-chevron-down"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </span> */}
+                  </Link>
+                  <Link className='contact-nav-a-mov' href='/contactUs'>
+                    <p style={{ color: navbarTextColor }}>Contact</p>{" "}
+                    {/* <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="10"
+                        fill="currentColor"
+                        class="bi bi-chevron-down"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </span> */}
+                  </Link>
+
+                  <div
+                    className='navBorder'
+                    style={{ borderColor: borderColor }}></div>
+                </div>
               </div>
             </div>
           </div>

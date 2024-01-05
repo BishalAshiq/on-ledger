@@ -1,0 +1,13 @@
+.m_contact__wrapper {
+  width: 100%;
+  display: flex;
+}
+
+/* _______ For Mobile Version Responsive ________ */
+@media screen and (max-width: 767px) {
+  .m_contact__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
